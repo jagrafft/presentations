@@ -14,6 +14,22 @@
 - Julia v0.7.x
 - Python v3.7.x
 - Exploration of how each language handles a set of problems
+- Use competent source for Python FP examples, replicate in Julia
+
+## Outline
+1. Arrays/lists
+    - Python lists
+    - NumPy, Pandas arrays
+    - Julia arrays
+2. Types (Float, Int, Missing/NA/...)
+    - Python
+    - Julia
+3. Functional programming primer
+    - Julia examples
+    - Python examples
+4. Discussion of functional programming examples for data science. Touch on,
+    - Julia compiler/"internals"
+    - Python compiler/"internals"
 
 ## Production
 - Code examples

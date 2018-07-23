@@ -1,17 +1,18 @@
 ---
-author: jason a. grafft
-title: Something wicked this way goes...
-date: 22 July 2018
+author: Jason A. Grafft
+title:  \[Arrays, Types, FP\].ap(Julia, Python)
 ---
-# One
+## Motivations
+
+## Python 3.7.x
 ```julia
 println("w00t")
 ```
-# Two
+## Julia 0.7.x
 - test
 - test
 
-# Information
+## Information
 - Jason A. Grafft
 - <jason@grafft.co>
 - <http://grafft.co>

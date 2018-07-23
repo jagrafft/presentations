@@ -1,2 +1,2 @@
 slides:
-	pandoc -t revealjs -s -o slides.html slides.md
+	pandoc -t revealjs -V theme=black -V transition=none -s -o slides.html slides.md
