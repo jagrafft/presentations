@@ -100,18 +100,113 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="author">Jason A. Grafft</p>
 </section>
 
-<section id="motivations" class="slide level2">
-<h2>Motivations</h2>
+<section id="premise" class="slide level2">
+<h2>Premise</h2>
+<blockquote>
+<p>An inquiry into the engineering solutions provided by two (2) programming languages to the same problem set.</p>
+</blockquote>
 </section>
-<section id="python-3.7.x" class="slide level2">
-<h2>Python 3.7.x</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb1-1" data-line-number="1">println(<span class="st">&quot;w00t&quot;</span>)</a></code></pre></div>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<blockquote>
+<p><a href="https://github.com/tensorflow/swift/blob/master/docs/WhySwiftForTensorFlow.md">Why <em>Swift</em> for TensorFlow?</a></p>
+</blockquote>
 </section>
-<section id="julia-0.7.x" class="slide level2">
-<h2>Julia 0.7.x</h2>
+<section id="contract" class="slide level2">
+<h2>Contract</h2>
 <ul>
-<li>test</li>
-<li>test</li>
+<li>Fun</li>
+<li>Earnest inquiry</li>
+<li>Honest disagreement</li>
+<li>Respectful communication</li>
+<li>Fun</li>
+</ul>
+</section>
+<section id="languages" class="slide level2">
+<h2>Languages</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># Python</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> sys.version_info</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">sys.version_info(major<span class="op">=</span><span class="dv">3</span>, minor<span class="op">=</span><span class="dv">7</span>, micro<span class="op">=</span><span class="dv">0</span>, releaselevel<span class="op">=</span><span class="st">&#39;final&#39;</span>, serial<span class="op">=</span><span class="dv">0</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># Julia</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">julia&gt; versioninfo()</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">Julia Version <span class="fl">0.6.2</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">Commit d386e40c17 (<span class="fl">2017</span>-<span class="fl">12</span>-<span class="fl">13</span> <span class="fl">18</span>:<span class="fl">08</span> UTC)</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">Platform Info:</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">  OS: Linux (x86_64-pc-linux-gnu)</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">  CPU: Intel(R) Core(TM) i5-<span class="fl">5257</span>U CPU @ <span class="fl">2.70</span>GHz</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">  WORD_SIZE: <span class="fl">64</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">  BLAS: libopenblas (USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell)</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">  LAPACK: libopenblas<span class="fl">64</span>_</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">  LIBM: libopenlibm</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">  LLVM: libLLVM-<span class="fl">3.9.1</span> (ORCJIT, broadwell)</a></code></pre></div>
+</section>
+<section id="python-characteristics" class="slide level2">
+<h2>Python Characteristics</h2>
+<ul>
+<li>Mulitparadigm, interpreted</li>
+<li>Interpreter written in C</li>
+<li>Dynamic typing
+<ul>
+<li>Not declarable, v3.5 introduced type <a href="https://docs.python.org/3/library/typing.html">hints</a></li>
+</ul></li>
+<li>Small, widely extensible core library</li>
+<li>Idiomatic</li>
+<li>Flexible</li>
+</ul>
+</section>
+<section id="python-catch-22s" class="slide level2">
+<h2>Python Catch-22s</h2>
+<ul>
+<li>“Ten day language” problem</li>
+<li>Package du jour</li>
+<li>Pedantically idiomatic</li>
+</ul>
+</section>
+<section id="julia-characteristics" class="slide level2">
+<h2>Julia Characteristics</h2>
+<ul>
+<li>Numerical computing language, JIT</li>
+<li>Compiler written in Julia</li>
+<li>Static typing
+<ul>
+<li>Optionally declared, always enforced</li>
+</ul></li>
+<li>User-defined types performant as base types</li>
+<li>Multiple dispatch</li>
+<li><em>Fast</em></li>
+</ul>
+</section>
+<section id="julia-catch-22s" class="slide level2">
+<h2>Julia Catch-22s</h2>
+<ul>
+<li>Breaking changes</li>
+</ul>
+</section>
+<section id="ground-truths" class="slide level2">
+<h2>Ground Truths</h2>
+<ul>
+<li>Architecture choices impose hard limits</li>
+<li>Efficiency via general purposing is an oxymoron</li>
+</ul>
+</section>
+<section id="defs" class="slide level2">
+<h2>defs</h2>
+<p>messages <code>{A,B}</code>, effects <code>{F,G}</code>, types <code>{T,U}</code> <!-- Map required everywhere [] observed... --></p>
+<ul>
+<li><strong>push:</strong> <code>A =&gt; F</code></li>
+<li><strong>pull:</strong> <code>A =&gt; F =&gt; B</code></li>
+<li><strong>future/promise:</strong> <code>A =&gt; F[B]</code></li>
+<li><strong>actor:</strong> <code>G[A =&gt; F[B]]</code></li>
+</ul>
+</section>
+<section id="defs-1" class="slide level2">
+<h2>defs</h2>
+<ul>
+<li><strong>array:</strong> <code>Tuple[A,B] = Tuple[&lt;&lt;addr&gt;&gt;,&lt;&lt;addr&gt;&gt;]</code> where <code>|B - A| &gt; 0</code></li>
+<li><strong>stream:</strong> <code>Tuple[A,B]</code> where <code>[A,B] != &lt;&lt;null&gt;&gt;</code></li>
+<li><strong>type:</strong> <code>T[A]</code></li>
+<li><strong>typed stream:</strong> <code>T[Tuple[A,B]]</code></li>
+<li><strong>stream with types:</strong> <code>Tuple[T[A],U[B]]</code> where <code>typeof[T,U] != Nothing</code></li>
 </ul>
 </section>
 <section id="information" class="slide level2">
