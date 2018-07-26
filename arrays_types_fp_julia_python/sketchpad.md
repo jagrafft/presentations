@@ -29,3 +29,4 @@
 
 ## ToDo
 - [ ] Look up "issues with Julia" (*Julia Catch-22's*)
+- [ ] Find excellent Python FP reference
