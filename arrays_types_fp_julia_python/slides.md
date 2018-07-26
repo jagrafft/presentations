@@ -37,12 +37,11 @@ Platform Info:
 ```
 
 ## Python Characteristics
-- Mulitparadigm, interpreted
-- Interpreter written in C
+- Mulitparadigm, interpreted (C)
 - Dynamic typing
-  - Not declarable, v3.5 introduced type [hints](https://docs.python.org/3/library/typing.html)
-- Small, widely extensible core library
-- Idiomatic
+  - Not declarable, run time "check"
+  - v3.5 introduced type [hints](https://docs.python.org/3/library/typing.html)
+- Small core library, widely modularizable
 - Flexible
 
 ## Python Catch-22s
@@ -51,36 +50,42 @@ Platform Info:
 - Pedantically idiomatic
 
 ## Julia Characteristics
-- Numerical computing language, JIT
-- Compiler written in Julia
+- Numerical computing, JIT (predominantly Julia)
 - Static typing
-  - Optionally declared, always enforced
-- User-defined types performant as base types
-- Multiple dispatch
-- *Fast*
+  - Optionally declared, compiler enforced
+  - User types fast as base types
+- Well curated core libraries, extended with packages
+- Highly performant
 
 ## Julia Catch-22s
+<!-- Look up "issues with Julia" -->
 - Breaking changes
+- First run slow
 
 ## Ground Truths
 - Architecture choices impose hard limits
+- At the processor, all operations are stateless
+- In physical storage, all memory is generic
 - Efficiency via general purposing is an oxymoron
+- John von Neumann has the last word
 
 ## defs
-messages `{A,B}`, effects `{F,G}`, types `{T,U}`
+for messages $\{A,B\}$, effects $\{F,G\}$, and types $\{T,U\}$
 <!-- Map required everywhere [] observed... -->
 
-- **push:** `A => F`
-- **pull:** `A => F => B`
-- **future/promise:** `A => F[B]`
-- **actor:** `G[A => F[B]]`
+- **push:** $A \to F$
+- **pull:** $A \to F \to B$
+- **future/promise:** $A \to F[B]$
+- **actor:** $G[A \to F[B]]$
 
 ## defs
-- **array:** `Tuple[A,B] = Tuple[<<addr>>,<<addr>>]` where `|B - A| > 0`
-- **stream:** `Tuple[A,B]` where `[A,B] != <<null>>`
-- **type:** `T[A]`
-- **typed stream:** `T[Tuple[A,B]]`
-- **stream with types:** `Tuple[T[A],U[B]]` where `typeof[T,U] != Nothing`
+- **message/value:** $∀x,n \ge 0:\{x,x_{(x+n)}\}$
+- **array:** $∀x,n \ge 0 \land y,m \ge x,n:\{A\{x,x_{(x+n)}\},B\{y,y_{(y+m)}\}\}$
+<!-- where $A B = [Tuple[byte,byte], Tuple[byte,byte]]` and `|A - B| > 0` -->
+- **stream:** $\{A,B\}∌∅$
+- **type:** $T\{\_\}^{\star}$
+- **typed stream:** $T\{\{A,B\}\}^{\star}$
+- **stream with types:** $\{T\{A\},T\{B\}\}^{\star}$
 
 ## Information
 - Jason A. Grafft
