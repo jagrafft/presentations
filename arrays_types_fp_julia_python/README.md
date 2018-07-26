@@ -1,6 +1,6 @@
 # [Arrays, Types, Functional Programming].ap(Julia, Python)
 
-- 01.01.1970. $\emptyset$
+- 01.01.1970. ∅
 
 ## Building
 - `make slides`
