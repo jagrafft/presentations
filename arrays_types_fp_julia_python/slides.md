@@ -2,11 +2,15 @@
 author: Jason A. Grafft
 title:  \[Arrays, Types, FP\].ap(Julia, Python)
 ---
-## Premise
-> An inquiry into the engineering solutions provided by two (2) programming languages to the same problem set.
+# Frontmatter
+
+---
 
 ## Motivation
 > [Why *Swift* for TensorFlow?](https://github.com/tensorflow/swift/blob/master/docs/WhySwiftForTensorFlow.md)
+
+## Premise
+> An inquiry into the engineering solutions provided by two (2) programming languages to the same problem set.
 
 ## Contract
 - Fun
@@ -15,7 +19,29 @@ title:  \[Arrays, Types, FP\].ap(Julia, Python)
 - Respectful communication
 - Fun
 
-## Languages
+## Flow
+- Languages
+- Ground Truths
+- Types
+- Arrays/Lists
+- Functional Programming
+
+:::notes
+- Generics first
+    - We'll spend time here to save time when looking at language-specific implementations.
+- Types in {Python, Julia} next
+    - Lanugage specifics
+    - Closer look at `Float..`, `Int..`, `Missing/Null/...`
+- Lastly, functional programming
+    - We needed coverage of language fundamentals and types to help this make sense.
+    - Shrouded in nomenclature and inept thinking -> you can learn, you are capable.
+:::
+
+# Languages
+
+---
+
+##
 ```python
 # Python
 >>> sys.version_info
@@ -60,16 +86,27 @@ Platform Info:
 ## Julia Catch-22s
 <!-- Look up "issues with Julia" -->
 - Breaking changes
-- First run slow
+- 2
+- 3
 
-## Ground Truths
+# Ground Truths
+
+---
+
+##
+> Programming is blindly manipulating symbols. —Bret Victor
+
+- Computers are stateless, recursive finite systems
 - Architecture choices impose hard limits
-- At the processor, all operations are stateless
-- In physical storage, all memory is generic
 - Efficiency via general purposing is an oxymoron
-- John von Neumann has the last word
+- John von Neumann gave the last word in *First Draft of a Report on the EDVAC*, distributed 30 June 1945
 
-## defs
+## $\emptyset$ (nothingness)
+> Vacuous truth has untenably expansive state for a finite system. $\emptyset\to ()$ is a convention, **not** a definition.
+>
+>$\therefore$ We are not building on, we are building **round** $\emptyset$.
+
+## $\forall x \notin\emptyset$ (nonempty sets)
 for messages $\{A,B\}$, effects $\{F,G\}$, and types $\{T,U\}$
 <!-- Map required everywhere [] observed... -->
 
@@ -78,18 +115,82 @@ for messages $\{A,B\}$, effects $\{F,G\}$, and types $\{T,U\}$
 - **future/promise:** $A \to F[B]$
 - **actor:** $G[A \to F[B]]$
 
-## defs
-- **message/value:** $∀x,n \ge 0:\{x,x_{(x+n)}\}$
-- **array:** $∀x,n \ge 0 \land y,m \ge x,n:\{A\{x,x_{(x+n)}\},B\{y,y_{(y+m)}\}\}$
-<!-- where $A B = [Tuple[byte,byte], Tuple[byte,byte]]` and `|A - B| > 0` -->
-- **stream:** $\{A,B\}∌∅$
-- **type:** $T\{\_\}^{\star}$
-- **typed stream:** $T\{\{A,B\}\}^{\star}$
-- **stream with types:** $\{T\{A\},T\{B\}\}^{\star}$
+## $\forall x \notin\emptyset$
+messages $\{A,B,C\}$, memory block $\{x\}$, and integer $\{n\}$
 
-## Information
-- Jason A. Grafft
-- <jason@grafft.co>
+- **message/value:** $\forall x,n \ge 0 \lor x \in\emptyset: A[x,x_{(x+n)}]$
+- **array:** $\forall B \nin\emptyset: B[A]$
+- **nonempty array:** $\forall \{A,B\} \nin\emptyset:B[A]$
+- **stream:** $\forall \{A,B,C\} \nin\emptyset:C[A,B]$
+
+## $\forall x \notin\emptyset$
+messages $\{A,B,C\}$ and types $\{T,U\}$
+
+- **type:** $\forall T \nin\emptyset: T[]$
+- **typed stream:** $\forall \{A,B,T\} \nin\emptyset: T[A,B]$
+- **streamed types:** $\forall \{A,B,C,T,U\} \nin\emptyset: C[U[A],T[B]]$
+
+## ...... .........   ................ ....why?
+> Computers perform recursive atomic operations on streams of electrons within a (theoretically) finite space. We need a differentiation strategy. This is expressed by a **type system**.
+
+:::notes
+- Here we step from physics to the physical world.
+:::
+
+# Types
+
+---
+
+## Python Types
+
+## Python's `Float..`
+
+## Python's `Int..`
+
+## Python's `Null/Missing/...`
+
+## Julia Types
+
+## Julia's `Float64`
+
+## Julia's `Int64`
+
+## Julia's `Missing`
+
+# Arrays/Lists
+
+---
+
+## Python Lists
+
+## NumPy Lists
+
+## Pandas Arrays
+
+## Julia Arrays
+
+# Functional Programming
+
+---
+
+## uptown()
+
+# Lastly
+
+---
+
+## Further Reading
+- [Erlang's Tail Recursion is Not a Silver Bullet](https://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html)
+- [First-Class Statistical Missing Values \[...\] in Julia 0.7](https://julialang.org/blog/2018/06/missing)
+- [Julia Docs](https://docs.julialang.org/)
+  - [Performance Tips](https://docs.julialang.org/en/stable/manual/performance-tips/)
+  - [Style Guide](https://docs.julialang.org/en/stable/manual/style-guide/)
+- [The Seven Myths of Erlang Performance](http://erlang.org/doc/efficiency_guide/myths.html)
+    - *2.1 Myth: Tail-Recursive Functions are Much Faster Than Recursive Functions*
+- [Swift for Tensorflow: Documentation](https://github.com/tensorflow/swift#documentation)
+
+## Thank you!!
+> <jason@grafft.co>
+
 - <http://grafft.co>
-- keybase
 - <http://github.com/jagrafft>

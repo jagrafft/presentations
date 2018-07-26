@@ -16,27 +16,10 @@
 - Exploration of how each language handles a set of problems
 - Use competent source for Python FP examples, replicate in Julia
 
-## Outline
-1. Arrays/lists
-    - Python lists
-    - NumPy, Pandas arrays
-    - Julia arrays
-2. Types (Float, Int, Missing/NA/...)
-    - Python
-    - Julia
-3. Functional programming primer
-    - Julia examples
-    - Python examples
-4. Discussion of functional programming examples for data science. Touch on,
-    - Julia compiler/"internals"
-    - Python compiler/"internals"
-
 ## Production
 - Code examples
     - Scripts and REPL? (preferred)
     - Notebook(s)?
-- Slides with Pandoc
-    - https://github.com/jgm/pandoc/wiki/Using-pandoc-to-produce-reveal.js-slides
 
 ## Possible References
 - [Erlang's Tail Recursion is Not a Silver Bullet](https://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html)
