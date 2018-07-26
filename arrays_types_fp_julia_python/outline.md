@@ -15,10 +15,10 @@ title:  \[Arrays, Types, FP\].ap(Julia, Python) Outline
     5. Julia Catch-22s
 3. Ground Truths
     1. \_
-    2. $\emptyset$ (nothingness)
-    3. $\forall x \notin\emptyset$ (nonempty sets)
-    4. $\forall x \notin\emptyset$
-    5. $\forall x \notin\emptyset$
+    2. ∅ (nothingness)
+    3. ∀x∉∅ (nonempty sets)
+    4. ∀x∉∅
+    5. ∀x∉∅
     6. ...... .........   ................ ....why?
 4. Types
     1. Python Types
