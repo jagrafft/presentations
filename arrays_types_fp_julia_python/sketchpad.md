@@ -26,3 +26,6 @@
 - [Julia Docs](https://docs.julialang.org/)
 - [The Seven Myths of Erlang Performance](http://erlang.org/doc/efficiency_guide/myths.html)
     - *2.1 Myth: Tail-Recursive Functions are Much Faster Than Recursive Functions*
+
+## ToDo
+- [ ] Look up "issues with Julia" (*Julia Catch-22's*)

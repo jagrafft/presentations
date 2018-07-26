@@ -84,7 +84,6 @@ Platform Info:
 - Highly performant
 
 ## Julia Catch-22s
-<!-- Look up "issues with Julia" -->
 - Breaking changes
 - 2
 - 3
@@ -108,12 +107,15 @@ Platform Info:
 
 ## $\forall x \notin\emptyset$ (nonempty sets)
 for messages $\{A,B\}$, effects $\{F,G\}$, and types $\{T,U\}$
-<!-- Map required everywhere [] observed... -->
 
 - **push:** $A \to F$
 - **pull:** $A \to F \to B$
 - **future/promise:** $A \to F[B]$
 - **actor:** $G[A \to F[B]]$
+
+:::notes
+- A *map*, or similar strategy, is required each time a pair of square brackets is encountered.
+:::
 
 ## $\forall x \notin\emptyset$
 messages $\{A,B,C\}$, memory block $\{x\}$, and integer $\{n\}$
