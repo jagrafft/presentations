@@ -178,6 +178,10 @@ messages $\{A,B,C\}$ and types $\{T,U\}$
 ## 
 [![John A. DeGoes - "Monad Wars"](img/JAdG-monad_wars.png)](https://twitter.com/jdegoes/status/1022546801457475584/photo/1, "John A. DeGoes on ending 'The Monad Wars'")
 
+:::notes
+- There is quite a difference here, and that difference is **global state**.
+:::
+
 # Lastly
 
 ---
