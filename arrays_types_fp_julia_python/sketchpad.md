@@ -1,3 +1,9 @@
+## __
+- ~35 minutes [section 1-5]
+- ~5 minute break
+- ~25 minutes [section 6]
+- ~10 minutes questions [section 7]
+
 ## Approach
 - Identify set of items/issues/problems/...
     - SMALL NUMBER!! -> 3?

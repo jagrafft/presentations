@@ -4,7 +4,8 @@
 
 ## Building
 1. `git clone ...reveal.js...`
-2. `make slides`
+2. Download `american-medical-association.csl` from <https://github.com/citation-style-language/styles>
+3. `make slides`
     - [Pandoc](https://pandoc.org/) -> Markdown -> [Reveal.js](https://github.com/hakimel/reveal.js/)
 
 #### `reveal.js/css/theme/black.css` customizations

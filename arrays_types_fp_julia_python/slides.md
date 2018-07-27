@@ -1,6 +1,8 @@
 ---
-author: Jason A. Grafft
 title:  \[Arrays, Types, FP\].ap(Julia, Python)
+author: Jason A. Grafft
+bibliography: citations.bib
+csl: './american-medical-association.csl'
 ---
 # Frontmatter
 
@@ -105,8 +107,15 @@ Platform Info:
 >
 >$\therefore$ We are not building on, we are building **round** $\emptyset$.
 
+:::notes
+- Actually the empty set...
+- Loosely, nothingness is a coproduct of somethingness and we need both for a complete view of the world.
+- Extending binary to ternary logic adds essential flexibility to structured reasoning.
+- The coproducts introduced by interaction of these categories are consequential for automated reasoning. I will return to this soon.
+:::
+
 ## $\forall x \notin\emptyset$ (nonempty sets)
-for messages $\{A,B\}$, effects $\{F,G\}$, and types $\{T,U\}$
+for messages $A,B$, effects $F,G$, and types $T,U$
 
 - **push:** $A \to F$
 - **pull:** $A \to F \to B$
@@ -118,30 +127,42 @@ for messages $\{A,B\}$, effects $\{F,G\}$, and types $\{T,U\}$
 :::
 
 ## $\forall x \notin\emptyset$
-messages $\{A,B,C\}$, memory block $\{x\}$, and integer $\{n\}$
+messages $A,B,C$, memory block $x$, and integer $n$
 
 - **message/value:** $\forall x,n \ge 0 \lor x \in\emptyset: A[x,x_{(x+n)}]$
 - **array:** $\forall B \nin\emptyset: B[A]$
-- **nonempty array:** $\forall \{A,B\} \nin\emptyset:B[A]$
-- **stream:** $\forall \{A,B,C\} \nin\emptyset:C[A,B]$
+- **nonempty array:** $\forall A,B \nin\emptyset:B[A]$
+- **stream:** $\forall A,B,C \nin\emptyset:C[A,B]$
 
 ## $\forall x \notin\emptyset$
-messages $\{A,B,C\}$ and types $\{T,U\}$
+messages $A,B,C$ and types $T,U$
 
 - **type:** $\forall T \nin\emptyset: T[]$
-- **typed stream:** $\forall \{A,B,T\} \nin\emptyset: T[A,B]$
-- **streamed types:** $\forall \{A,B,C,T,U\} \nin\emptyset: C[U[A],T[B]]$
+- **typed stream:** $\forall A,B,T \nin\emptyset: T[A,B]$
+- **streamed types:** $\forall A,B,C,T,U \nin\emptyset: C[U[A],T[B]]$
 
 ## ...... .........   ................ ....why?
 > Computers perform recursive atomic operations on streams of electrons within a (theoretically) finite space. We need a differentiation strategy. This is expressed by a **type system**.
 
 :::notes
+- Types are used for differentiation.
 - Here we step from physics to the physical world.
 :::
 
 # Types
 
 ---
+
+## 
+> Any time behavior is determined by cases, there is a coproduct involved.[@spivak_category_2014]
+
+:::notes
+- A coproduct is the "equal and opposite" reaction... (recall I just mentioned differentiation)
+- The quality of the coproducts' assertions depends on the definition of the products.
+- Whoever happens to be correct, the problem here is **overhead**: all strategies introduce some degree of entropy.
+  - Where, why, what from, and system tolerances are engineering questions.
+  - Whether an individual strategy is "justifiable" consumes the common debate. This is drivel.
+:::
 
 ## Python Types
 
@@ -201,3 +222,5 @@ messages $\{A,B,C\}$ and types $\{T,U\}$
 
 - <http://grafft.co>
 - <http://github.com/jagrafft>
+
+## References

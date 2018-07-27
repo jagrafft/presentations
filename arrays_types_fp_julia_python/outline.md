@@ -21,14 +21,15 @@ title:  \[Arrays, Types, FP\].ap(Julia, Python) Outline
     5. ∀x∉∅
     6. ...... .........   ................ ....why?
 4. Types
-    1. Python Types
-    2. Python's `Float..`
-    3. Python's `Int..`
-    4. Python's `Null/Missing/..`
-    5. Julia Types
-    6. Julia's `Float64`
-    7. Julia's `Int64`
-    8. Julia's `Missing`
+    1. \_
+    2. Python Types
+    3. Python's `Float..`
+    4. Python's `Int..`
+    5. Python's `Null/Missing/..`
+    6. Julia Types
+    7. Julia's `Float64`
+    8. Julia's `Int64`
+    9. Julia's `Missing`
 5. Arrays/Lists
     1. Python Lists
     2. NumPy Lists
