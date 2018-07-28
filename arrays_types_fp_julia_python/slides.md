@@ -17,9 +17,15 @@ csl: './american-medical-association.csl'
 ## Contract
 - Fun
 - Earnest inquiry
-- Honest disagreement
+- Honest assessment
 - Respectful communication
 - Fun
+
+:::notes
+- My goal is to provide accurate representation of the subjects, and I've done a good job at that.
+- Our opinions don't matter, this is a discussion about facts in closed systems.
+  - E.g. It is not controversial to say Python isn't a presence in high-performance computing.
+:::
 
 ## Flow
 - Languages
@@ -64,6 +70,12 @@ Platform Info:
   LLVM: libLLVM-3.9.1 (ORCJIT, broadwell)
 ```
 
+:::notes
+- v3.7 
+- v0.7 still in beta?
+- See *Further Reading* for articles on both
+:::
+
 ## Python Characteristics
 - Mulitparadigm, interpreted (C)
 - Dynamic typing
@@ -71,6 +83,10 @@ Platform Info:
   - v3.5 introduced type [hints](https://docs.python.org/3/library/typing.html)
 - Small core library, widely modularizable
 - Flexible
+
+:::notes
+- "check" == crash on fail
+:::
 
 ## Python Catch-22s
 - "Ten day language" problem
@@ -85,10 +101,19 @@ Platform Info:
 - Well curated core libraries, extended with packages
 - Highly performant
 
+:::notes
+- Petaflop
+- Rapidly expanding presence in high performance, high precision, and time critical environments
+:::
+
 ## Julia Catch-22s
 - Breaking changes
-- 2
+- Code quality 
 - 3
+
+:::notes
+- Core features like multiple dispatch and type unions can be used to introduce significant performance roadblocks
+:::
 
 # Ground Truths
 
@@ -101,6 +126,12 @@ Platform Info:
 - Architecture choices impose hard limits
 - Efficiency via general purposing is an oxymoron
 - John von Neumann gave the last word in *First Draft of a Report on the EDVAC*, distributed 30 June 1945
+
+:::notes
+- These definitions will help us moving forward.
+- What follows *represents* truth about fundamental computational structures. It is a principally sound explanation, not a definitive guide.
+  - This is especially true for types, which are bound to their language.
+:::
 
 ## $\emptyset$ (nothingness)
 > Vacuous truth has untenably expansive state for a finite system. $\emptyset\to ()$ is a convention, **not** a definition.
@@ -135,7 +166,7 @@ messages $A,B,C$, memory block $x$, and integer $n$
 - **stream:** $\forall A,B,C \nin\emptyset:C[A,B]$
 
 ## $\forall x \notin\emptyset$
-messages $A,B,C$ and types $T,U$
+messages $A,B,C$, and types $T,U$
 
 - **type:** $\forall T \nin\emptyset: T[]$
 - **typed stream:** $\forall A,B,T \nin\emptyset: T[A,B]$
@@ -146,7 +177,7 @@ messages $A,B,C$ and types $T,U$
 
 :::notes
 - Types are used for differentiation.
-- Here we step from physics to the physical world.
+- Here we step from physics to the physical world, so to speak.
 :::
 
 # Types
@@ -184,13 +215,51 @@ messages $A,B,C$ and types $T,U$
 
 ---
 
-## Python Lists
+## 
+> Lists and arrays are memory structures with *some* guarantee of ordering. Common implementations tend to make isomorphism fragile or expensive, leaving significant feature and performance gaps at scale. The mathematical concept of *range*, typically defined as the *image* (of a function...?) helps us see why
 
-## NumPy Lists
+:::notes
+- Computationally, isomorphism is an ideal state because it reduces dependence on ordering.
+- Lookup expense, guarantees, time, et cetera vary hugely by structure.
+:::
 
-## Pandas Arrays
+## Python `list`
+types $A, T_0, ..., T_n$, and objects $O_0, ..., O_n$
 
-## Julia Arrays
+- **pointer array:** $A[T_3[O_0], T_1[O_1], T_6[0_2], ..., T_n[O_m]]$
+
+:::notes
+- Heterogenous
+- Pointers to Python objects--type check each iteration
+  - Recall each pair of `[]` indicates a mapping operation
+- Room for `Missing/NaN/...`
+:::
+
+## NumPy `array`
+types A, T, and values V_0, ..., V_n
+
+- **value array:** $A_T[V_0, V_1, V_2, V_3, ..., V_n]$
+
+:::notes
+- Homogenous
+- "[M]eans for array-like Python objects to re-use each other’s data buffers intelligently whenever possible."[@numpy_array_interface_2018]
+- Type check on insertion succeeds or fails **operation**, NO room for `Missing/NaN/...`
+- `Pandas` adds missing value support and other "convenience" features.
+:::
+
+## Thoughts
+- *Patterns*
+  - Adding features via modules
+  - 
+- *Antipatterns*
+  - Substantial increase in global state
+  - Untyped list made strictly typed made more flexibly typed again
+
+:::notes
+- It takes three packages (Base, NumPy, Pandas) to add missing value support
+:::
+
+## Julia Array
 
 # Functional Programming
 
@@ -213,6 +282,8 @@ messages $A,B,C$ and types $T,U$
 - [Julia Docs](https://docs.julialang.org/)
   - [Performance Tips](https://docs.julialang.org/en/stable/manual/performance-tips/)
   - [Style Guide](https://docs.julialang.org/en/stable/manual/style-guide/)
+- [The key differences between Python 2.7.x and Python 3.x with examples](http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html)
+- [Python 3 Q & A](http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html)
 - [The Seven Myths of Erlang Performance](http://erlang.org/doc/efficiency_guide/myths.html)
     - *2.1 Myth: Tail-Recursive Functions are Much Faster Than Recursive Functions*
 - [Swift for Tensorflow: Documentation](https://github.com/tensorflow/swift#documentation)
