@@ -51,7 +51,7 @@ csl: './american-medical-association.csl'
 
 ##
 ```python
-# Python
+# CPython
 >>> sys.version_info
 sys.version_info(major=3, minor=7, micro=0, releaselevel='final', serial=0)
 ```
@@ -79,7 +79,7 @@ Platform Info:
 ## Python Characteristics
 - Mulitparadigm, interpreted (C)
 - Dynamic typing
-  - Not declarable, run time "check"
+  - Not declarable, "duck" method
   - v3.5 introduced type [hints](https://docs.python.org/3/library/typing.html)
 - Small core library, widely modularizable
 - Flexible
@@ -95,15 +95,16 @@ Platform Info:
 
 ## Julia Characteristics
 - Numerical computing, JIT (predominantly Julia)
-- Static typing
+- Dynamic typing
   - Optionally declared, compiler enforced
-  - User types fast as base types
+- Multiple dispatch
 - Well curated core libraries, extended with packages
 - Highly performant
 
 :::notes
-- Petaflop
+- Petaflop—so far C, C++, Fortan, Julia
 - Rapidly expanding presence in high performance, high precision, and time critical environments
+- Quite odd for a dynamic langauge to include a full type system
 :::
 
 ## Julia Catch-22s
@@ -177,6 +178,8 @@ messages $A,B,C$, and types $T,U$
 
 :::notes
 - Types are used for differentiation.
+- Turns out there is no imperative for users to explicitly interact with them.
+  - This can even be done well (Erlang).
 - Here we step from physics to the physical world, so to speak.
 :::
 
@@ -195,7 +198,23 @@ messages $A,B,C$, and types $T,U$
   - Whether an individual strategy is "justifiable" consumes the common debate. This is drivel.
 :::
 
+## Type Systems
+> 
+
 ## Python Types
+- Dynamic, Strong
+- Programmers guarantee program correctness$\star$
+- $valid \lor crash$ ("duck" method)
+
+![](img/duck_typing.jpg)
+
+:::notes
+- $\star$ shaky "gaurantee"—no answer to the halting problem as of yet.
+- "Program correctness" suffers a strong experience bias here: "not a problem in my world" $\ne$ "not a problem"
+  - e.g. "Works fine for us because we only use..."
+  - Of course there are systems in production...
+- In terms of Hoare logic, Python's interpreter does not verify the truth of the precondition prior to invoking the command.
+:::
 
 ## Python's `Float..`
 
@@ -204,6 +223,15 @@ messages $A,B,C$, and types $T,U$
 ## Python's `Null/Missing/...`
 
 ## Julia Types
+- Dynamic
+- Compiler guarantees program correctness$\star$
+- Parametrically polymorphic
+  - `map :: (a -> b) -> [a] -> [b]`
+
+:::notes
+- $\star$ shaky "gaurantee"—no answer to the halting problem as of yet.
+- Parametric polymorphism is the foundation of generic programming
+:::
 
 ## Julia's `Float64`
 
@@ -250,12 +278,15 @@ types A, T, and values V_0, ..., V_n
 ## Thoughts
 - *Patterns*
   - Adding features via modules
-  - 
+  - Reduction of overhead via abstraction
 - *Antipatterns*
   - Substantial increase in global state
   - Untyped list made strictly typed made more flexibly typed again
 
 :::notes
+- I am not sure what is meant by "intelligently whenever possible"
+  - I interpret this as an enlargement of already bulky state
+- Gains from abstraction are strictured due to architecture
 - It takes three packages (Base, NumPy, Pandas) to add missing value support
 :::
 
@@ -270,6 +301,27 @@ types A, T, and values V_0, ..., V_n
 
 :::notes
 - There is quite a difference here, and that difference is **global state**.
+- Polymorphism es muy bueno
+:::
+
+## Composition
+> "The study of nonlinear functions is like the study of nonelephants." –John von Neumann
+
+$$f \circ g \circ h \circ p$$
+
+:::notes
+- Right-to-left nesting!! $p(h(g(f)))$
+- By now we've seen that linear ordering is required for computation.
+- These may be extracted from complex data structures, but **they are still linear.**
+:::
+
+## FP in Python
+
+## FP in Julia
+- Architecturally, the language is favorable to functional approaches
+
+:::notes
+- Designed and built by PhDs in math; project leader holds PhD in linear algebra.
 :::
 
 # Lastly
@@ -279,13 +331,10 @@ types A, T, and values V_0, ..., V_n
 ## Further Reading
 - [Erlang's Tail Recursion is Not a Silver Bullet](https://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html)
 - [First-Class Statistical Missing Values \[...\] in Julia 0.7](https://julialang.org/blog/2018/06/missing)
-- [Julia Docs](https://docs.julialang.org/)
-  - [Performance Tips](https://docs.julialang.org/en/stable/manual/performance-tips/)
-  - [Style Guide](https://docs.julialang.org/en/stable/manual/style-guide/)
-- [The key differences between Python 2.7.x and Python 3.x with examples](http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html)
+- [Julia Docs](https://docs.julialang.org/) $\to$ \{[Performance Tips](https://docs.julialang.org/en/stable/manual/performance-tips/), [Style Guide](https://docs.julialang.org/en/stable/manual/style-guide/)\}
+- [Key differences: Python 2.7.x and Python 3.x](http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html)
 - [Python 3 Q & A](http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html)
-- [The Seven Myths of Erlang Performance](http://erlang.org/doc/efficiency_guide/myths.html)
-    - *2.1 Myth: Tail-Recursive Functions are Much Faster Than Recursive Functions*
+- [The Seven Myths of Erlang Performance (see 2.1)](http://erlang.org/doc/efficiency_guide/myths.html)
 - [Swift for Tensorflow: Documentation](https://github.com/tensorflow/swift#documentation)
 
 ## Thank you!!
