@@ -49,7 +49,7 @@ csl: './american-medical-association.csl'
 
 ---
 
-##
+## 
 ```python
 # CPython
 >>> sys.version_info
@@ -57,41 +57,37 @@ sys.version_info(major=3, minor=7, micro=0, releaselevel='final', serial=0)
 ```
 ```julia
 # Julia
-julia> versioninfo()
-Julia Version 0.6.2
-Commit d386e40c17 (2017-12-13 18:08 UTC)
+Julia Version 0.7.0-rc1.0
+Commit 15fcc7c4e6 (2018-07-31 20:29 UTC)
 Platform Info:
-  OS: Linux (x86_64-pc-linux-gnu)
+  OS: Linux (x86_64-linux-gnu)
   CPU: Intel(R) Core(TM) i5-5257U CPU @ 2.70GHz
   WORD_SIZE: 64
-  BLAS: libopenblas (USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell)
-  LAPACK: libopenblas64_
   LIBM: libopenlibm
-  LLVM: libLLVM-3.9.1 (ORCJIT, broadwell)
+  LLVM: libLLVM-6.0.0 (ORCJIT, broadwell)
 ```
 
 :::notes
-- v3.7 
-- v0.7 still in beta?
-- See *Further Reading* for articles on both
+- v3.7 .0
+- v0.7rc1
+- See *Further Reading*, *Environments*
 :::
 
 ## Python Characteristics
 - Mulitparadigm, interpreted (C)
 - Dynamic typing
-  - Not declarable, "duck" method
-  - v3.5 introduced type [hints](https://docs.python.org/3/library/typing.html)
+  - Not declarable, v3.5 introduced type [hints](https://docs.python.org/3/library/typing.html)
 - Small core library, widely modularizable
 - Flexible
 
-:::notes
-- "check" == crash on fail
-:::
-
 ## Python Catch-22s
-- "Ten day language" problem
 - Package du jour
+- Late binding ("duck" method)
 - Pedantically idiomatic
+
+:::notes
+- late binding == crash on fail
+:::
 
 ## Julia Characteristics
 - Numerical computing, JIT (predominantly Julia)
@@ -109,7 +105,7 @@ Platform Info:
 
 ## Julia Catch-22s
 - Breaking changes
-- Code quality 
+- 
 - 3
 
 :::notes
@@ -204,7 +200,7 @@ messages $A,B,C$, and types $T,U$
 ## Python Types
 - Dynamic, Strong
 - Programmers guarantee program correctness$\star$
-- $valid \lor crash$ ("duck" method)
+- $valid \lor crash$ (late binding)
 
 ![](img/duck_typing.jpg)
 
@@ -336,6 +332,27 @@ $$f \circ g \circ h \circ p$$
 - [Python 3 Q & A](http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html)
 - [The Seven Myths of Erlang Performance (see 2.1)](http://erlang.org/doc/efficiency_guide/myths.html)
 - [Swift for Tensorflow: Documentation](https://github.com/tensorflow/swift#documentation)
+
+## Environments
+```bash
+# Julia v0.7.0rc1
+docker run -it -p 127.0.0.1:13106:3000 --name jul07rc1 -v ~/development/julia:/opt/julia -v ~/development/data:/opt/julia/data -w /opt/julia ubuntu:18.10 /bin/bash
+apt update; apt upgrade --yes; apt autoremove --yes
+apt install --yes build-essential git libatomic1 python gfortran perl wget m4 cmake pkg-config
+git clone git://github.com/JuliaLang/julia.git
+git checkout 0.7.0-rc1
+make
+```
+```bash
+# CPython 3.7.0
+docker run -it -p 127.0.0.1:13107:3000 --name py370 -v ~/development/python:/opt/python -v ~/development/data:/opt/python/data -w /opt/python ubuntu:18.10 /bin/bash
+apt update; apt upgrade --yes; apt autoremove --yes
+apt install --yes build-essential cmake git libffi-dev libssl-dev m4 pkg-config wget zlib1g-dev
+wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
+./configure
+make
+make install
+```
 
 ## Thank you!!
 > <jason@grafft.co>
