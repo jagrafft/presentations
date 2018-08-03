@@ -105,8 +105,10 @@ Platform Info:
 
 ## Julia Catch-22s
 - Breaking changes
-- 
 - 3
+- Antipatterns are real
+
+[![](img/prealloc.png)](https://docs.julialang.org/en/stable/manual/performance-tips/#Pre-allocating-outputs-1)
 
 :::notes
 - Core features like multiple dispatch and type unions can be used to introduce significant performance roadblocks
@@ -140,34 +142,46 @@ Platform Info:
 - Loosely, nothingness is a coproduct of somethingness and we need both for a complete view of the world.
 - Extending binary to ternary logic adds essential flexibility to structured reasoning.
 - The coproducts introduced by interaction of these categories are consequential for automated reasoning. I will return to this soon.
+- *Humans reason much more efficiently about this concept.*
 :::
 
 ## $\forall x \notin\emptyset$ (nonempty sets)
 for messages $A,B$, effects $F,G$, and types $T,U$
 
-- **push:** $A \to F$
-- **pull:** $A \to F \to B$
-- **future/promise:** $A \to F[B]$
-- **actor:** $G[A \to F[B]]$
+| | |
+|-|-|
+| **message/value** | $\forall x,n \ge 0 \lor x \in\emptyset: A[x,x_{(x+n)}]$ |
+| **push** | $A \to F$ |
+| **pull** | $A \to F \to B$ |
+| **future/promise** | $A \to F[B]$ |
+| **actor** | $G[A \to F[B]]$ |
 
 :::notes
 - A *map*, or similar strategy, is required each time a pair of square brackets is encountered.
+- Don't worry if the symbols make sense, I know you can see the increase in nesting.
 :::
 
 ## $\forall x \notin\emptyset$
 messages $A,B,C$, memory block $x$, and integer $n$
 
-- **message/value:** $\forall x,n \ge 0 \lor x \in\emptyset: A[x,x_{(x+n)}]$
-- **array:** $\forall B \nin\emptyset: B[A]$
-- **nonempty array:** $\forall A,B \nin\emptyset:B[A]$
-- **stream:** $\forall A,B,C \nin\emptyset:C[A,B]$
+| | |
+|-|-|
+| **array** | $\forall B \nin\emptyset: B[A]$ |
+| **nonempty array** | $\forall A,B \nin\emptyset:B[A]$ |
+| **stream** | $\forall A,B,C \nin\emptyset:C[A,B]$ |
 
 ## $\forall x \notin\emptyset$
 messages $A,B,C$, and types $T,U$
 
-- **type:** $\forall T \nin\emptyset: T[]$
-- **typed stream:** $\forall A,B,T \nin\emptyset: T[A,B]$
-- **streamed types:** $\forall A,B,C,T,U \nin\emptyset: C[U[A],T[B]]$
+| | |
+|-|-|
+| **type** | $\forall T \nin\emptyset: T[]$ |
+| **typed stream** | $\forall A,B,T \nin\emptyset: T[A,B]$ |
+| **streamed types** | $\forall A,B,C,T,U \nin\emptyset: C[U[A],T[B]]$ |
+
+:::notes
+- Streams are generally defined as promising (or greater) a *next* value
+:::
 
 ## ...... .........   ................ ....why?
 > Computers perform recursive atomic operations on streams of electrons within a (theoretically) finite space. We need a differentiation strategy. This is expressed by a **type system**.
@@ -195,21 +209,36 @@ messages $A,B,C$, and types $T,U$
 :::
 
 ## Type Systems
-> 
+> $\{P\}$ $C$ $\{Q\}$ (or thereabout)
+
+| | |
+|-|-|
+| **P** | Precondition |
+| **C** | Command |
+| **Q** | Postcondition |
+
+:::notes
+- Strength of gaurantee precondition is met correlates with predictability of output.
+  - Command may fire with or without precondition match.
+- Declarable types not a requirement: Erlang, Javascript, Python.
+  - See Erlang for a good example.
+- Large enterprise systems written in all three
+  - Erlang wins again (telephony)
+:::
 
 ## Python Types
 - Dynamic, Strong
-- Programmers guarantee program correctness$\star$
+- Programmers provide operating guarantees$\star$
 - $valid \lor crash$ (late binding)
 
 ![](img/duck_typing.jpg)
 
 :::notes
-- $\star$ shaky "gaurantee"—no answer to the halting problem as of yet.
-- "Program correctness" suffers a strong experience bias here: "not a problem in my world" $\ne$ "not a problem"
+- $\star$ No answer to the halting problem as of yet, program guarantees are tenuous.
+- "Correctness" suffers a strong experience bias here: "not a problem in my world" $\ne$ "not a problem"
   - e.g. "Works fine for us because we only use..."
   - Of course there are systems in production...
-- In terms of Hoare logic, Python's interpreter does not verify the truth of the precondition prior to invoking the command.
+- Python's interpreter does not verify the truth of $P$ prior to invoking $C$.
 :::
 
 ## Python's `Float..`
@@ -220,13 +249,14 @@ messages $A,B,C$, and types $T,U$
 
 ## Julia Types
 - Dynamic
-- Compiler guarantees program correctness$\star$
+- Compiler provides operating guarantees$\star$
 - Parametrically polymorphic
-  - `map :: (a -> b) -> [a] -> [b]`
 
 :::notes
-- $\star$ shaky "gaurantee"—no answer to the halting problem as of yet.
-- Parametric polymorphism is the foundation of generic programming
+- $\star$ No answer to the halting problem as of yet, program guarantees are tenuous.
+- `map :: (a -> b) -> [a] -> [b]`
+- Parametric polymorphism is the foundation of generic programming.
+- Union{dynamic, full, parametrically polymorphic} rare feature list.
 :::
 
 ## Julia's `Float64`
@@ -248,9 +278,10 @@ messages $A,B,C$, and types $T,U$
 :::
 
 ## Python `list`
-types $A, T_0, ..., T_n$, and objects $O_0, ..., O_n$
+types $A, T_0, \ldots, T_n$, and objects $o_0, \ldots, o_n$
 
-- **pointer array:** $A[T_3[O_0], T_1[O_1], T_6[0_2], ..., T_n[O_m]]$
+**pointer array**
+$$\forall A,T,O\nin\emptyset: A[T_3[O_0], T_1[O_1], T_6[0_2], \ldots, T_n[O_m]]$$
 
 :::notes
 - Heterogenous
@@ -260,9 +291,10 @@ types $A, T_0, ..., T_n$, and objects $O_0, ..., O_n$
 :::
 
 ## NumPy `array`
-types A, T, and values V_0, ..., V_n
+types A, T, and values $v_0, \ldots, v_n$
 
-- **value array:** $A_T[V_0, V_1, V_2, V_3, ..., V_n]$
+**value array**
+$$\forall T,v \nin\emptyset: A_T[v_0, v_1, v_2, v_3, ..., v_n]$$
 
 :::notes
 - Homogenous
