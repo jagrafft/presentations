@@ -1,10 +1,10 @@
 ---
-title:  \[Arrays, Types, FP\].ap(Julia, Python)
+title:  Programming Languages Influence How We Code
 author: Jason A. Grafft
 bibliography: citations.bib
 csl: './american-medical-association.csl'
 ---
-# Frontmatter
+# \[Arrays, Types, FP\].ap(Julia, Python)
 
 ---
 
