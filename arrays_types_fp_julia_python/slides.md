@@ -104,7 +104,7 @@ Platform Info:
 :::
 
 ## Julia Catch-22s
-- Breaking changes
+- Breaking changes till v1.0
 - 3
 - Antipatterns are real
 
@@ -130,19 +130,20 @@ Platform Info:
 - These definitions will help us moving forward.
 - What follows *represents* truth about fundamental computational structures. It is a principally sound explanation, not a definitive guide.
   - This is especially true for types, which are bound to their language.
+  - Set theory can be used to *describe* many relations that do not involve sets.
+- **Math ahead!** What I want you to retain is that there *exist* structured, well-defined relations *between* values.
 :::
 
-## $\emptyset$ (nothingness)
+## $\emptyset$ (`Nothing`)
 > Vacuous truth has untenably expansive state for a finite system. $\emptyset\to ()$ is a convention, **not** a definition.
 >
 >$\therefore$ We are not building on, we are building **round** $\emptyset$.
 
 :::notes
-- Actually the empty set...
 - Loosely, nothingness is a coproduct of somethingness and we need both for a complete view of the world.
 - Extending binary to ternary logic adds essential flexibility to structured reasoning.
 - The coproducts introduced by interaction of these categories are consequential for automated reasoning. I will return to this soon.
-- *Humans reason much more efficiently about this concept.*
+- *Humans reason much more efficiently than algorithms about this concept.*
 :::
 
 ## $\forall x \notin\emptyset$ (nonempty sets)
@@ -181,6 +182,16 @@ messages $A,B,C$, and types $T,U$
 
 :::notes
 - Streams are generally defined as promising (or greater) a *next* value
+:::
+
+## $\forall$ (`Any`)
+> "Total" truth is **necessarily** incomplete: the "set of all sets" $A$ cannot satisfy $\wp(A) \cup (A \subset A)$.
+>
+> $\therefore \forall$ is a pragmatic representation of 
+
+:::notes
+- Partially (99.9999..\%) complete—which is quite awkward to reason about.
+- $\emptyset$ and $\forall$ do not share an isomorphic relationship.
 :::
 
 ## ...... .........   ................ ....why?
@@ -240,6 +251,10 @@ messages $A,B,C$, and types $T,U$
   - Of course there are systems in production...
 - Python's interpreter does not verify the truth of $P$ prior to invoking $C$.
 :::
+
+## Late Binding **(-->verify<--)**
+- Localized type "heirarchies" exist inside each instantiated object
+  - `if/else` $\lor$ `switch`
 
 ## Python's `Float..`
 
