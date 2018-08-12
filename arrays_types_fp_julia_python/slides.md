@@ -65,7 +65,15 @@ sys.version_info(major=3, minor=7, micro=0, releaselevel='final', serial=0)
 ```
 ```julia
 # Julia
-
+julia> versioninfo()
+Julia Version 1.0.0
+Commit 5d4eaca0c9 (2018-08-08 20:58 UTC)
+Platform Info:
+  OS: Linux (x86_64-linux-gnu)
+  CPU: Intel(R) Core(TM) i5-5257U CPU @ 2.70GHz
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-6.0.0 (ORCJIT, broadwell)
 ```
 
 :::notes
@@ -78,8 +86,14 @@ sys.version_info(major=3, minor=7, micro=0, releaselevel='final', serial=0)
 - Mulitparadigm, interpreted (C)
 - Dynamic typing
   - Not declarable, v3.5 introduced type [hints](https://docs.python.org/3/library/typing.html)
+- "One (best) way"
 - Small core library, widely modularizable
 - Flexible
+
+:::notes
+- Well-represented in several major sectors.
+- Undeniably "proven" as a language.
+:::
 
 ## Python Catch-22s
 - Package du jour
@@ -93,15 +107,15 @@ sys.version_info(major=3, minor=7, micro=0, releaselevel='final', serial=0)
 ## Julia Characteristics
 - Numerical computing, JIT (predominantly Julia)
 - Dynamic typing
-  - Optionally declared, compiler enforced
+  - Optionally declared
 - Multiple dispatch
 - Well curated core libraries, extended with packages
 - Highly performant
 
 :::notes
-- Petaflop—so far C, C++, Fortan, Julia
-- Rapidly expanding presence in high performance, high precision, and time critical environments
-- Quite odd for a dynamic langauge to include a full type system
+- Petaflop—so far C, C++, Fortan, Julia.
+- Rapidly expanding presence in high performance, high precision, and time critical environments.
+- Quite odd for a dynamic langauge to include a full type system.
 :::
 
 ## Julia Catch-22s
@@ -203,8 +217,9 @@ messages $A,B,C$, and types $T,U$
 
 :::notes
 - Types are used for differentiation.
-- Turns out there is no imperative for users to explicitly interact with them.
-  - This can even be done well (Erlang).
+- Turns out there is no imperative for users to explicitly define or interact with them.
+  - High-demand enterprise systems deployed in Erlang, Javascript, Python.
+  - Erlang keeps the telephony system operational.
 - Here we step from physics to the physical world, so to speak.
 :::
 
@@ -221,10 +236,11 @@ messages $A,B,C$, and types $T,U$
 - Whoever happens to be correct, the problem here is **overhead**: all strategies introduce some degree of entropy.
   - Where, why, what from, and system tolerances are engineering questions.
   - Whether an individual strategy is "justifiable" consumes the common debate. This is drivel.
+- Mathematical reasoning provides a lot of clarity here, so let's go talk to Tony...
 :::
 
-## Type Systems
-> $\{P\}$ $C$ $\{Q\}$ (or thereabout)
+## Hoare Logic
+> $\{P\}$ $C$ $\{Q\}$
 
 | | |
 |-|-|
@@ -232,33 +248,50 @@ messages $A,B,C$, and types $T,U$
 | **C** | Command |
 | **Q** | Postcondition |
 
+You may use the postcondition to find the precondition, *not the other way*.
+
 :::notes
+- Command may fire without precondition match.
 - Strength of gaurantee precondition is met correlates with predictability of output.
-  - Command may fire with or without precondition match.
-- Declarable types not a requirement: Erlang, Javascript, Python.
-  - See Erlang for a good example.
-- Large enterprise systems written in all three
-  - Erlang wins again (telephony)
+- This is a key difference between Python and Julia
+  - Python tests commands with input ("command cannot be executed")
+  - Julia requires inputs match before command is executed ("not possible to execute command")
+- Don't forget we're now talking about types.
+- Starting to sound like entropy/variance/..? Great!
+- The different methods used to match precondition likely account for fundamental differences in performance between languages.
 :::
 
 ## Python's Types
 - Dynamic, Strong (since 3.5)
-- Programmers provide operating guarantees$\star$
 - $valid \lor crash$ (late binding)
 
 ![](img/duck_typing.jpg)
 
 :::notes
-- $\star$ No answer to the halting problem as of yet, program guarantees are tenuous.
 - "Correctness" suffers a strong experience bias here: "not a problem in my world" $\ne$ "not a problem"
   - e.g. "Works fine for us because we only use..."
   - Of course there are systems in production...
 - Python's interpreter does not verify the truth of $P$ prior to invoking $C$.
 :::
 
-## Late Binding **(-->verify<--)**
-- Localized type "heirarchies" exist inside each instantiated object
-  - `if/else` $\lor$ `switch`
+## Late Binding: Example
+```julia
+m(x) = x^2;
+# Which steps complete?
+# Where does failure occur?
+m(3);                         # 1
+m("w00t");                    # 2
+m(BigInt(typemax(Int64)))     # 3
+m(missing);                   # 4
+m(*);                         # 5
+m(2.3);                       # 6
+m('c');                       # 7
+```
+
+:::notes
+- Julia uses a type union to handle `m("w00t")`
+  - `[51] ^(s::Union{AbstractChar, AbstractString}, r::Integer) in Base at strings/basic.jl:674`
+:::
 
 ## `Float..`
 
@@ -267,30 +300,40 @@ messages $A,B,C$, and types $T,U$
 ## `Null/Missing/...`
 
 ## Julia's Types
+$$[\bot_{\emptyset},\top_{\forall}]$$
+
 - Dynamic
-- Compiler provides operating guarantees$\star$
 - Parametrically polymorphic
 
 :::notes
-- $\star$ No answer to the halting problem as of yet, program guarantees are tenuous.
-- `map :: (a -> b) -> [a] -> [b]`
+- $\bot$ and $\top$ represent "minmax" of type AST.
 - Parametric polymorphism is the foundation of generic programming.
-- Union{dynamic, full, parametrically polymorphic} rare feature list.
+- Union{dynamic, full, parametrically polymorphic} is a rare feature list.
 :::
 
-## `Int[8,16,32,64,128]`[@julia_int_flt_2018]
-> `Core.Number` $\to$ `Core.Real` $\to$ `Core.Integer` $\to$ `[Core.Signed, Core.Unsigned]`
+## `Int`[@julia_int_flt_2018]
+- `Core.Number`
+  - `Core.Real`
+    - `Core.Integer`
+        - `Core.Signed` $\to$ `Int[8,16,32,64,128]`
+        - `Core.Unsigned` $\to$ `UInt[8,16,32,64,128]`
 
-- Signed (`Int_`) and Unsigned (`UInt_`)
+:::notes
+- Superscript is a reference.
+- This is subclassing in the *mathematical* sense.
+- Successive specialization, allows insertion of new nodes.
+:::
 
-## `Float[16,32,64]`[@julia_int_flt_2018]
+## `Float`[@julia_int_flt_2018]
+`Core.Number` $\to$ `Core.Real` $\to$ `Core.AbstractFloat` $\to$
+
 | **Type** | **Precision** | **Number of bits** |
 |:-:|:-:|:-:|
 | Float16 | half | 16 |
 | Float32 | single | 32 |
 | Float64 | double | 64 |
 
-## `Missing`
+## `Missing`[@julia_missing_2018]
 
 # Arrays/Lists
 
@@ -356,17 +399,17 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 ---
 
 ## 
-[![John A. DeGoes - "Monad Wars"](img/JAdG-monad_wars.png)](https://twitter.com/jdegoes/status/1022546801457475584/photo/1, "John A. DeGoes on ending 'The Monad Wars'")
-
-:::notes
-- There is quite a difference here, and that difference is **global state**.
-- Polymorphism es muy bueno
-:::
-
-## Composition
 > "The study of nonlinear functions is like the study of nonelephants." –John von Neumann
 
+
+## Composition
 $$f \circ g \circ h \circ p$$
+
+```julia
+f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
+
+@> "z" f g h p    # => "f(g(h(p(z))))"
+```
 
 :::notes
 - Right-to-left nesting!! $p(h(g(f)))$
@@ -374,8 +417,22 @@ $$f \circ g \circ h \circ p$$
 - These may be extracted from complex data structures, but **they are still linear.**
 :::
 
+## Monads
+[![John A. DeGoes - "Monad Wars"](img/JAdG-monad_wars.png)](https://twitter.com/jdegoes/status/1022546801457475584/photo/1, "John A. DeGoes on ending 'The Monad Wars'")
+
+:::notes
+- "Math side of computing", structurally more akin to Category Theory.
+- Chances are you're overspecializing monads--they're a way to implement the same things you do now.
+  - What's compelling about monads is how they may be used to represent other programming paradigms, but the reverse is not true
+- Terms are awkward and differentiate from more accessible concepts by shades.
+  - *I recommend we retain the nomenclature, as the small differences make big ones in practice.*
+- Regarding JAdG graphic
+  - There is quite a difference here, and that difference is **global state**.
+  - Polymorphism es muy bueno.
+:::
+
 ## FP in Python
-- Guido says "Python has its own way."
+- Guido says: "Python has its own way."
 
 ## FP in Julia
 - Architecturally, the language is favorable to functional approaches
@@ -403,7 +460,7 @@ $$f \circ g \circ h \circ p$$
 # Julia v1.0
 docker run -it -p 127.0.0.1:13106:3000 --name julia1 -v ~/development/julia:/opt/julia -v ~/development/data:/opt/julia/data -w /opt/julia ubuntu:18.10 /bin/bash
 apt update; apt upgrade --yes; apt autoremove --yes
-apt install --yes build-essential cmake git gfortran libatomic1 libedit-dev libncurses5-dev m4 perl pkg-config python wget
+apt install --yes build-essential cmake git gfortran imagemagick libatomic1 libedit-dev libncurses5-dev libpango-dev libpng-dev m4 perl pkg-config python wget
 git clone git://github.com/JuliaLang/julia.git
 git checkout v1.0.0
 make
