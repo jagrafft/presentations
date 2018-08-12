@@ -77,8 +77,8 @@ Platform Info:
 ```
 
 :::notes
-- v3.7 .0
-- v1.0
+- v3.7.0
+- v1.0.0
 - See *Further Reading*, *Environments*
 :::
 
@@ -97,7 +97,7 @@ Platform Info:
 
 ## Python Catch-22s
 - Package du jour
-- Late binding ("duck" method)
+- Late binding ("duck" typing)
 - Pedantically idiomatic
 
 :::notes
@@ -289,6 +289,8 @@ m('c');                       # 7
 ```
 
 :::notes
+- Python attempts to execute `*` and fails when it cannot
+- Julia attempts to find a function matching `{airity: 1, type: …}`, then works its way "up" the type AST.
 - Julia uses a type union to handle `m("w00t")`
   - `[51] ^(s::Union{AbstractChar, AbstractString}, r::Integer) in Base at strings/basic.jl:674`
 :::
@@ -307,8 +309,10 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 
 :::notes
 - $\bot$ and $\top$ represent "minmax" of type AST.
+   - Successive specialization, allows insertion of new nodes.
 - Parametric polymorphism is the foundation of generic programming.
 - Union{dynamic, full, parametrically polymorphic} is a rare feature list.
+- Successive specialization, allows insertion of new nodes.
 :::
 
 ## `Int`[@julia_int_flt_2018]
@@ -321,7 +325,9 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 :::notes
 - Superscript is a reference.
 - This is subclassing in the *mathematical* sense.
-- Successive specialization, allows insertion of new nodes.
+- For programmers, this parameterizes a value (`typemin/max`).
+- For the machine, it provides a tenably low-level definition of the structure (number of bits, meaning of slot) which *represents* a type.
+- These isomorphisms are a first principle of design in thr functional paradigm.
 :::
 
 ## `Float`[@julia_int_flt_2018]
@@ -332,6 +338,12 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 | Float16 | half | 16 |
 | Float32 | single | 32 |
 | Float64 | double | 64 |
+
+:::notes
+- "Rules above" apply.
+- We can think of definitions like these as constituting a contract with the programmer.
+- Details deep to this look progressively like machine code, which describe the physical layout of memory and assumptions that can be made about such an ordering.
+:::
 
 ## `Missing`[@julia_missing_2018]
 
