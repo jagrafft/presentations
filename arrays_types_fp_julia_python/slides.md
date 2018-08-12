@@ -22,9 +22,10 @@ csl: './american-medical-association.csl'
 - Fun
 
 :::notes
-- My goal is to provide accurate representation of the subjects, and I've done a good job at that.
+- My goal is to provide accurate representation of the subjects--and I've done a good job at that.
 - Our opinions don't matter, this is a discussion about facts in closed systems.
   - E.g. It is not controversial to say Python isn't a presence in high-performance computing.
+- We don't need to change our minds to benefit from critical thinking.
 :::
 
 ## Flow
@@ -45,6 +46,13 @@ csl: './american-medical-association.csl'
     - Shrouded in nomenclature and inept thinking -> you can learn, you are capable.
 :::
 
+## By the end...
+Personally, I'd like you to leave with these items on your mind
+
+:::notes
+- Foreshadow of main points of talk.
+:::
+
 # Languages
 
 ---
@@ -57,19 +65,12 @@ sys.version_info(major=3, minor=7, micro=0, releaselevel='final', serial=0)
 ```
 ```julia
 # Julia
-Julia Version 0.7.0-rc1.0
-Commit 15fcc7c4e6 (2018-07-31 20:29 UTC)
-Platform Info:
-  OS: Linux (x86_64-linux-gnu)
-  CPU: Intel(R) Core(TM) i5-5257U CPU @ 2.70GHz
-  WORD_SIZE: 64
-  LIBM: libopenlibm
-  LLVM: libLLVM-6.0.0 (ORCJIT, broadwell)
+
 ```
 
 :::notes
 - v3.7 .0
-- v0.7rc1
+- v1.0
 - See *Further Reading*, *Environments*
 :::
 
@@ -104,8 +105,8 @@ Platform Info:
 :::
 
 ## Julia Catch-22s
-- Breaking changes till v1.0
-- 3
+- 1
+- 2
 - Antipatterns are real
 
 [![](img/prealloc.png)](https://docs.julialang.org/en/stable/manual/performance-tips/#Pre-allocating-outputs-1)
@@ -140,6 +141,7 @@ Platform Info:
 >$\therefore$ We are not building on, we are building **round** $\emptyset$.
 
 :::notes
+- None/Nothing/Void/...
 - Loosely, nothingness is a coproduct of somethingness and we need both for a complete view of the world.
 - Extending binary to ternary logic adds essential flexibility to structured reasoning.
 - The coproducts introduced by interaction of these categories are consequential for automated reasoning. I will return to this soon.
@@ -147,23 +149,24 @@ Platform Info:
 :::
 
 ## $\forall x \notin\emptyset$ (nonempty sets)
-for messages $A,B$, effects $F,G$, and types $T,U$
+effects $F,G$, integer $n$, memory block $M$, messages $A,B$
 
 | | |
 |-|-|
-| **message/value** | $\forall x,n \ge 0 \lor x \in\emptyset: A[x,x_{(x+n)}]$ |
+| **message/value** | $\forall (M,n) \ge 0: A[M,M_{(M+n)}]$ |
 | **push** | $A \to F$ |
 | **pull** | $A \to F \to B$ |
 | **future/promise** | $A \to F[B]$ |
 | **actor** | $G[A \to F[B]]$ |
 
 :::notes
+- $x$ may **not** be empty because $\emptyset$ is represented as a type.
 - A *map*, or similar strategy, is required each time a pair of square brackets is encountered.
 - Don't worry if the symbols make sense, I know you can see the increase in nesting.
 :::
 
 ## $\forall x \notin\emptyset$
-messages $A,B,C$, memory block $x$, and integer $n$
+messages $A,B,C$
 
 | | |
 |-|-|
@@ -176,7 +179,8 @@ messages $A,B,C$, and types $T,U$
 
 | | |
 |-|-|
-| **type** | $\forall T \nin\emptyset: T[]$ |
+| **type** | $\forall T \in\emptyset: T$ |
+| | $\forall T \nin\emptyset: T[]$ |
 | **typed stream** | $\forall A,B,T \nin\emptyset: T[A,B]$ |
 | **streamed types** | $\forall A,B,C,T,U \nin\emptyset: C[U[A],T[B]]$ |
 
@@ -237,8 +241,8 @@ messages $A,B,C$, and types $T,U$
   - Erlang wins again (telephony)
 :::
 
-## Python Types
-- Dynamic, Strong
+## Python's Types
+- Dynamic, Strong (since 3.5)
 - Programmers provide operating guarantees$\star$
 - $valid \lor crash$ (late binding)
 
@@ -256,13 +260,13 @@ messages $A,B,C$, and types $T,U$
 - Localized type "heirarchies" exist inside each instantiated object
   - `if/else` $\lor$ `switch`
 
-## Python's `Float..`
+## `Float..`
 
-## Python's `Int..`
+## `Int..`
 
-## Python's `Null/Missing/...`
+## `Null/Missing/...`
 
-## Julia Types
+## Julia's Types
 - Dynamic
 - Compiler provides operating guarantees$\star$
 - Parametrically polymorphic
@@ -274,18 +278,26 @@ messages $A,B,C$, and types $T,U$
 - Union{dynamic, full, parametrically polymorphic} rare feature list.
 :::
 
-## Julia's `Float64`
+## `Int[8,16,32,64,128]`[@julia_int_flt_2018]
+> `Core.Number` $\to$ `Core.Real` $\to$ `Core.Integer` $\to$ `[Core.Signed, Core.Unsigned]`
 
-## Julia's `Int64`
+- Signed (`Int_`) and Unsigned (`UInt_`)
 
-## Julia's `Missing`
+## `Float[16,32,64]`[@julia_int_flt_2018]
+| **Type** | **Precision** | **Number of bits** |
+|:-:|:-:|:-:|
+| Float16 | half | 16 |
+| Float32 | single | 32 |
+| Float64 | double | 64 |
+
+## `Missing`
 
 # Arrays/Lists
 
 ---
 
 ## 
-> Lists and arrays are memory structures with *some* guarantee of ordering. Common implementations tend to make isomorphism fragile or expensive, leaving significant feature and performance gaps at scale. The mathematical concept of *range*, typically defined as the *image* (of a function...?) helps us see why
+<!-- > Lists and arrays are memory structures with *some* guarantee of ordering. Common implementations tend to make isomorphism fragile or expensive, leaving significant feature and performance gaps at scale. The mathematical concept of *range*, typically defined as the *image* (of a function...?) helps us see why -->
 
 :::notes
 - Computationally, isomorphism is an ideal state because it reduces dependence on ordering.
@@ -293,27 +305,31 @@ messages $A,B,C$, and types $T,U$
 :::
 
 ## Python `list`
-types $A, T_0, \ldots, T_n$, and objects $o_0, \ldots, o_n$
+pointer P, types $A, T_0, \ldots, T_n$, and values $V_0, \ldots, V_n$
 
-**pointer array**
-$$\forall A,T,O\nin\emptyset: A[T_3[O_0], T_1[O_1], T_6[0_2], \ldots, T_n[O_m]]$$
+$$P \cap\emptyset: \emptyset$$
+$$\forall A,T,V\in P: A[T_3[V_0], T_1[V_1], T_6[V_2], \ldots, T_n[V_m]]$$
 
 :::notes
-- Heterogenous
-- Pointers to Python objects--type check each iteration
+- $P$ is disjoint to the empty set--e.g. no members of $P$ are $\emptyset$
+- Array of pointers to Python objects
+  - Heterogenous
+  - Room for `Missing/NaN/...`
+- Type check each iteration
   - Recall each pair of `[]` indicates a mapping operation
-- Room for `Missing/NaN/...`
+  - Hinders performance
 :::
 
 ## NumPy `array`
-types A, T, and values $v_0, \ldots, v_n$
+types A, T, and values $V_0, \ldots, V_n$
 
-**value array**
-$$\forall T,v \nin\emptyset: A_T[v_0, v_1, v_2, v_3, ..., v_n]$$
+**value array** (are these pointers?)
+$$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 
 :::notes
 - Homogenous
 - "[M]eans for array-like Python objects to re-use each other’s data buffers intelligently whenever possible."[@numpy_array_interface_2018]
+  - This statement is ambiguous to me.
 - Type check on insertion succeeds or fails **operation**, NO room for `Missing/NaN/...`
 - `Pandas` adds missing value support and other "convenience" features.
 :::
@@ -359,6 +375,7 @@ $$f \circ g \circ h \circ p$$
 :::
 
 ## FP in Python
+- Guido says "Python has its own way."
 
 ## FP in Julia
 - Architecturally, the language is favorable to functional approaches
@@ -376,18 +393,19 @@ $$f \circ g \circ h \circ p$$
 - [First-Class Statistical Missing Values \[...\] in Julia 0.7](https://julialang.org/blog/2018/06/missing)
 - [Julia Docs](https://docs.julialang.org/) $\to$ \{[Performance Tips](https://docs.julialang.org/en/stable/manual/performance-tips/), [Style Guide](https://docs.julialang.org/en/stable/manual/style-guide/)\}
 - [Key differences: Python 2.7.x and Python 3.x](http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html)
+- [Kinds of types in Scala, part 1: types, what are they?](https://kubuszok.com/2018/kinds-of-types-in-scala-part-1/)
 - [Python 3 Q & A](http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html)
 - [The Seven Myths of Erlang Performance (see 2.1)](http://erlang.org/doc/efficiency_guide/myths.html)
 - [Swift for Tensorflow: Documentation](https://github.com/tensorflow/swift#documentation)
 
 ## Environments
 ```bash
-# Julia v0.7.0rc1
-docker run -it -p 127.0.0.1:13106:3000 --name jul07rc1 -v ~/development/julia:/opt/julia -v ~/development/data:/opt/julia/data -w /opt/julia ubuntu:18.10 /bin/bash
+# Julia v1.0
+docker run -it -p 127.0.0.1:13106:3000 --name julia1 -v ~/development/julia:/opt/julia -v ~/development/data:/opt/julia/data -w /opt/julia ubuntu:18.10 /bin/bash
 apt update; apt upgrade --yes; apt autoremove --yes
-apt install --yes build-essential git libatomic1 python gfortran perl wget m4 cmake pkg-config
+apt install --yes build-essential cmake git gfortran libatomic1 libedit-dev libncurses5-dev m4 perl pkg-config python wget
 git clone git://github.com/JuliaLang/julia.git
-git checkout 0.7.0-rc1
+git checkout v1.0.0
 make
 ```
 ```bash
