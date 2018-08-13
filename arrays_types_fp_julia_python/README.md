@@ -1,6 +1,6 @@
-# [Arrays, Types, Functional Programming].ap(Julia, Python)
+# Programming Languages Influence How We Code: \[Arrays, Types, FP\].ap(Julia, Python)
 
-- 01.01.1970. ∅
+- 08.09.2018. Veritas Data Science Meetup (Roseville, MN).
 
 ## Building
 1. `git clone ...reveal.js...`

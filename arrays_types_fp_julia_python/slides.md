@@ -26,13 +26,15 @@ csl: './american-medical-association.csl'
 - Fun
 
 :::notes
-- My goal is to provide accurate representation of the subjects--and I've done a good job at that.
+- There are many ways to make programs resillient but architecture sets limits; we need genuine insight to progress.
 - Our opinions don't matter, this is a discussion about facts in closed systems.
 - We don't need to change our minds to benefit from critical thinking.
 - *If you see something...*
-  - Send me a well-reasoned argument, I guarantee I'll take you seriously.
-  - You'll see that I take my time to reach understanding, and I will not engage if you don't.
-- Fun!!
+  - Ask questions.
+  - Respectul counterpoints are welcome.
+  - I may defer you to maintain flow.
+  - I may not have a good answer. Those questions I'll write down and push to an accessible place later.
+- We can have fun working together.
 :::
 
 ## Flow
@@ -44,6 +46,7 @@ csl: './american-medical-association.csl'
 
 :::notes
 - Generics first.
+  - Much content falls under "general knowledge".
   - We'll spend time here to save time when looking at language-specific implementations.
 - Types in {Python, Julia} next.
   - Useful (to us) lanugage details.
@@ -53,18 +56,6 @@ csl: './american-medical-association.csl'
   - Shrouded in nomenclature and inept interpretation.
   - No more difficult than other patterns, overwhelmingly less code for the same functionality.
 - You can learn, you are capable.
-:::
-
-## Foreshadowing <<INC>>
-<!-- Personally, I'd like you to leave with these items on your mind
-<<main points of talk....>> -->
-- The [Halting Problem](http://www.cgl.uwaterloo.ca/csk/halt/) is eternal
-- The [Incompleteness Theorem]() has no master
-
-:::notes
-- Much content falls under "general knowledge".
-- Official documentation receives priority representation.
-- There are many ways to make programs resillient but architecture sets limits; we need genuine insight to progress.
 :::
 
 # Languages
@@ -158,19 +149,17 @@ Platform Info:
 ##
 > Programming is blindly manipulating symbols. —Bret Victor
 
-- Computers are stateless, recursive finite systems
-- Architecture choices impose hard limits
-- Efficiency via general purposing is an oxymoron
+- Computers are stateless, recursive, finite systems
 - John von Neumann gave the last word in *First Draft of a Report on the EDVAC*, distributed 30 June 1945
+- The [Halting Problem](http://www.cgl.uwaterloo.ca/csk/halt/) is eternal
+- The [Incompleteness Theorem]() has no master
 
 :::notes
-- The definitions in this section will help us moving forward.
-- They *represent* truth about fundamental computational structures in a principally sound way.
-  - This is especially true for types, which are bound to their language.
+- 
+- The definitions that follow are principally sound--language implementations will differ.
 - Set theory can be used to *describe* many relations that do not involve sets.
-  - Fine distinction, can be awkward.
-  - Sufficient for us to know this.
-- **Math ahead!** What I want you to retain is that there *exist* structured, well-defined relations *between* values.
+  - Fine distinction, can be awkward. That's okay.
+- **Math ahead!** What I want you to see is that there *exist* structured, well-defined relations *between* values.
 :::
 
 ## $\emptyset$ (`Nothing`)
@@ -335,7 +324,7 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 - This is subclassing in the *mathematical* sense.
 - For programmers, this parameterizes a value (`typemin/max`).
 - For the machine, it provides a tenably low-level definition of the structure (number of bits, meaning of slot) which *represents* a type.
-- These isomorphisms are a first principle of design in thr functional paradigm.
+- These isomorphisms are a first principle of design in the functional paradigm.
 :::
 
 ## `Float`[@julia_int_flt_2018]
