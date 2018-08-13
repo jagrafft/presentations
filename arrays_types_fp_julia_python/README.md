@@ -19,20 +19,17 @@
   letter-spacing: normal;
   /* text-transform: uppercase; */
   text-shadow: none;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
 
-.reveal h1 {
-  font-size: 2.1em; }
+.reveal h1 { font-size: 2.1em; text-shadow: none; }
+.reveal h2 { font-size: 1.6em; }
+.reveal h3 { font-size: 1.3em; }
+.reveal h4 { font-size: 1em; }
 
-.reveal h2 {
-  font-size: 1.6em; }
-
-.reveal h3 {
-  font-size: 1.3em; }
-
-.reveal h4 {
-  font-size: 1em; }
-
-.reveal h1 {
-  text-shadow: none; }
+div[id^="ref-"] > p {
+  font-size: 0.4em;
+  margin: 0;
+  text-align: left;
+}
 ```

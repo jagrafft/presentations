@@ -119,14 +119,15 @@ Platform Info:
 :::
 
 ## Julia Catch-22s
-- 1
+- Young
 - 2
 - Antipatterns are real
 
 [![](img/prealloc.png)](https://docs.julialang.org/en/stable/manual/performance-tips/#Pre-allocating-outputs-1)
 
 :::notes
-- Core features like multiple dispatch and type unions can be used to introduce significant performance roadblocks
+- `v1.0.0` released 08-08-2018.
+- Core features like multiple dispatch and type unions can be used to introduce significant performance issues.
 :::
 
 # Ground Truths
@@ -142,7 +143,7 @@ Platform Info:
 - John von Neumann gave the last word in *First Draft of a Report on the EDVAC*, distributed 30 June 1945
 
 :::notes
-- These definitions will help us moving forward.
+- The definitions in this section will help us moving forward.
 - What follows *represents* truth about fundamental computational structures. It is a principally sound explanation, not a definitive guide.
   - This is especially true for types, which are bound to their language.
   - Set theory can be used to *describe* many relations that do not involve sets.
@@ -158,7 +159,7 @@ Platform Info:
 - None/Nothing/Void/...
 - Loosely, nothingness is a coproduct of somethingness and we need both for a complete view of the world.
 - Extending binary to ternary logic adds essential flexibility to structured reasoning.
-- The coproducts introduced by interaction of these categories are consequential for automated reasoning. I will return to this soon.
+- The coproducts introduced by interaction of these categories are consequential for automated reasoning. I will return to this.
 - *Humans reason much more efficiently than algorithms about this concept.*
 :::
 
@@ -170,13 +171,14 @@ effects $F,G$, integer $n$, memory block $M$, messages $A,B$
 | **message/value** | $\forall (M,n) \ge 0: A[M,M_{(M+n)}]$ |
 | **push** | $A \to F$ |
 | **pull** | $A \to F \to B$ |
-| **future/promise** | $A \to F[B]$ |
-| **actor** | $G[A \to F[B]]$ |
+| **future/promise** | $A \to F[B]$[@john_a_degoes_scalaz_2018] |
+| **actor** | $G[A \to F[B]]$[@john_a_degoes_scalaz_2018] |
 
 :::notes
-- $x$ may **not** be empty because $\emptyset$ is represented as a type.
+- $M$ may **not** be empty because $\emptyset$ is represented as a type.
 - A *map*, or similar strategy, is required each time a pair of square brackets is encountered.
-- Don't worry if the symbols make sense, I know you can see the increase in nesting.
+- Don't worry if the symbols make sense, I know you can see the increase in nesting and changes to essential structure between definitions.
+- Future/Promise and Actor definition courtesy of John DeGoes.
 :::
 
 ## $\forall x \notin\emptyset$
@@ -243,22 +245,18 @@ messages $A,B,C$, and types $T,U$
 > $\{P\}$ $C$ $\{Q\}$
 
 | | |
-|-|-|
+|:-:|:-|
 | **P** | Precondition |
 | **C** | Command |
 | **Q** | Postcondition |
 
-You may use the postcondition to find the precondition, *not the other way*.
-
 :::notes
+- You may operate on the postcondition to find the precondition. *The the other way is not valid*.
 - Command may fire without precondition match.
-- Strength of gaurantee precondition is met correlates with predictability of output.
-- This is a key difference between Python and Julia
-  - Python tests commands with input ("command cannot be executed")
-  - Julia requires inputs match before command is executed ("not possible to execute command")
-- Don't forget we're now talking about types.
+  - Strength of gaurantee precondition is met correlates with predictability of output.
+  - This is a key difference between Python and Julia, as we'll see in a few minutes.
 - Starting to sound like entropy/variance/..? Great!
-- The different methods used to match precondition likely account for fundamental differences in performance between languages.
+- Methods used for precondition match guarantees likely account for fundamental differences in performance between languages.
 :::
 
 ## Python's Types
@@ -268,31 +266,8 @@ You may use the postcondition to find the precondition, *not the other way*.
 ![](img/duck_typing.jpg)
 
 :::notes
-- "Correctness" suffers a strong experience bias here: "not a problem in my world" $\ne$ "not a problem"
-  - e.g. "Works fine for us because we only use..."
-  - Of course there are systems in production...
-- Python's interpreter does not verify the truth of $P$ prior to invoking $C$.
-:::
-
-## Late Binding: Example
-```julia
-m(x) = x^2;
-# Which steps complete?
-# Where does failure occur?
-m(3);                         # 1
-m("w00t");                    # 2
-m(BigInt(typemax(Int64)))     # 3
-m(missing);                   # 4
-m(*);                         # 5
-m(2.3);                       # 6
-m('c');                       # 7
-```
-
-:::notes
-- Python attempts to execute `*` and fails when it cannot
-- Julia attempts to find a function matching `{airity: 1, type: …}`, then works its way "up" the type AST.
-- Julia uses a type union to handle `m("w00t")`
-  - `[51] ^(s::Union{AbstractChar, AbstractString}, r::Integer) in Base at strings/basic.jl:674`
+- Assigned by interpreter at runtime
+- Python tests commands with input ("command cannot be executed")
 :::
 
 ## `Float..`
@@ -309,10 +284,10 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 
 :::notes
 - $\bot$ and $\top$ represent "minmax" of type AST.
-   - Successive specialization, allows insertion of new nodes.
-- Parametric polymorphism is the foundation of generic programming.
+   - Successive specialization of types, allows insertion of new nodes.
+- Julia requires type match before input is given to command ("not possible to execute command")
 - Union{dynamic, full, parametrically polymorphic} is a rare feature list.
-- Successive specialization, allows insertion of new nodes.
+  - Parametric polymorphism is the foundation of generic programming.
 :::
 
 ## `Int`[@julia_int_flt_2018]
@@ -346,6 +321,30 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 :::
 
 ## `Missing`[@julia_missing_2018]
+
+## Variable Binding: Example
+```julia
+m(x) = (println("w00t"); println("z00t"); x*x);
+# Which steps complete?
+# Where does failure occur?
+# Do we see the output of `println`?
+m(3);                         # 1
+m("w00t");                    # 2
+m(BigInt(typemax(Int64)))     # 3
+m(missing);                   # 4
+m(*);                         # 5
+m(2.3);                       # 6
+m('c');                       # 7
+```
+
+:::notes
+- `goto: REPL`
+- Python attempts to execute `*` via `m` and fails when it cannot.
+- Julia attempts to find a function matching `{name: "m", airity: 1, type: Function}`, then works its way "up" the type AST for weaker matches.
+  - `supertype(Function)` $\to$ `Any`, so search stops.
+- Interestingly, Julia uses a type union to handle `m("w00t")`.
+  - `[51] ^(s::Union{AbstractChar, AbstractString}, r::Integer) in Base at strings/basic.jl:674`
+:::
 
 # Arrays/Lists
 
@@ -420,11 +419,11 @@ $$f \circ g \circ h \circ p$$
 ```julia
 f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
 
-@> "z" f g h p    # => "f(g(h(p(z))))"
+@> "z" f g h p    # => "p(h(g(f(z))))"
 ```
 
 :::notes
-- Right-to-left nesting!! $p(h(g(f)))$
+- Right-to-left!!
 - By now we've seen that linear ordering is required for computation.
 - These may be extracted from complex data structures, but **they are still linear.**
 :::
@@ -469,7 +468,7 @@ f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
 
 ## Environments
 ```bash
-# Julia v1.0
+# Julia v1.0.0
 docker run -it -p 127.0.0.1:13106:3000 --name julia1 -v ~/development/julia:/opt/julia -v ~/development/data:/opt/julia/data -w /opt/julia ubuntu:18.10 /bin/bash
 apt update; apt upgrade --yes; apt autoremove --yes
 apt install --yes build-essential cmake git gfortran imagemagick libatomic1 libedit-dev libncurses5-dev libpango-dev libpng-dev m4 perl pkg-config python wget
