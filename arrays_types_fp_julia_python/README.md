@@ -3,7 +3,7 @@
 - 08.09.2018. Veritas Data Science Meetup (Roseville, MN).
 
 ## Building
-1. `git clone ...reveal.js...`
+1. `git clone https://github.com/hakimel/reveal.js.git`
 2. Download `american-medical-association.csl` from <https://github.com/citation-style-language/styles>
 3. `make slides`
     - [Pandoc](https://pandoc.org/) -> Markdown -> [Reveal.js](https://github.com/hakimel/reveal.js/)
