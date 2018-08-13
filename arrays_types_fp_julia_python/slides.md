@@ -9,7 +9,11 @@ csl: './american-medical-association.csl'
 ---
 
 ## Motivation
-> [Why *Swift* for TensorFlow?](https://github.com/tensorflow/swift/blob/master/docs/WhySwiftForTensorFlow.md)
+> [Why *Swift* for TensorFlow?](https://github.com/tensorflow/swift/blob/master/docs/WhySwiftForTensorFlow.md)[@zheng_why_2018]
+
+:::notes
+- Interestingly, Chris Lattner is the second "author" (contributor) of this paper.
+:::
 
 ## Premise
 > An inquiry into the engineering solutions provided by two (2) programming languages to the same problem set.
@@ -24,8 +28,11 @@ csl: './american-medical-association.csl'
 :::notes
 - My goal is to provide accurate representation of the subjects--and I've done a good job at that.
 - Our opinions don't matter, this is a discussion about facts in closed systems.
-  - E.g. It is not controversial to say Python isn't a presence in high-performance computing.
 - We don't need to change our minds to benefit from critical thinking.
+- *If you see something...*
+  - Send me a well-reasoned argument, I guarantee I'll take you seriously.
+  - You'll see that I take my time to reach understanding, and I will not engage if you don't.
+- Fun!!
 :::
 
 ## Flow
@@ -36,21 +43,28 @@ csl: './american-medical-association.csl'
 - Functional Programming
 
 :::notes
-- Generics first
-    - We'll spend time here to save time when looking at language-specific implementations.
-- Types in {Python, Julia} next
-    - Lanugage specifics
-    - Closer look at `Float..`, `Int..`, `Missing/Null/...`
-- Lastly, functional programming
-    - We needed coverage of language fundamentals and types to help this make sense.
-    - Shrouded in nomenclature and inept thinking -> you can learn, you are capable.
+- Generics first.
+  - We'll spend time here to save time when looking at language-specific implementations.
+- Types in {Python, Julia} next.
+  - Useful (to us) lanugage details.
+  - Closer look at `Float`, `Int`, `Missing` and `{NULL?}`.
+- Lastly, functional programming.
+  - We need fundamentals to help this make sense.
+  - Shrouded in nomenclature and inept interpretation.
+  - No more difficult than other patterns, overwhelmingly less code for the same functionality.
+- You can learn, you are capable.
 :::
 
-## By the end...
-Personally, I'd like you to leave with these items on your mind
+## Foreshadowing <<INC>>
+<!-- Personally, I'd like you to leave with these items on your mind
+<<main points of talk....>> -->
+- The [Halting Problem](http://www.cgl.uwaterloo.ca/csk/halt/) is eternal
+- The [Incompleteness Theorem]() has no master
 
 :::notes
-- Foreshadow of main points of talk.
+- Much content falls under "general knowledge".
+- Official documentation receives priority representation.
+- There are many ways to make programs resillient but architecture sets limits; we need genuine insight to progress.
 :::
 
 # Languages
@@ -79,7 +93,7 @@ Platform Info:
 :::notes
 - v3.7.0
 - v1.0.0
-- See *Further Reading*, *Environments*
+- See *Further Reading* $\to$ *Environments*.
 :::
 
 ## Python Characteristics
@@ -93,6 +107,7 @@ Platform Info:
 :::notes
 - Well-represented in several major sectors.
 - Undeniably "proven" as a language.
+- Large, generally enthusiastic user community.
 :::
 
 ## Python Catch-22s
@@ -101,7 +116,11 @@ Platform Info:
 - Pedantically idiomatic
 
 :::notes
-- late binding == crash on fail
+- Age of language partly to blame for "package du jour" (*see* Java).
+- Late binding == crash on execution fail.
+  - More on this ahead.
+- "One (best) way" very much a matter of external and internal debate.
+  - Does not imply "bad" (*see* list comps), only that we should interpret claims with caution.
 :::
 
 ## Julia Characteristics
@@ -113,9 +132,11 @@ Platform Info:
 - Highly performant
 
 :::notes
-- Petaflop—so far C, C++, Fortan, Julia.
 - Rapidly expanding presence in high performance, high precision, and time critical environments.
+  - Has performed a petaflop: "language list" now C, C++, Fortan, Julia.
 - Quite odd for a dynamic langauge to include a full type system.
+- Surprising number of non-CS disciplines in user community.
+  - Similar to Python in this respect.
 :::
 
 ## Julia Catch-22s
@@ -144,9 +165,11 @@ Platform Info:
 
 :::notes
 - The definitions in this section will help us moving forward.
-- What follows *represents* truth about fundamental computational structures. It is a principally sound explanation, not a definitive guide.
+- They *represent* truth about fundamental computational structures in a principally sound way.
   - This is especially true for types, which are bound to their language.
-  - Set theory can be used to *describe* many relations that do not involve sets.
+- Set theory can be used to *describe* many relations that do not involve sets.
+  - Fine distinction, can be awkward.
+  - Sufficient for us to know this.
 - **Math ahead!** What I want you to retain is that there *exist* structured, well-defined relations *between* values.
 :::
 
@@ -158,9 +181,11 @@ Platform Info:
 :::notes
 - None/Nothing/Void/...
 - Loosely, nothingness is a coproduct of somethingness and we need both for a complete view of the world.
+- The coproducts introduced by interaction of these categories are consequential for automated reasoning.
+  - I will return to this.
 - Extending binary to ternary logic adds essential flexibility to structured reasoning.
-- The coproducts introduced by interaction of these categories are consequential for automated reasoning. I will return to this.
-- *Humans reason much more efficiently than algorithms about this concept.*
+  - `(false, null, true)` more expressive than `(false, true)`
+- *Humans reason much more efficiently than algorithms about $\emptyset$.*
 :::
 
 ## $\forall x \notin\emptyset$ (nonempty sets)
@@ -169,16 +194,20 @@ effects $F,G$, integer $n$, memory block $M$, messages $A,B$
 | | |
 |-|-|
 | **message/value** | $\forall (M,n) \ge 0: A[M,M_{(M+n)}]$ |
-| **push** | $A \to F$ |
-| **pull** | $A \to F \to B$ |
+| **push** | $A \to F$[@staltz_why_2018] |
+| **pull** | $A \to F \to B$[@staltz_why_2018] |
 | **future/promise** | $A \to F[B]$[@john_a_degoes_scalaz_2018] |
 | **actor** | $G[A \to F[B]]$[@john_a_degoes_scalaz_2018] |
 
 :::notes
 - $M$ may **not** be empty because $\emptyset$ is represented as a type.
-- A *map*, or similar strategy, is required each time a pair of square brackets is encountered.
+  - And a type is represented by bits.
+  - This distinction is not necessary in mathematics.
 - Don't worry if the symbols make sense, I know you can see the increase in nesting and changes to essential structure between definitions.
-- Future/Promise and Actor definition courtesy of John DeGoes.
+- *NB*
+  - A map, or similar strategy, is required each time a pair of square brackets is encountered.
+  - Push/Pull definition courtesy of André Staltz.
+  - {Future/Promise, Actor} definition courtesy of John DeGoes.
 :::
 
 ## $\forall x \notin\emptyset$
@@ -190,6 +219,10 @@ messages $A,B,C$
 | **nonempty array** | $\forall A,B \nin\emptyset:B[A]$ |
 | **stream** | $\forall A,B,C \nin\emptyset:C[A,B]$ |
 
+:::notes
+- Streams are generally defined as promising (or greater) a *next* value.
+:::
+
 ## $\forall x \notin\emptyset$
 messages $A,B,C$, and types $T,U$
 
@@ -200,29 +233,27 @@ messages $A,B,C$, and types $T,U$
 | **typed stream** | $\forall A,B,T \nin\emptyset: T[A,B]$ |
 | **streamed types** | $\forall A,B,C,T,U \nin\emptyset: C[U[A],T[B]]$ |
 
-:::notes
-- Streams are generally defined as promising (or greater) a *next* value
-:::
-
 ## $\forall$ (`Any`)
 > "Total" truth is **necessarily** incomplete: the "set of all sets" $A$ cannot satisfy $\wp(A) \cup (A \subset A)$.
 >
-> $\therefore \forall$ is a pragmatic representation of 
+> $\therefore \forall$ is a pragmatic representation of a "complete" set
 
 :::notes
-- Partially (99.9999..\%) complete—which is quite awkward to reason about.
-- $\emptyset$ and $\forall$ do not share an isomorphic relationship.
+- Incompleteness!!
+- "Very partially complete" (99.9999..\%) is quite awkward to reason about.
+- $\emptyset$ and $\forall$ **do not** share an isomorphic relationship.
 :::
 
-## ...... .........   ................ ....why?
+## ...... ....... ....why?
 > Computers perform recursive atomic operations on streams of electrons within a (theoretically) finite space. We need a differentiation strategy. This is expressed by a **type system**.
 
 :::notes
-- Types are used for differentiation.
+- *If you're just waking...*
+- Types are used for differentiation of (essentially) stateless memory blocks.
+  - Yes, this is loose.
 - Turns out there is no imperative for users to explicitly define or interact with them.
   - High-demand enterprise systems deployed in Erlang, Javascript, Python.
   - Erlang keeps the telephony system operational.
-- Here we step from physics to the physical world, so to speak.
 :::
 
 # Types
@@ -249,6 +280,8 @@ messages $A,B,C$, and types $T,U$
 | **P** | Precondition |
 | **C** | Command |
 | **Q** | Postcondition |
+
+> $f: P \to C \to Q$
 
 :::notes
 - You may operate on the postcondition to find the precondition. *The the other way is not valid*.
@@ -320,9 +353,45 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 - Details deep to this look progressively like machine code, which describe the physical layout of memory and assumptions that can be made about such an ordering.
 :::
 
-## `Missing`[@julia_missing_2018]
+## `Missing`
+> [...] `missing` values **propagate** automatically when passed to standard operators and functions, in particular mathematical functions. Uncertainty about the value of one of the operands induces uncertainty about the result.[@julia_missing_2018]
 
-## Variable Binding: Example
+:::notes
+- Uncertainty is a serious contender for the greatest intellectual achievement of the 20th century.
+- Propogation of uncertainty is extremely useful for reasoning.
+  - Congruent with modern (quantum) physical models.
+- *Mitigates unpredictable halting.*
+  - `Union{Missing, T[, U, ...]}` increases reliability of precondition match; the "downstream" consequences of this are positive.
+:::
+
+## `Missing`
+- `missing` is the singleton instance of `Missing`
+  - Equivalent to R's `NA` and SQL's `NULL`
+  - Behaves like them in most cases
+- "[A] normal Julia object"[@julia_missing_2018]
+  - Propogation rules must be defined like all other objects
+
+:::notes
+- Note difference in case: object, Type.
+- Anticlimactic definition, thanks to the AST.
+  - Complex parts of type definition in Julia are generic, easing the task of logically congruent refactoring.
+:::
+
+# Variable Binding
+
+---
+
+## "Between Memory and Representation"
+
+:::notes
+- We need to briefly consider variable binding before moving from types to their implementation(s).
+- Binding strategies have strong implications for error propogation.
+  - Type of.
+  - Reporting: `throw` is not the sole option.
+  - Stack trace obfuscation.
+:::
+
+## Example
 ```julia
 m(x) = (println("w00t"); println("z00t"); x*x);
 # Which steps complete?
@@ -459,6 +528,7 @@ f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
 ## Further Reading
 - [Erlang's Tail Recursion is Not a Silver Bullet](https://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html)
 - [First-Class Statistical Missing Values \[...\] in Julia 0.7](https://julialang.org/blog/2018/06/missing)
+- [The Halting Problem](http://www.cgl.uwaterloo.ca/csk/halt/)
 - [Julia Docs](https://docs.julialang.org/) $\to$ \{[Performance Tips](https://docs.julialang.org/en/stable/manual/performance-tips/), [Style Guide](https://docs.julialang.org/en/stable/manual/style-guide/)\}
 - [Key differences: Python 2.7.x and Python 3.x](http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html)
 - [Kinds of types in Scala, part 1: types, what are they?](https://kubuszok.com/2018/kinds-of-types-in-scala-part-1/)
