@@ -1,3 +1,4 @@
+# [SKETCHPAD] Programming Languages Influence How We Code: \[Arrays, Types, FP\].ap(Julia, Python)
 ## __
 - 45 minutes [1...]
 - 10 minute break
@@ -25,8 +26,8 @@ Python 3 is well established in data science, and Julia is a heavyweight up-and-
 [ABOUT] Jason is a human factors researcher at the University of Minnesota Medical School's simulation laboratory, SimPORTAL, working primarily with streaming data using functional programming in a polyglot development environment. He develops data farming, handling, and modeling techniques with the long-term goal of producing validatable, automated, expert-informed assessment of skills performed by healthcare providers.
 
 ## Knowns
-- Julia v0.7.x
-- Python v3.7.x
+- Julia v1.0.0
+- Python v3.7.0
 - Exploration of how each language handles a set of problems
 - Use competent source for Python FP examples, replicate in Julia
 
