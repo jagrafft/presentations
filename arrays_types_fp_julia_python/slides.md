@@ -255,9 +255,9 @@ messages $A,B,C$, and types $T,U$
 :::notes
 - A coproduct is the "equal and opposite" reaction... (recall I just mentioned differentiation)
 - The quality of the coproducts' assertions depends on the definition of the products.
-- Whoever happens to be correct, the problem here is **overhead**: all strategies introduce some degree of entropy.
-  - Where, why, what from, and system tolerances are engineering questions.
-  - Whether an individual strategy is "justifiable" consumes the common debate. This is drivel.
+- All strategies introduce some degree of processing "overhead" on behalf of entropy reduction.
+  - Entropy can be helpfully defined as diversity of types.
+  - Entropy **costs**: *effort* to reduce, *predictability* to increase.
 - Mathematical reasoning provides a lot of clarity here, so let's go talk to Tony...
 :::
 
@@ -371,10 +371,14 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 ---
 
 ## "Between Memory and Representation"
+- The variables programs operate on must be bound to memory structures
+- Binding *must* occur before the compiler can operate on a memory block
 
 :::notes
 - We need to briefly consider variable binding before moving from types to their implementation(s).
+- Micro- to nanosecond `async/await` loops.
 - Binding strategies have strong implications for error propogation.
+  - Compiler's "response time contract" with programmer.
   - Type of.
   - Reporting: `throw` is not the sole option.
   - Stack trace obfuscation.
@@ -397,12 +401,14 @@ m('c');                       # 7
 
 :::notes
 - `goto: REPL`
-- Python attempts to execute `*` via `m` and fails when it cannot.
+- Example of late binding and multiple dispatch
+- Python attempts to execute `"w00t"` via `m` and fails when it cannot.
 - Julia attempts to find a function matching `{name: "m", airity: 1, type: Function}`, then works its way "up" the type AST for weaker matches.
   - `supertype(Function)` $\to$ `Any`, so search stops.
 - Interestingly, Julia uses a type union to handle `m("w00t")`.
   - `[51] ^(s::Union{AbstractChar, AbstractString}, r::Integer) in Base at strings/basic.jl:674`
 :::
+
 
 # Arrays/Lists
 
