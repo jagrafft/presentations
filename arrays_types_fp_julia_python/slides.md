@@ -536,7 +536,7 @@ f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
 # Julia v1.0.0
 docker run -it -p 127.0.0.1:13106:3000 --name julia1 -v ~/development/julia:/opt/julia -v ~/development/data:/opt/julia/data -w /opt/julia ubuntu:18.10 /bin/bash
 apt update; apt upgrade --yes; apt autoremove --yes
-apt install --yes build-essential cmake git gfortran imagemagick libatomic1 libedit-dev libncurses5-dev libpango-dev libpng-dev m4 perl pkg-config python wget
+apt install --yes build-essential cmake git gfortran imagemagick libatomic1 libedit-dev libncurses5-dev libpango1.0-dev libpng-dev m4 perl pkg-config python wget
 git clone git://github.com/JuliaLang/julia.git
 git checkout v1.0.0
 make
