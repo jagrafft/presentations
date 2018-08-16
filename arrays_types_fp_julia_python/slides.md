@@ -152,7 +152,7 @@ Platform Info:
 - Computers are stateless, recursive, finite systems
 - John von Neumann gave the last word in *First Draft of a Report on the EDVAC*, distributed 30 June 1945
 - The [Halting Problem](http://www.cgl.uwaterloo.ca/csk/halt/) is eternal
-- The [Incompleteness Theorem]() has no master
+- The [Incompleteness Theorem](https://plato.stanford.edu/entries/goedel-incompleteness/) has no master
 
 :::notes
 - 
@@ -168,7 +168,7 @@ Platform Info:
 >$\therefore$ We are not building on, we are building **round** $\emptyset$.
 
 :::notes
-- None/Nothing/Void/...
+- $P(\emptyset) = 0$ (probability of empty set axiom)
 - Loosely, nothingness is a coproduct of somethingness and we need both for a complete view of the world.
 - The coproducts introduced by interaction of these categories are consequential for automated reasoning.
   - I will return to this.
@@ -370,7 +370,7 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 
 ---
 
-## "Between Memory and Representation"
+## Between Memory and Representation
 - The variables programs operate on must be bound to memory structures
 - Binding *must* occur before the compiler can operate on a memory block
 
@@ -386,7 +386,7 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 
 ## Example
 ```julia
-m(x) = (println("w00t"); println("z00t"); x*x);
+m(x) = (println("w00t"); println("z00t"); x^2);
 # Which steps complete?
 # Where does failure occur?
 # Do we see the output of `println`?
@@ -403,12 +403,12 @@ m('c');                       # 7
 - `goto: REPL`
 - Example of late binding and multiple dispatch
 - Python attempts to execute `"w00t"` via `m` and fails when it cannot.
+  - This behavior can be replicated in Julia with input type `Any`
 - Julia attempts to find a function matching `{name: "m", airity: 1, type: Function}`, then works its way "up" the type AST for weaker matches.
   - `supertype(Function)` $\to$ `Any`, so search stops.
-- Interestingly, Julia uses a type union to handle `m("w00t")`.
-  - `[51] ^(s::Union{AbstractChar, AbstractString}, r::Integer) in Base at strings/basic.jl:674`
+- Julia uses a type union to handle `m("w00t")`.
+  - `methods(^)` $\to$ `[51] ^(s::Union{AbstractChar, AbstractString}, r::Integer) in Base at strings/basic.jl:674`
 :::
-
 
 # Arrays/Lists
 
@@ -498,22 +498,24 @@ f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
 :::notes
 - "Math side of computing", structurally more akin to Category Theory.
 - Chances are you're overspecializing monads--they're a way to implement the same things you do now.
-  - What's compelling about monads is how they may be used to represent other programming paradigms, but the reverse is not true
+  - What's compelling about monads is how they may be used to represent other programming paradigms, but the reverse is not true.
+  - *Functions that compose via logically-associated operations.*
 - Terms are awkward and differentiate from more accessible concepts by shades.
   - *I recommend we retain the nomenclature, as the small differences make big ones in practice.*
-- Regarding JAdG graphic
+- Regarding JAdG graphic.
   - There is quite a difference here, and that difference is **global state**.
   - Polymorphism es muy bueno.
 :::
 
 ## FP in Python
-- Guido says: "Python has its own way."
+> Guido says: "Python has its own way."
 
 ## FP in Julia
-- Architecturally, the language is favorable to functional approaches
+> Multiple dispatch is quite functional
 
 :::notes
-- Designed and built by PhDs in math; project leader holds PhD in linear algebra.
+- Designed and built by PhDs in math; project leader holds PhD in *linear algebra*.
+- Multiple dispatch defines *systems of equations*.
 :::
 
 # Lastly
