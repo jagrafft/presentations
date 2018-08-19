@@ -56,6 +56,24 @@ csl: './american-medical-association.csl'
   - Shrouded in nomenclature and inept interpretation.
   - No more difficult than other patterns, overwhelmingly less code for the same functionality.
 - You can learn, you are capable.
+- **NB** All example code in Julia because I am much more familiar with it.
+:::
+
+## Themes
+- Psychological safety
+- Asynchronicity contracts
+- Structural obligations
+  - Binding
+  - Linear nesting
+
+:::notes
+- **NB** Don't memorize this list, I want to put a set of "cue frames" in your mind for the immedate future.
+- "Go with what I know or ..."--fundamental to our interactions with the world.
+- All operations are asynchronus!!
+  - We can meaningfully talk about the difference between a future and a bound variable as "overhead of/time to access".
+  - Language specific.
+- software $\in$ hardware
+  - Hence the mathematical descriptions, which are quite suitable for describing the structure of transformations.
 :::
 
 # Languages
@@ -155,7 +173,6 @@ Platform Info:
 - The [Incompleteness Theorem](https://plato.stanford.edu/entries/goedel-incompleteness/) has no master
 
 :::notes
-- 
 - The definitions that follow are principally sound--language implementations will differ.
 - Set theory can be used to *describe* many relations that do not involve sets.
   - Fine distinction, can be awkward. That's okay.
@@ -183,10 +200,10 @@ effects $F,G$, integer $n$, memory block $M$, messages $A,B$
 | | |
 |-|-|
 | **message/value** | $\forall (M,n) \ge 0: A[M,M_{(M+n)}]$ |
-| **push** | $A \to F$[@staltz_why_2018] |
-| **pull** | $A \to F \to B$[@staltz_why_2018] |
-| **future/promise** | $A \to F[B]$[@john_a_degoes_scalaz_2018] |
-| **actor** | $G[A \to F[B]]$[@john_a_degoes_scalaz_2018] |
+| **push**[@staltz_why_2018] | $A \to F$ |
+| **pull**[@staltz_why_2018] | $A \to F \to B$ |
+| **future/promise**[@john_a_degoes_scalaz_2018] | $A \to F[B]$ |
+| **actor**[@john_a_degoes_scalaz_2018] | $G[A \to F[B]]$ |
 
 :::notes
 - $M$ may **not** be empty because $\emptyset$ is represented as a type.
@@ -219,13 +236,14 @@ messages $A,B,C$, and types $T,U$
 |-|-|
 | **type** | $\forall T \in\emptyset: T$ |
 | | $\forall T \nin\emptyset: T[]$ |
+| **typed message** | $\forall A,T \nin\emptyset: T[A]$ |
 | **typed stream** | $\forall A,B,T \nin\emptyset: T[A,B]$ |
 | **streamed types** | $\forall A,B,C,T,U \nin\emptyset: C[U[A],T[B]]$ |
 
 ## $\forall$ (`Any`)
 > "Total" truth is **necessarily** incomplete: the "set of all sets" $A$ cannot satisfy $\wp(A) \cup (A \subset A)$.
 >
-> $\therefore \forall$ is a pragmatic representation of a "complete" set
+> $\therefore \forall$ is a **computable representation** of a "complete" set
 
 :::notes
 - Incompleteness!!
@@ -234,7 +252,7 @@ messages $A,B,C$, and types $T,U$
 :::
 
 ## ...... ....... ....why?
-> Computers perform recursive atomic operations on streams of electrons within a (theoretically) finite space. We need a differentiation strategy. This is expressed by a **type system**.
+> Computers perform recursive atomic operations on streams of electrons within a (theoretically) finite space. We need a differentiation strategy. This is expressed by a **type system**, which enforces ordered assumptions about memory structures.
 
 :::notes
 - *If you're just waking...*
@@ -243,6 +261,7 @@ messages $A,B,C$, and types $T,U$
 - Turns out there is no imperative for users to explicitly define or interact with them.
   - High-demand enterprise systems deployed in Erlang, Javascript, Python.
   - Erlang keeps the telephony system operational.
+- Strength of relation between assumption and result inconsistent.
 :::
 
 # Types
@@ -320,11 +339,11 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
         - `Core.Unsigned` $\to$ `UInt[8,16,32,64,128]`
 
 :::notes
-- Superscript is a reference.
+- Superscripts in this section are references.
 - This is subclassing in the *mathematical* sense.
 - For programmers, this parameterizes a value (`typemin/max`).
 - For the machine, it provides a tenably low-level definition of the structure (number of bits, meaning of slot) which *represents* a type.
-- These isomorphisms are a first principle of design in the functional paradigm.
+- Isomorphisms like this are a first principle of design in the functional paradigm.
 :::
 
 ## `Float`[@julia_int_flt_2018]
@@ -340,6 +359,7 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 - "Rules above" apply.
 - We can think of definitions like these as constituting a contract with the programmer.
 - Details deep to this look progressively like machine code, which describe the physical layout of memory and assumptions that can be made about such an ordering.
+- Note `{Core.AbstractFloat, Core. Integer}` fork at `Core.Real`
 :::
 
 ## `Missing`
@@ -354,6 +374,7 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 :::
 
 ## `Missing`
+- Julia's representation of $\emptyset$
 - `missing` is the singleton instance of `Missing`
   - Equivalent to R's `NA` and SQL's `NULL`
   - Behaves like them in most cases
@@ -361,7 +382,8 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
   - Propogation rules must be defined like all other objects
 
 :::notes
-- Note difference in case: object, Type.
+- Note difference in case: `object`, `Type`.
+- Represents "bottom" of type AST (see above).
 - Anticlimactic definition, thanks to the AST.
   - Complex parts of type definition in Julia are generic, easing the task of logically congruent refactoring.
 :::
@@ -371,40 +393,45 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 ---
 
 ## Between Memory and Representation
-- The variables programs operate on must be bound to memory structures
-- Binding *must* occur before the compiler can operate on a memory block
+- The variables programs operate on **must** be bound to memory structures
+- Binding **must** occur before the compiler can operate on a memory block
+- $S$ is a nonempty set of nonempty sets. $f:S \to \cup S$ is a choice function for $S$ if $\forall x \in S: \exists f(x) \in x$
 
 :::notes
 - We need to briefly consider variable binding before moving from types to their implementation(s).
-- Micro- to nanosecond `async/await` loops.
 - Binding strategies have strong implications for error propogation.
+  - Micro- to nanosecond `async/await` loops.
   - Compiler's "response time contract" with programmer.
-  - Type of.
-  - Reporting: `throw` is not the sole option.
+  - Defines set of possible strategies--e.g. `throw` is not the sole option.
   - Stack trace obfuscation.
+- Axiom of Choice
+  - **The Cartesian product of nonempty sets is nonempty.**
+  - *For each indexed family* $S_n$ *of nonempty sets there exists an indexed family* $x_n$ *of elements such that* $\forall$... 
+  - Choice functions provide *ordering schemes*, which selection is based on.
+  - **NB** Axiom hooks a sharp left soon after this mile marker--generally does not need to be invoked for sets with definable ordering schemas.
 :::
 
 ## Example
 ```julia
-m(x) = (println("w00t"); println("z00t"); x^2);
+m(x) = (println("w00t"); println("z00t"); println(x^2));
 # Which steps complete?
 # Where does failure occur?
 # Do we see the output of `println`?
-m(3);                         # 1
-m("w00t");                    # 2
+m(3)                          # 1
+m("w00t")                     # 2
 m(BigInt(typemax(Int64)))     # 3
-m(missing);                   # 4
-m(*);                         # 5
-m(2.3);                       # 6
-m('c');                       # 7
+m(missing)                    # 4
+m(*)                          # 5
+m(2.3)                        # 6
+m('c')                        # 7
 ```
 
 :::notes
 - `goto: REPL`
-- Example of late binding and multiple dispatch
+- Example of late binding $\land$ multiple dispatch
 - Python attempts to execute `"w00t"` via `m` and fails when it cannot.
   - This behavior can be replicated in Julia with input type `Any`
-- Julia attempts to find a function matching `{name: "m", airity: 1, type: Function}`, then works its way "up" the type AST for weaker matches.
+- Julia attempts to find a function matching `{name: "m", airity: 1, type: Function}`, then searches the type AST for weaker matches.
   - `supertype(Function)` $\to$ `Any`, so search stops.
 - Julia uses a type union to handle `m("w00t")`.
   - `methods(^)` $\to$ `[51] ^(s::Union{AbstractChar, AbstractString}, r::Integer) in Base at strings/basic.jl:674`
@@ -419,7 +446,8 @@ m('c');                       # 7
 
 :::notes
 - Computationally, isomorphism is an ideal state because it reduces dependence on ordering.
-- Lookup expense, guarantees, time, et cetera vary hugely by structure.
+- Lookup expense, guarantees, time, et cetera vary widely by structure.
+- The degree of nesting, "distance"/time to access (time is roughly equivalent to distance for an $e^-$), and effeciency of "wrap/unwrap" operations are important variables here.
 :::
 
 ## Python `list`
@@ -461,13 +489,13 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
   - Untyped list made strictly typed made more flexibly typed again
 
 :::notes
-- I am not sure what is meant by "intelligently whenever possible"
-  - I interpret this as an enlargement of already bulky state
-- Gains from abstraction are strictured due to architecture
-- It takes three packages (Base, NumPy, Pandas) to add missing value support
+- I interpret "intelligently whenever possible" (from last slide) as an enlargement of already bulky state.
+- Gains from abstraction are strictured due to architecture.
+- It takes three packages (Base, NumPy, Pandas) to add missing value support.
 :::
 
 ## Julia Array
+
 
 # Functional Programming
 
@@ -475,7 +503,6 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 
 ## 
 > "The study of nonlinear functions is like the study of nonelephants." –John von Neumann
-
 
 ## Composition
 $$f \circ g \circ h \circ p$$
@@ -487,9 +514,15 @@ f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
 ```
 
 :::notes
+- `goto: REPL`
 - Right-to-left!!
-- By now we've seen that linear ordering is required for computation.
-- These may be extracted from complex data structures, but **they are still linear.**
+
+:::
+
+## Laziness
+
+:::notes
+- "Fundamental of FP"
 :::
 
 ## Monads
@@ -510,8 +543,12 @@ f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
 ## FP in Python
 > Guido says: "Python has its own way."
 
+## Examples
+
 ## FP in Julia
 > Multiple dispatch is quite functional
+
+## Examples
 
 :::notes
 - Designed and built by PhDs in math; project leader holds PhD in *linear algebra*.
