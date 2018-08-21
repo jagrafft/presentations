@@ -117,6 +117,9 @@ Platform Info:
 - Well-represented in several major sectors.
 - Undeniably "proven" as a language.
 - Large, generally enthusiastic user community.
+- Core library is quite robust given its size.
+  - `xz` $\to$ `16.9MB`
+  - uncompressed $\to$ `78.5MB`
 :::
 
 ## Python Catch-22s
@@ -510,13 +513,13 @@ $$f \circ g \circ h \circ p$$
 ```julia
 f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
 
-@> "z" f g h p    # => "p(h(g(f(z))))"
+julia> (f ∘ g ∘ h ∘ p)("z")   # => "p(h(g(f(z))))"
 ```
 
 :::notes
+- Yes, you really can enter `\circ` in the Julia REPL.
 - `goto: REPL`
 - Right-to-left!!
-
 :::
 
 ## Laziness
@@ -541,14 +544,23 @@ f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
 :::
 
 ## FP in Python
-> Guido says: "Python has its own way."
+> Guido says
+> 
+> "Python has its own way...
+> 
+> ...and use list comprehensions."
 
-## Examples
+## 
+> The [Python 3.7.0 documentation](https://docs.python.org/3/library/functional.html) says
+>
+> "The modules described in this chapter provide functions and classes that support a functional programming style, and general operations on callables."[@python_docs_fp_modules_2018]
+
+:::notes
+- I am going to stick to the standard library—it offers us a great deal.
+:::
 
 ## FP in Julia
 > Multiple dispatch is quite functional
-
-## Examples
 
 :::notes
 - Designed and built by PhDs in math; project leader holds PhD in *linear algebra*.
