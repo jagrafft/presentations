@@ -493,12 +493,13 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 
 :::notes
 - I interpret "intelligently whenever possible" (from last slide) as an enlargement of already bulky state.
-- Gains from abstraction are strictured due to architecture.
-- It takes three packages (Base, NumPy, Pandas) to add missing value support.
+- "Bolt on" abstraction.
+  - Disarticulated layers (untyped made typed...).
+  - Three packages required (Base, NumPy, Pandas) for missing value support.
 :::
 
 ## Julia Array
-
+[w, 0, 0, 0, t]
 
 # Functional Programming
 
@@ -507,17 +508,27 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 ## 
 > "The study of nonlinear functions is like the study of nonelephants." –John von Neumann
 
+:::notes
+- In my experience, FP is a more consistent way of working between multiple languages.
+- Operations like currying, mapping, partial application, et cetera manipulate well-defined state in a *straightforward and regular* way.
+- These operations are easily definable as atomic (linearizable) operations—isolated (encapsulated), self-contained, and thread safe.
+- Syntax will change due to language specifics, mechanics will not.
+  - $f: A \to B$, `map::(a→b)→[a]→[b]`
+  - $f \equiv map$
+- A consequence of this is low implementation diversity; essentially, these operations are too simple to have many expressions.
+:::
+
 ## Composition
 $$f \circ g \circ h \circ p$$
 
 ```julia
 f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
 
-julia> (f ∘ g ∘ h ∘ p)("z")   # => "p(h(g(f(z))))"
+julia> (f ∘ g ∘ h ∘ p)("w00t")   # => "p(h(g(f(w00t))))"
 ```
 
 :::notes
-- Yes, you really can enter `\circ` in the Julia REPL.
+- You may enter `\circ` in the Julia REPL.
 - `goto: REPL`
 - Right-to-left!!
 :::
@@ -535,11 +546,11 @@ julia> (f ∘ g ∘ h ∘ p)("z")   # => "p(h(g(f(z))))"
 - "Math side of computing", structurally more akin to Category Theory.
 - Chances are you're overspecializing monads--they're a way to implement the same things you do now.
   - What's compelling about monads is how they may be used to represent other programming paradigms, but the reverse is not true.
-  - *Functions that compose via logically-associated operations.*
+  - *Functions that compose via logically-associated operations.* ("nonlinear elephants" slide)
 - Terms are awkward and differentiate from more accessible concepts by shades.
   - *I recommend we retain the nomenclature, as the small differences make big ones in practice.*
 - Regarding JAdG graphic.
-  - There is quite a difference here, and that difference is **global state**.
+  - There is quite a difference here, and that difference is **global state**. ("nonlinear elephants" slide)
   - Polymorphism es muy bueno.
 :::
 
