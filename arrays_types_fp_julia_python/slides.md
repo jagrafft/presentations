@@ -483,6 +483,17 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 - `Pandas` adds missing value support and other "convenience" features.
 :::
 
+## Pandas `DataFrame`, `Series`
+- `Series`
+  - 1-dimensional `ndarray` with axix labels. Homogeneously typed.
+- `DataFrame`
+  - 2-dimensional, size-mutable, potentially heterogenous tabular data structure with labeled axes.
+  - "[D]ict-like container for `Series` objects."
+
+:::notes
+- Both hold "standard" Python objects.
+:::
+
 ## Thoughts
 - *Patterns*
   - Adding features via modules
@@ -498,8 +509,14 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
   - Three packages required (Base, NumPy, Pandas) for missing value support.
 :::
 
-## Julia Array
+## Julia `Array`
 [w, 0, 0, 0, t]
+
+## Julia `DataFrame`
+
+:::notes
+- Deliberate similarities in appearance to Pandas `DataFrame`.
+:::
 
 # Functional Programming
 
