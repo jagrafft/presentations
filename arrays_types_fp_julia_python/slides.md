@@ -497,23 +497,20 @@ $$\forall A,T,V\in P: A[T_3[V_0], T_1[V_1], T_6[V_2], \ldots, T_n[V_m]]$$
 - $P$ is disjoint to the empty set--e.g. no members of $P$ are $\emptyset$
 - Array of pointers to Python objects
   - Heterogenous
-  - Room for `Missing/NaN/...`
+  - Room for `None`
 - Type check each iteration
   - Recall each pair of `[]` indicates a mapping operation
   - Hinders performance
 :::
 
-## NumPy `array`
+## NumPy `ndarray`[@numpy_array_objects_2018]
 types A, T, and values $V_0, \ldots, V_n$
 
-**value array** (are these pointers?)
 $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 
 :::notes
-- Homogenous
-- "[M]eans for array-like Python objects to re-use each other’s data buffers intelligently whenever possible."[@numpy_array_interface_2018]
-  - This statement is ambiguous to me.
-- Type check on insertion succeeds or fails **operation**, NO room for `Missing/NaN/...`
+- Homogenous: "every item takes up the same size block of memory, and all blocks are interpreted in exactly the same way"[@numpy_array_objects_2018]
+- Type check on insertion succeeds or fails **operation**, NO room for `None`
 - `Pandas` adds missing value support and other "convenience" features.
 :::
 
@@ -526,15 +523,13 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 
 :::notes
 - Both hold "standard" Python objects.
+- `Series` akin to Julia's `Vector` (`Array{T,1}`).
 :::
 
 ## Thoughts
-- *Patterns*
-  - Adding features via modules
-  - Reduction of overhead via abstraction
-- *Antipatterns*
-  - Substantial increase in global state
-  - Untyped list made strictly typed made more flexibly typed again
+- Abstraction
+- Modularity
+- Reasonable increase in global state
 
 :::notes
 - I interpret "intelligently whenever possible" (from last slide) as an enlargement of already bulky state.
@@ -544,12 +539,45 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 :::
 
 ## Julia `Array`
-[w, 0, 0, 0, t]
+- `Core.AbstractArray{T,N}`
+  - `Array{T,N}`
 
-## Julia `DataFrame`
+$$\forall A \nin\emptyset, T \cup \{U,W,X\}, N \ge 0: A_T[V_0, V_1, V_2, ..., V_n]$$
 
 :::notes
-- Deliberate similarities in appearance to Pandas `DataFrame`.
+- May include *any valid Julia type*, including user defined.
+- Julia does not require explicit `N` for method calls to `Array`.
+:::
+
+## Julia [`DataFrame`](https://github.com/JuliaData/DataFrames.jl/blob/master/src/dataframe/dataframe.jl)
+```julia
+DataFrame(columns::Vector, names::Vector{Symbol}; makeunique::Bool=false)
+DataFrame(columns::Matrix, names::Vector{Symbol}; makeunique::Bool=false)
+DataFrame(kwargs...)
+DataFrame(pairs::Pair{Symbol}...; makeunique::Bool=false)
+DataFrame() # an empty DataFrame
+DataFrame(t::Type, nrows::Integer, ncols::Integer) # an empty DataFrame of arbitrary size
+DataFrame(column_eltypes::Vector, names::Vector, nrows::Integer; makeunique::Bool=false)
+DataFrame(column_eltypes::Vector, cnames::Vector, categorical::Vector, nrows::Integer; makeunique::Bool=false)
+DataFrame(ds::AbstractDict)
+```
+
+:::notes
+- Deliberate similarities in appearance to Pandas' `DataFrame`.
+- Columns must be of length `n`.
+- `Vector` $\to$ `Array{T,1}`.
+- `Matrix` $\to$ `Array{T,2}`.
+- May be broken down into `Array{Tuple{Symbol, T}, N}`.
+:::
+
+## Thoughts
+- Inheritence
+- Creating features by extending structures of base library
+- More predictable increase in global state
+
+:::notes
+- Coherent abstraction allows us to take advantage of inheritance.
+- No need for impossibly vague concepts like "wider" and "narrower".
 :::
 
 # Functional Programming

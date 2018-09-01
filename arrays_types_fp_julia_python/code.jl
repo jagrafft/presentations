@@ -3,9 +3,12 @@ m(x) = (println("\tw00t"); println("\tz00t"); println("\t$(x^2)"));
 n(x) = foreach(x -> println("\t$(x)"), ["w00t", "z00t", x^2]);
 
 a = [3, "w00t", BigInt(typemax(Int64)), missing, *, 2.3, 'c'];
-a = [3, "w00t", BigInt(typemax(Int64)), missing, 2.3, 'c'];
 foreach(x -> (println(x); m(x)), a);
 foreach(x -> (println(x); n(x)), a);
+
+b = [3, "w00t", BigInt(typemax(Int64)), missing, 2.3, 'c'];
+foreach(x -> (println(x); m(x)), b);
+foreach(x -> (println(x); n(x)), b);
 
 # Composition
 # (f ∘ g ∘ h ∘ p)("w00t") => "f(g(h(p(w00t))))"
