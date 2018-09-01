@@ -153,13 +153,15 @@ Platform Info:
 
 ## Julia Catch-22s
 - Young
-- 2
+- Focused
 - Antipatterns are real
 
 [![](img/prealloc.png)](https://docs.julialang.org/en/stable/manual/performance-tips/#Pre-allocating-outputs-1)
 
 :::notes
 - `v1.0.0` released 08-08-2018.
+- CS/mathematical bearing. Excellent for computing, much less ecosystem support for gaming, UI, ...
+  - HTTP is IO... Now you know why nearly every language supports it.
 - Core features like multiple dispatch and type unions can be used to introduce significant performance issues.
 :::
 
@@ -310,15 +312,47 @@ messages $A,B,C$, and types $T,U$
 ![](img/duck_typing.jpg)
 
 :::notes
-- Assigned by interpreter at runtime
-- Python tests commands with input ("command cannot be executed")
+- Assigned by interpreter at runtime.
+- Late binding tests commands with input.
+- Julia also uses late binding via different mehods. *This is an important distincition between the languages.*
 :::
 
-## `Float..`
+## `float`[@python_docs_numeric_types_2018]<sup>,</sup>[@python_docs_numeric_literals_2018]
+- "Wider" type than `Int`, "narrower" than `complex`
+- "[U]sually implemented using double in C"[@python_docs_numeric_types_2018]
 
-## `Int..`
+[![](img/floating_point_literals.png)](https://docs.python.org/3/reference/lexical_analysis.html#floating-point-literals)
+[![](img/floating_point_examples.png)](https://docs.python.org/3/reference/lexical_analysis.html#floating-point-literals)
 
-## `Null/Missing/...`
+:::notes
+- Superscripts in this section are references.
+- I am unclear on "usually". Docs seem to imply distinction is based on operating environment.
+- We can sketch a crude heirarchy of types from their crude relations.
+- Bear in mind types are *intentionally simple* and have a utility roughly inverse the complexity of their definition.
+- The *implementation* of a type is a different matter we will not examine today. Our interests lie in understanding how two programming languages utilize types.
+:::
+
+## `int`[@python_docs_numeric_types_2018]<sup>,</sup>[@python_docs_numeric_literals_2018]
+- "Narrower" than float, "wider" than Boolean
+
+[![](img/integer_literals.png)](https://docs.python.org/3/reference/lexical_analysis.html#integer-literals)
+[![](img/integer_examples.png)](https://docs.python.org/3/reference/lexical_analysis.html#integer-literals)
+
+:::notes
+- Allows unlimited precision.
+- **Numeric literals do not include a sign.**
+  - `-1` is "an expression composed of the unary operator `-` and the literal `1`"[@python_docs_numeric_literals_2018]
+:::
+
+## `None`
+> "The sole value of the type `NoneType`. `None` is frequently used to represent the absence of a value, as when default arguments are not passed to a function. Assignments to `None` are illegal and raise a [SyntaxError](https://docs.python.org/3/library/exceptions.html#SyntaxError)."[@python_docs_constants_2018]
+
+:::notes
+- The definition of `None` represents a *state*--absence.
+- While $\emptyset$ types are are tricky to implement, **they are very strict in definition--rigorously *falsifiable*, in fact**
+- A priori immutable.
+- "Terminus" of type hierarchy.
+:::
 
 ## Julia's Types
 $$[\bot_{\emptyset},\top_{\forall}]$$
@@ -332,6 +366,7 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 - Julia requires type match before input is given to command ("not possible to execute command")
 - Union{dynamic, full, parametrically polymorphic} is a rare feature list.
   - Parametric polymorphism is the foundation of generic programming.
+- Contrast definitions below with "narrower" and "wider" above.
 :::
 
 ## `Int`[@julia_int_flt_2018]
@@ -342,7 +377,6 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
         - `Core.Unsigned` $\to$ `UInt[8,16,32,64,128]`
 
 :::notes
-- Superscripts in this section are references.
 - This is subclassing in the *mathematical* sense.
 - For programmers, this parameterizes a value (`typemin/max`).
 - For the machine, it provides a tenably low-level definition of the structure (number of bits, meaning of slot) which *represents* a type.
