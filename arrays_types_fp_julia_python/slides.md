@@ -588,49 +588,38 @@ DataFrame(ds::AbstractDict)
 > "The study of nonlinear functions is like the study of nonelephants." –John von Neumann
 
 :::notes
-- In my experience, FP is a more consistent way of working between multiple languages.
-- Operations like currying, mapping, partial application, et cetera manipulate well-defined state in a *straightforward and regular* way.
-- These operations are easily definable as atomic (linearizable) operations—isolated (encapsulated), self-contained, and thread safe.
+- FP is a more consistent way of working between multiple languages.
+- 
 - Syntax will change due to language specifics, mechanics will not.
   - $f: A \to B$, `map::(a→b)→[a]→[b]`
   - $f \equiv map$
 - A consequence of this is low implementation diversity; essentially, these operations are too simple to have many expressions.
+- We're going to look at two core principles, immutability and laziness, in the interests of time and applicability to both languages.
 :::
 
-## Composition
-$$f \circ g \circ h \circ p$$
+## Immutability
+> Encapsulation of state is a first-order principle of functional programming.
 
-```julia
-f(x)="f($x)";g(x)="g($x)";h(x)="h($x)";p(x)="p($x)";
-
-julia> (f ∘ g ∘ h ∘ p)("w00t")   # => "p(h(g(f(w00t))))"
-```
+|||
+|:-:|-|
+| $f: A \to A$ | *Identity* function |
+| $f: A \to B$ | Function |
 
 :::notes
-- You may enter `\circ` in the Julia REPL.
-- `goto: REPL`
-- Right-to-left!!
+- Mutability violates encapsulation.
+  - It is also independent of variable passing strategy.
+- In most languages, immutability is maintained by *convention and style*.
+- *Requires **two** bindings* per variable operated on, which uses more memory but is not *a priori* less performant.
+- *Far stronger guarantee of thread safety.*
 :::
 
 ## Laziness
+[![](img/MikeInnes-Lazyjl.png)](https://github.com/MikeInnes/Lazy.jl)
 
 :::notes
-- "Fundamental of FP"
-:::
-
-## Monads
-[![John A. DeGoes - "Monad Wars"](img/JAdG-monad_wars.png)](https://twitter.com/jdegoes/status/1022546801457475584/photo/1, "John A. DeGoes on ending 'The Monad Wars'")
-
-:::notes
-- "Math side of computing", structurally more akin to Category Theory.
-- Chances are you're overspecializing monads--they're a way to implement the same things you do now.
-  - What's compelling about monads is how they may be used to represent other programming paradigms, but the reverse is not true.
-  - *Functions that compose via logically-associated operations.* ("nonlinear elephants" slide)
-- Terms are awkward and differentiate from more accessible concepts by shades.
-  - *I recommend we retain the nomenclature, as the small differences make big ones in practice.*
-- Regarding JAdG graphic.
-  - There is quite a difference here, and that difference is **global state**. ("nonlinear elephants" slide)
-  - Polymorphism es muy bueno.
+- "Cornerstone of functional programming."
+- Elements are not calculated till called, and only what is called is calculated.
+- Essential for large datasets.
 :::
 
 ## FP in Python
@@ -646,14 +635,18 @@ julia> (f ∘ g ∘ h ∘ p)("w00t")   # => "p(h(g(f(w00t))))"
 > "The modules described in this chapter provide functions and classes that support a functional programming style, and general operations on callables."[@python_docs_fp_modules_2018]
 
 :::notes
+- `itertools.tee` is an *a priori* embrace of functional principles.
+  - Including memory overhead issues. (Two bindings per...)
+- Python makes functional styles awkward--they can be done well.
 - I am going to stick to the standard library—it offers us a great deal.
 :::
 
 ## FP in Julia
-> Multiple dispatch is quite functional
+> Core langauge designers hold PhDs in mathematics and computer science.
 
 :::notes
-- Designed and built by PhDs in math; project leader holds PhD in *linear algebra*.
+- Functional principles "baked in" to language.
+- Julia's syntax is friendly and does not mandate a programming style.
 - Multiple dispatch defines *systems of equations*.
 :::
 
@@ -665,6 +658,7 @@ julia> (f ∘ g ∘ h ∘ p)("w00t")   # => "p(h(g(f(w00t))))"
 - [Erlang's Tail Recursion is Not a Silver Bullet](https://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html)
 - [First-Class Statistical Missing Values \[...\] in Julia 0.7](https://julialang.org/blog/2018/06/missing)
 - [The Halting Problem](http://www.cgl.uwaterloo.ca/csk/halt/)
+- [Haskell-Style Fibonacci in Python](http://joelgrus.com/2015/07/07/haskell-style-fibonacci-in-python/)
 - [Julia Docs](https://docs.julialang.org/) $\to$ \{[Performance Tips](https://docs.julialang.org/en/stable/manual/performance-tips/), [Style Guide](https://docs.julialang.org/en/stable/manual/style-guide/)\}
 - [Key differences: Python 2.7.x and Python 3.x](http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html)
 - [Kinds of types in Scala, part 1: types, what are they?](https://kubuszok.com/2018/kinds-of-types-in-scala-part-1/)
