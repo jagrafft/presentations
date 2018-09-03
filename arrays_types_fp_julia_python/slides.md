@@ -140,7 +140,7 @@ Platform Info:
 - Dynamic typing
   - Optionally declared
 - Multiple dispatch
-- Well curated core libraries, extended with packages
+- Core libraries, extended with packages
 - Highly performant
 
 :::notes
@@ -400,17 +400,6 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 :::
 
 ## `Missing`
-> [...] `missing` values **propagate** automatically when passed to standard operators and functions, in particular mathematical functions. Uncertainty about the value of one of the operands induces uncertainty about the result.[@julia_missing_2018]
-
-:::notes
-- Uncertainty is a serious contender for the greatest intellectual achievement of the 20th century.
-- Propogation of uncertainty is extremely useful for reasoning.
-  - Congruent with modern (quantum) physical models.
-- *Mitigates unpredictable halting.*
-  - `Union{Missing, T[, U, ...]}` increases reliability of precondition match; the "downstream" consequences of this are positive.
-:::
-
-## `Missing`
 - Julia's representation of $\emptyset$
 - `missing` is the singleton instance of `Missing`
   - Equivalent to R's `NA` and SQL's `NULL`
@@ -423,6 +412,17 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 - Represents "bottom" of type AST (see above).
 - Anticlimactic definition, thanks to the AST.
   - Complex parts of type definition in Julia are generic, easing the task of logically congruent refactoring.
+:::
+
+## `Missing`
+> [...] `missing` values **propagate** automatically when passed to standard operators and functions, in particular mathematical functions. Uncertainty about the value of one of the operands induces uncertainty about the result.[@julia_missing_2018]
+
+:::notes
+- Uncertainty is a serious contender for the greatest intellectual achievement of the 20th century.
+- Propogation of uncertainty is extremely useful for reasoning.
+  - Congruent with modern (quantum) physical models.
+- *Mitigates unpredictable halting.*
+  - `Union{Missing, T[, U, ...]}` increases reliability of precondition match; the "downstream" consequences of this are positive.
 :::
 
 # Variable Binding
@@ -478,15 +478,6 @@ m('c')                        # 7
 
 ---
 
-## 
-<!-- > Lists and arrays are memory structures with *some* guarantee of ordering. Common implementations tend to make isomorphism fragile or expensive, leaving significant feature and performance gaps at scale. The mathematical concept of *range*, typically defined as the *image* (of a function...?) helps us see why -->
-
-:::notes
-- Computationally, isomorphism is an ideal state because it reduces dependence on ordering.
-- Lookup expense, guarantees, time, et cetera vary widely by structure.
-- The degree of nesting, "distance"/time to access (time is roughly equivalent to distance for an $e^-$), and effeciency of "wrap/unwrap" operations are important variables here.
-:::
-
 ## Python `list`
 pointer P, types $A, T_0, \ldots, T_n$, and values $V_0, \ldots, V_n$
 
@@ -494,7 +485,7 @@ $$P \cap\emptyset: \emptyset$$
 $$\forall A,T,V\in P: A[T_3[V_0], T_1[V_1], T_6[V_2], \ldots, T_n[V_m]]$$
 
 :::notes
-- $P$ is disjoint to the empty set--e.g. no members of $P$ are $\emptyset$
+- $P$ is disjoint to the empty set--no members of $P$ are $\emptyset$
 - Array of pointers to Python objects
   - Heterogenous
   - Room for `None`
@@ -529,13 +520,10 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 ## Thoughts
 - Abstraction
 - Modularity
-- Reasonable increase in global state
+- "Bolt on" abstraction
 
 :::notes
-- I interpret "intelligently whenever possible" (from last slide) as an enlargement of already bulky state.
-- "Bolt on" abstraction.
-  - Disarticulated layers (untyped made typed...).
-  - Three packages required (Base, NumPy, Pandas) for missing value support.
+- Disarticulated layers (untyped made typed...).
 :::
 
 ## Julia `Array`
@@ -572,8 +560,7 @@ DataFrame(ds::AbstractDict)
 
 ## Thoughts
 - Inheritence
-- Creating features by extending structures of base library
-- More predictable increase in global state
+- Progressive specialization of base libraries
 
 :::notes
 - Coherent abstraction allows us to take advantage of inheritance.
@@ -655,15 +642,11 @@ DataFrame(ds::AbstractDict)
 ---
 
 ## Further Reading
-- [Erlang's Tail Recursion is Not a Silver Bullet](https://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html)
 - [First-Class Statistical Missing Values \[...\] in Julia 0.7](https://julialang.org/blog/2018/06/missing)
-- [The Halting Problem](http://www.cgl.uwaterloo.ca/csk/halt/)
 - [Haskell-Style Fibonacci in Python](http://joelgrus.com/2015/07/07/haskell-style-fibonacci-in-python/)
 - [Julia Docs](https://docs.julialang.org/) $\to$ \{[Performance Tips](https://docs.julialang.org/en/stable/manual/performance-tips/), [Style Guide](https://docs.julialang.org/en/stable/manual/style-guide/)\}
 - [Key differences: Python 2.7.x and Python 3.x](http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html)
-- [Kinds of types in Scala, part 1: types, what are they?](https://kubuszok.com/2018/kinds-of-types-in-scala-part-1/)
 - [Python 3 Q & A](http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html)
-- [The Seven Myths of Erlang Performance (see 2.1)](http://erlang.org/doc/efficiency_guide/myths.html)
 - [Swift for Tensorflow: Documentation](https://github.com/tensorflow/swift#documentation)
 
 ## Environments
@@ -688,7 +671,7 @@ make install
 ```
 
 ## Thank you!!
-> <jason@grafft.co>
+> <jgrafft@gmail.com>
 
 - <http://grafft.co>
 - <http://github.com/jagrafft>
