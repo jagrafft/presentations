@@ -185,11 +185,14 @@ Platform Info:
 :::
 
 ## $\emptyset$ (`Nothing`)
+> "The initial object in a poset [,if it exists,] is its least element."[@milewski_products_2015]
+>
 > Vacuous truth has untenably expansive state for a finite system. $\emptyset\to ()$ is a convention, **not** a definition.
 >
 >$\therefore$ We are not building on, we are building **round** $\emptyset$.
 
 :::notes
+- *poset* $\to$ partially ordered set
 - $P(\emptyset) = 0$ (probability of empty set axiom)
 - Loosely, nothingness is a coproduct of somethingness and we need both for a complete view of the world.
 - The coproducts introduced by interaction of these categories are consequential for automated reasoning.
@@ -246,6 +249,8 @@ messages $A,B,C$, and types $T,U$
 | **streamed types** | $\forall A,B,C,T,U \nin\emptyset: C[U[A],T[B]]$ |
 
 ## $\forall$ (`Any`)
+> "In a poset, the terminal object, if it exists, is the biggest object."[@milewski_products_2015]
+> 
 > "Total" truth is **necessarily** incomplete: the "set of all sets" $A$ cannot satisfy $\wp(A) \cup (A \subset A)$.
 >
 > $\therefore \forall$ is a **computable representation** of a "complete" set
@@ -405,11 +410,12 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
   - Equivalent to R's `NA` and SQL's `NULL`
   - Behaves like them in most cases
 - "[A] normal Julia object"[@julia_missing_2018]
-  - Propogation rules must be defined like all other objects
+  - Propogation rules must be defined like all other objects 
 
 :::notes
 - Note difference in case: `object`, `Type`.
-- Represents "bottom" of type AST (see above).
+- Represents "bottom" of type AST (*initial object*).
+  - `Any` is the union of all types (*terminal object*).
 - Anticlimactic definition, thanks to the AST.
   - Complex parts of type definition in Julia are generic, easing the task of logically congruent refactoring.
 :::
