@@ -10,8 +10,6 @@ b = [3, "w00t", BigInt(typemax(Int64)), missing, 2.3, 'c'];
 foreach(x -> (println(x); m(x)), b);
 foreach(x -> (println(x); n(x)), b);
 
-# Immutability
-
 # Laziness
 r = 777:7777                # => 777:7777
 r |> typeof                 # => UnitRange{Int64}

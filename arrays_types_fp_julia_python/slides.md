@@ -13,6 +13,7 @@ csl: './american-medical-association.csl'
 
 :::notes
 - Interestingly, Chris Lattner is the second "author" (contributor) of this paper.
+- Data science is rife with epistemological claims, very weak to ignorantly strong.
 :::
 
 ## Premise
@@ -50,13 +51,11 @@ csl: './american-medical-association.csl'
   - We'll spend time here to save time when looking at language-specific implementations.
 - Types in {Python, Julia} next.
   - Useful (to us) lanugage details.
-  - Closer look at `Float`, `Int`, `Missing` and `{NULL?}`.
+  - Closer look at `Float`, `Int`, `Missing` and `None`.
 - Lastly, functional programming.
   - We need fundamentals to help this make sense.
   - Shrouded in nomenclature and inept interpretation.
   - No more difficult than other patterns, overwhelmingly less code for the same functionality.
-- You can learn, you are capable.
-- **NB** All example code in Julia because I am much more familiar with it.
 :::
 
 ## Themes
@@ -69,9 +68,9 @@ csl: './american-medical-association.csl'
 :::notes
 - **NB** Don't memorize this list, I want to put a set of "cue frames" in your mind for the immedate future.
 - "Go with what I know or ..."--fundamental to our interactions with the world.
-- All operations are asynchronus!!
+- All operations are asynchronus.
   - We can meaningfully talk about the difference between a future and a bound variable as "overhead of/time to access".
-  - Language specific.
+  - Details, "contract" with programmers language specific.
 - software $\in$ hardware
   - Hence the mathematical descriptions, which are quite suitable for describing the structure of transformations.
 :::
@@ -114,10 +113,10 @@ Platform Info:
 - Flexible
 
 :::notes
-- Well-represented in several major sectors.
+- Well-represented in major sectors.
 - Undeniably "proven" as a language.
 - Large, generally enthusiastic user community.
-- Core library is quite robust given its size.
+- Core library is quite robust given its size. Source
   - `xz` $\to$ `16.9MB`
   - uncompressed $\to$ `78.5MB`
 :::
@@ -133,6 +132,7 @@ Platform Info:
   - More on this ahead.
 - "One (best) way" very much a matter of external and internal debate.
   - Does not imply "bad" (*see* list comps), only that we should interpret claims with caution.
+  - Internal fixations seem to have genuinely hurt the Python community, however.
 :::
 
 ## Julia Characteristics
@@ -145,8 +145,8 @@ Platform Info:
 
 :::notes
 - Rapidly expanding presence in high performance, high precision, and time critical environments.
-  - Has performed a petaflop: "language list" now C, C++, Fortan, Julia.
-- Quite odd for a dynamic langauge to include a full type system.
+  - Has performed a petaflop: "language list" now C, C++, Fortan, Julia. (middling source)
+- Quite odd for a dynamic langauge to feature a full type system.
 - Surprising number of non-CS disciplines in user community.
   - Similar to Python in this respect.
 :::
@@ -192,14 +192,14 @@ Platform Info:
 >$\therefore$ We are not building on, we are building **round** $\emptyset$.
 
 :::notes
+- *Humans reason much more efficiently than algorithms about $\emptyset$.*
 - *poset* $\to$ partially ordered set
 - $P(\emptyset) = 0$ (probability of empty set axiom)
 - Loosely, nothingness is a coproduct of somethingness and we need both for a complete view of the world.
 - The coproducts introduced by interaction of these categories are consequential for automated reasoning.
-  - I will return to this.
+  - I will return to this. (Types)
 - Extending binary to ternary logic adds essential flexibility to structured reasoning.
-  - `(false, null, true)` more expressive than `(false, true)`
-- *Humans reason much more efficiently than algorithms about $\emptyset$.*
+  - `{-1,0,1}` more expressive than `{-1,1}`
 :::
 
 ## $\forall x \notin\emptyset$ (nonempty sets)
@@ -215,13 +215,12 @@ effects $F,G$, integer $n$, memory block $M$, messages $A,B$
 
 :::notes
 - $M$ may **not** be empty because $\emptyset$ is represented as a type.
-  - And a type is represented by bits.
-  - This distinction is not necessary in mathematics.
+  - And a type is represented by zero or more bits.
+  - This distinction is not necessary in mathematics, which *describes* the structure of transformations.
 - Don't worry if the symbols make sense, I know you can see the increase in nesting and changes to essential structure between definitions.
-- *NB*
-  - A map, or similar strategy, is required each time a pair of square brackets is encountered.
-  - Push/Pull definition courtesy of André Staltz.
-  - {Future/Promise, Actor} definition courtesy of John DeGoes.
+- A map, or similar strategy, is required each time a pair of square brackets is encountered.
+- Push/Pull definition courtesy of André Staltz.
+- {Future/Promise, Actor} definition courtesy of John DeGoes.
 :::
 
 ## $\forall x \notin\emptyset$
@@ -234,6 +233,7 @@ messages $A,B,C$
 | **stream** | $\forall A,B,C \nin\emptyset:C[A,B]$ |
 
 :::notes
+- This suggests why `start/next/stop` (iterator) methods are fundamental to the definition of arrays; and how arrays relate to streams.
 - Streams are generally defined as promising (or greater) a *next* value.
 :::
 
@@ -257,6 +257,7 @@ messages $A,B,C$, and types $T,U$
 
 :::notes
 - Incompleteness!!
+  - Why epistemology left math.
 - "Very partially complete" (99.9999..\%) is quite awkward to reason about.
 - $\emptyset$ and $\forall$ **do not** share an isomorphic relationship.
 :::
@@ -282,7 +283,7 @@ messages $A,B,C$, and types $T,U$
 > Any time behavior is determined by cases, there is a coproduct involved.[@spivak_category_2014]
 
 :::notes
-- A coproduct is the "equal and opposite" reaction... (recall I just mentioned differentiation)
+- Recall `poset`s above.
 - The quality of the coproducts' assertions depends on the definition of the products.
 - All strategies introduce some degree of processing "overhead" on behalf of entropy reduction.
   - Entropy can be helpfully defined as diversity of types.
@@ -304,8 +305,8 @@ messages $A,B,C$, and types $T,U$
 :::notes
 - You may operate on the postcondition to find the precondition. *The the other way is not valid*.
 - Command may fire without precondition match.
-  - Strength of gaurantee precondition is met correlates with predictability of output.
-  - This is a key difference between Python and Julia, as we'll see in a few minutes.
+- Strength of guarantee precondition is met correlates with predictability of output.
+  - This is a key difference between Python and Julia, as we'll see.
 - Starting to sound like entropy/variance/..? Great!
 - Methods used for precondition match guarantees likely account for fundamental differences in performance between languages.
 :::
@@ -318,8 +319,11 @@ messages $A,B,C$, and types $T,U$
 
 :::notes
 - Assigned by interpreter at runtime.
+- We can sketch a crude hierarchy of types from the way Python defines their relation.
+  - Bear in mind types are *intentionally simple*, but ambiguous hierarchies have greater overhead.
 - Late binding tests commands with input.
-- Julia also uses late binding via different mehods. *This is an important distincition between the languages.*
+  - Julia also uses late binding via different mehods. *This is an important distincition between the languages.*
+- The *implementation* of a type is a different matter we will not examine today. Our interests lie in understanding how two programming languages utilize types.
 :::
 
 ## `float`[@python_docs_numeric_types_2018]<sup>,</sup>[@python_docs_numeric_literals_2018]
@@ -332,9 +336,6 @@ messages $A,B,C$, and types $T,U$
 :::notes
 - Superscripts in this section are references.
 - I am unclear on "usually". Docs seem to imply distinction is based on operating environment.
-- We can sketch a crude heirarchy of types from their crude relations.
-- Bear in mind types are *intentionally simple* and have a utility roughly inverse the complexity of their definition.
-- The *implementation* of a type is a different matter we will not examine today. Our interests lie in understanding how two programming languages utilize types.
 :::
 
 ## `int`[@python_docs_numeric_types_2018]<sup>,</sup>[@python_docs_numeric_literals_2018]
@@ -356,7 +357,6 @@ messages $A,B,C$, and types $T,U$
 - The definition of `None` represents a *state*--absence.
 - While $\emptyset$ types are are tricky to implement, **they are very strict in definition--rigorously *falsifiable*, in fact**
 - A priori immutable.
-- "Terminus" of type hierarchy.
 :::
 
 ## Julia's Types
@@ -383,9 +383,9 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 
 :::notes
 - This is subclassing in the *mathematical* sense.
-- For programmers, this parameterizes a value (`typemin/max`).
-- For the machine, it provides a tenably low-level definition of the structure (number of bits, meaning of slot) which *represents* a type.
-- Isomorphisms like this are a first principle of design in the functional paradigm.
+- For programmers, this parameterizes a typed value (`typemin/max`).
+- For the machine, it provides a tenably low-level definition of the structure (number of bits, meaning of slot, ...) which *represents* a type.
+- Isomorphism is a first principle of design in the functional paradigm.
 :::
 
 ## `Float`[@julia_int_flt_2018]
@@ -398,10 +398,8 @@ $$[\bot_{\emptyset},\top_{\forall}]$$
 | Float64 | double | 64 |
 
 :::notes
-- "Rules above" apply.
-- We can think of definitions like these as constituting a contract with the programmer.
 - Details deep to this look progressively like machine code, which describe the physical layout of memory and assumptions that can be made about such an ordering.
-- Note `{Core.AbstractFloat, Core. Integer}` fork at `Core.Real`
+- Note `{Core.AbstractFloat, Core.Integer}` fork at `Core.Real`
 :::
 
 ## `Missing`
@@ -491,11 +489,11 @@ $$P \cap\emptyset: \emptyset$$
 $$\forall A,T,V\in P: A[T_3[V_0], T_1[V_1], T_6[V_2], \ldots, T_n[V_m]]$$
 
 :::notes
-- $P$ is disjoint to the empty set--no members of $P$ are $\emptyset$
+- Because it has a physical representation, $P$ is disjoint to the empty set--no members of $P$ are $\emptyset$
 - Array of pointers to Python objects
   - Heterogenous
   - Room for `None`
-- Type check each iteration
+- Type check each slot
   - Recall each pair of `[]` indicates a mapping operation
   - Hinders performance
 :::
@@ -521,15 +519,6 @@ $$\forall A,T,V \nin\emptyset: A_T[V_0, V_1, V_2, V_3, ..., V_n]$$
 :::notes
 - Both hold "standard" Python objects.
 - `Series` akin to Julia's `Vector` (`Array{T,1}`).
-:::
-
-## Thoughts
-- Abstraction
-- Modularity
-- "Bolt on" abstraction
-
-:::notes
-- Disarticulated layers (untyped made typed...).
 :::
 
 ## Julia `Array`
@@ -564,15 +553,6 @@ DataFrame(ds::AbstractDict)
 - May be broken down into `Array{Tuple{Symbol, T}, N}`.
 :::
 
-## Thoughts
-- Inheritence
-- Progressive specialization of base libraries
-
-:::notes
-- Coherent abstraction allows us to take advantage of inheritance.
-- No need for impossibly vague concepts like "wider" and "narrower".
-:::
-
 # Functional Programming
 
 ---
@@ -582,10 +562,8 @@ DataFrame(ds::AbstractDict)
 
 :::notes
 - FP is a more consistent way of working between multiple languages.
-- 
 - Syntax will change due to language specifics, mechanics will not.
-  - $f: A \to B$, `map::(a→b)→[a]→[b]`
-  - $f \equiv map$
+  - $f: A \to B \equiv$ `map::(a→b)→[a]→[b]`
 - A consequence of this is low implementation diversity; essentially, these operations are too simple to have many expressions.
 - We're going to look at two core principles, immutability and laziness, in the interests of time and applicability to both languages.
 :::
@@ -601,7 +579,7 @@ DataFrame(ds::AbstractDict)
 :::notes
 - Mutability violates encapsulation.
   - It is also independent of variable passing strategy.
-- In most languages, immutability is maintained by *convention and style*.
+  - Each language has unique guarantees, set your expectations accordingly.
 - *Requires **two** bindings* per variable operated on, which uses more memory but is not *a priori* less performant.
 - *Far stronger guarantee of thread safety.*
 :::
@@ -631,7 +609,7 @@ DataFrame(ds::AbstractDict)
 - `itertools.tee` is an *a priori* embrace of functional principles.
   - Including memory overhead issues. (Two bindings per...)
 - Python makes functional styles awkward--they can be done well.
-- I am going to stick to the standard library—it offers us a great deal.
+- I am going to stick to the standard library--it offers us a great deal.
 :::
 
 ## FP in Julia
@@ -641,6 +619,14 @@ DataFrame(ds::AbstractDict)
 - Functional principles "baked in" to language.
 - Julia's syntax is friendly and does not mandate a programming style.
 - Multiple dispatch defines *systems of equations*.
+:::
+
+## Fibonacci Time!
+
+> `(0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 ...)`
+
+:::notes
+- Examples in REPL
 :::
 
 # Lastly

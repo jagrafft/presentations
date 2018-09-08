@@ -7,8 +7,6 @@ def m(x):
 def n(x):
     [print("\t{}".format(x)) for x in ["w00t", "z00t", x**2]]
 
-# Immutability
-
 # Laziness
 r = range(777,7777)     # => range(777,7777)
 type(r)                 # => <class 'range'>
