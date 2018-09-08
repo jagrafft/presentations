@@ -1,6 +1,6 @@
 # Presentations
 ## Upcoming
-- 08.09.2018. *[Programming Languages Influence How We Code: \[Arrays, Types, FP\].ap(Julia, Python)](https://github.com/jagrafft/presentations/tree/master/arrays_types_fp_julia_python)*. [Veritas Data Science Meetup][leam] (Roseville, MN).
+- 08.09.2018. *[Programming Languages Influence How We Code: \[Arrays, Types, FP\].ap(Julia, Python)](https://github.com/jagrafft/presentations/tree/master/arrays_types_fp_julia_python)*. [DataSciPy Meetup][leam] (Roseville, MN).
 - 18.09.2018. *Observable Notebook Dataflows, Fast*. [Twin Cities Data Visualization Meetup][tcdv] (Saint Paul, MN).
 - 09.10.2018. *[Extracting Information from Awkward Datasets (Tabletop Talk)](https://github.com/jagrafft/presentations/tree/master/extracting_info_awkward_datasets)*. [League of Extraordinary Algorithms][leam] (Minneapolis, MN).
 
