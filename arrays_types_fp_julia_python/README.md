@@ -1,6 +1,7 @@
 # Programming Languages Influence How We Code: \[Arrays, Types, FP\].ap(Julia, Python)
 
 - 08.09.2018. DataSciPy Meetup (Roseville, MN).
+  - [Compiled Slides](https://github.com/jagrafft/presentations/blob/master/arrays_types_fp_julia_python/compiled-slides.zip)
 
 ## 08.09.2018 DataSciPy Meetup: Follow-up Notes
 - Python's ecosystem is huge and we have to put some effort into connecting with its core feature set. These features reward the effort.
