@@ -8,6 +8,7 @@
 - 10.07.2017. *[Plotting with Gadfly in Less Than 15 Minutes](https://github.com/jagrafft/presentations/tree/master/plotting_w_gadfly_lt_15min)*. [Twin Cities Data Visualization Meetup][tcdv] (Roseville, MN).
 
 ## Incubator
+- Data Science with Julia: Fundamentals
 
 [leam]: https://www.meetup.com/League-of-Extraordinary-Algorithms/
 [tcdv]: https://www.meetup.com/Twin-Cities-Visualization-Group/
