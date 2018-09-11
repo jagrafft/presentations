@@ -1,0 +1,770 @@
+[
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Irack",
+    "region": "East",
+    "depart": "2018-05-10",
+    "return": "2018-05-20",
+    "cost": "1337.57"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Extro",
+    "region": "North",
+    "depart": "2018-06-15",
+    "return": "2018-06-15",
+    "cost": "759.46"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Incubus",
+    "region": "South",
+    "depart": "2018-06-30",
+    "return": "2018-07-08",
+    "cost": "4074.75"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Printspan",
+    "region": "South",
+    "depart": "2018-03-25",
+    "return": "2018-03-27",
+    "cost": "959.11"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Ewaves",
+    "region": "West",
+    "depart": "2018-02-15",
+    "return": "2018-02-19",
+    "cost": "695.37"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Intrawear",
+    "region": "East",
+    "depart": "2018-02-22",
+    "return": "2018-02-25",
+    "cost": "1350.76"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Organica",
+    "region": "West",
+    "depart": "2018-08-03",
+    "return": "2018-08-11",
+    "cost": "4076.99"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Zensus",
+    "region": "South",
+    "depart": "2018-04-15",
+    "return": "2018-04-16",
+    "cost": "887.75"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Stelaecor",
+    "region": "West",
+    "depart": "2018-09-02",
+    "return": "2018-09-11",
+    "cost": "366.27"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Musix",
+    "region": "North",
+    "depart": "2018-05-12",
+    "return": "2018-05-17",
+    "cost": "3159.27"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Artiq",
+    "region": "West",
+    "depart": "2018-01-16",
+    "return": "2018-01-18",
+    "cost": "1007.44"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Nebulean",
+    "region": "North",
+    "depart": "2018-06-25",
+    "return": "2018-06-27",
+    "cost": "1339.61"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Farmage",
+    "region": "North",
+    "depart": "2018-02-14",
+    "return": "2018-02-21",
+    "cost": "1581.77"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Phuel",
+    "region": "South",
+    "depart": "2018-07-12",
+    "return": "2018-07-15",
+    "cost": "801.53"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Filodyne",
+    "region": "West",
+    "depart": "2018-03-14",
+    "return": "2018-03-16",
+    "cost": "1167.96"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Talendula",
+    "region": "Central",
+    "depart": "2018-06-03",
+    "return": "2018-06-03",
+    "cost": "668.10"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Geekola",
+    "region": "Central",
+    "depart": "2018-05-12",
+    "return": "2018-05-12",
+    "cost": "402.47"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Nurplex",
+    "region": "Central",
+    "depart": "2018-06-19",
+    "return": "2018-06-19",
+    "cost": "171.11"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Lingoage",
+    "region": "East",
+    "depart": "2018-03-24",
+    "return": "2018-03-31",
+    "cost": "1307.06"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Ovation",
+    "region": "East",
+    "depart": "2018-05-05",
+    "return": "2018-05-05",
+    "cost": "923.51"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Infotrips",
+    "region": "Central",
+    "depart": "2018-08-19",
+    "return": "2018-08-30",
+    "cost": "2371.72"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Zenolux",
+    "region": "North",
+    "depart": "2018-06-06",
+    "return": "2018-06-06",
+    "cost": "74.73"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Buzzness",
+    "region": "North",
+    "depart": "2018-08-20",
+    "return": "2018-08-20",
+    "cost": "650.43"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Plasto",
+    "region": "Central",
+    "depart": "2018-05-20",
+    "return": "2018-05-27",
+    "cost": "2808.48"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Voipa",
+    "region": "South",
+    "depart": "2018-08-27",
+    "return": "2018-09-03",
+    "cost": "3979.85"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Ginkogene",
+    "region": "North",
+    "depart": "2018-04-28",
+    "return": "2018-05-08",
+    "cost": "4440.35"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Moltonic",
+    "region": "East",
+    "depart": "2018-02-23",
+    "return": "2018-03-01",
+    "cost": "1810.10"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Exodoc",
+    "region": "West",
+    "depart": "2018-05-31",
+    "return": "2018-06-09",
+    "cost": "5162.64"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Bitendrex",
+    "region": "Central",
+    "depart": "2018-06-08",
+    "return": "2018-06-18",
+    "cost": "3111.29"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Otherway",
+    "region": "South",
+    "depart": "2018-08-22",
+    "return": "2018-08-30",
+    "cost": "1261.59"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Marqet",
+    "region": "East",
+    "depart": "2018-03-08",
+    "return": "2018-03-13",
+    "cost": "2151.08"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Kiosk",
+    "region": "West",
+    "depart": "2018-08-06",
+    "return": "2018-08-17",
+    "cost": "4195.84"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Xerex",
+    "region": "West",
+    "depart": "2018-05-24",
+    "return": "2018-05-31",
+    "cost": "3772.29"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Bolax",
+    "region": "South",
+    "depart": "2018-04-13",
+    "return": "2018-04-23",
+    "cost": "3787.90"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Senmei",
+    "region": "North",
+    "depart": "2018-08-18",
+    "return": "2018-08-23",
+    "cost": "1600.13"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Typhonica",
+    "region": "West",
+    "depart": "2018-08-15",
+    "return": "2018-08-15",
+    "cost": "604.54"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Comvey",
+    "region": "Central",
+    "depart": "2018-01-03",
+    "return": "2018-01-05",
+    "cost": "807.34"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Spacewax",
+    "region": "Central",
+    "depart": "2018-04-05",
+    "return": "2018-04-15",
+    "cost": "225.79"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Fiberox",
+    "region": "West",
+    "depart": "2018-03-24",
+    "return": "2018-03-27",
+    "cost": "1199.83"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Ceprene",
+    "region": "North",
+    "depart": "2018-04-28",
+    "return": "2018-05-09",
+    "cost": "3247.61"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Waretel",
+    "region": "Central",
+    "depart": "2018-04-07",
+    "return": "2018-04-14",
+    "cost": "3470.17"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Comverges",
+    "region": "East",
+    "depart": "2018-07-28",
+    "return": "2018-08-05",
+    "cost": "1162.63"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Exozent",
+    "region": "South",
+    "depart": "2018-04-09",
+    "return": "2018-04-15",
+    "cost": "1199.42"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Digigen",
+    "region": "West",
+    "depart": "2018-07-13",
+    "return": "2018-07-21",
+    "cost": "1543.24"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Klugger",
+    "region": "South",
+    "depart": "2018-05-14",
+    "return": "2018-05-17",
+    "cost": "915.58"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Geekmosis",
+    "region": "North",
+    "depart": "2018-04-01",
+    "return": "2018-04-12",
+    "cost": "5269.53"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Orbean",
+    "region": "Central",
+    "depart": "2018-03-04",
+    "return": "2018-03-09",
+    "cost": "742.11"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Empirica",
+    "region": "East",
+    "depart": "2018-01-26",
+    "return": "2018-02-05",
+    "cost": "4926.09"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Portaline",
+    "region": "West",
+    "depart": "2018-07-29",
+    "return": "2018-08-03",
+    "cost": "1885.06"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Marvane",
+    "region": "South",
+    "depart": "2018-07-03",
+    "return": "2018-07-05",
+    "cost": "91.34"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Powernet",
+    "region": "North",
+    "depart": "2018-02-24",
+    "return": "2018-03-07",
+    "cost": "4953.79"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Atgen",
+    "region": "East",
+    "depart": "2018-02-13",
+    "return": "2018-02-23",
+    "cost": "4141.28"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Konnect",
+    "region": "Central",
+    "depart": "2018-06-02",
+    "return": "2018-06-08",
+    "cost": "3351.13"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Grupoli",
+    "region": "West",
+    "depart": "2018-01-30",
+    "return": "2018-02-05",
+    "cost": "3489.69"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Gadtron",
+    "region": "West",
+    "depart": "2018-08-03",
+    "return": "2018-08-09",
+    "cost": "650.45"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Housedown",
+    "region": "East",
+    "depart": "2018-02-13",
+    "return": "2018-02-16",
+    "cost": "1846.59"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Musanpoly",
+    "region": "Central",
+    "depart": "2018-07-05",
+    "return": "2018-07-11",
+    "cost": "2924.73"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Quarx",
+    "region": "North",
+    "depart": "2018-04-13",
+    "return": "2018-04-19",
+    "cost": "2638.01"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Kage",
+    "region": "South",
+    "depart": "2018-03-03",
+    "return": "2018-03-05",
+    "cost": "1516.44"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Memora",
+    "region": "East",
+    "depart": "2018-01-15",
+    "return": "2018-01-15",
+    "cost": "317.70"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Optyk",
+    "region": "Central",
+    "depart": "2018-03-27",
+    "return": "2018-04-03",
+    "cost": "2575.68"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Handshake",
+    "region": "South",
+    "depart": "2018-04-01",
+    "return": "2018-04-03",
+    "cost": "1418.09"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Avit",
+    "region": "South",
+    "depart": "2018-02-28",
+    "return": "2018-03-09",
+    "cost": "4100.09"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Accruex",
+    "region": "East",
+    "depart": "2018-08-27",
+    "return": "2018-08-27",
+    "cost": "570.58"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Biotica",
+    "region": "Central",
+    "depart": "2018-05-07",
+    "return": "2018-05-09",
+    "cost": "1743.33"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Accupharm",
+    "region": "Central",
+    "depart": "2018-03-16",
+    "return": "2018-03-25",
+    "cost": "2819.73"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Kegular",
+    "region": "West",
+    "depart": "2018-03-04",
+    "return": "2018-03-08",
+    "cost": "1471.19"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Idego",
+    "region": "East",
+    "depart": "2018-01-02",
+    "return": "2018-01-08",
+    "cost": "1128.85"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Namebox",
+    "region": "West",
+    "depart": "2018-04-06",
+    "return": "2018-04-11",
+    "cost": "1587.94"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Zizzle",
+    "region": "North",
+    "depart": "2018-04-16",
+    "return": "2018-04-18",
+    "cost": "1511.02"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Rubadub",
+    "region": "North",
+    "depart": "2018-01-21",
+    "return": "2018-01-24",
+    "cost": "1250.19"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Vertide",
+    "region": "East",
+    "depart": "2018-01-18",
+    "return": "2018-01-26",
+    "cost": "1899.67"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Geekfarm",
+    "region": "East",
+    "depart": "2018-08-23",
+    "return": "2018-09-01",
+    "cost": "2956.44"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Comcubine",
+    "region": "South",
+    "depart": "2018-01-08",
+    "return": "2018-01-12",
+    "cost": "2990.18"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Elentrix",
+    "region": "East",
+    "depart": "2018-02-28",
+    "return": "2018-03-07",
+    "cost": "1415.21"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Songlines",
+    "region": "North",
+    "depart": "2018-05-12",
+    "return": "2018-05-15",
+    "cost": "1139.39"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Poshome",
+    "region": "East",
+    "depart": "2018-01-23",
+    "return": "2018-01-28",
+    "cost": "2446.46"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Flumbo",
+    "region": "Central",
+    "depart": "2018-08-11",
+    "return": "2018-08-11",
+    "cost": "478.96"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Zuvy",
+    "region": "East",
+    "depart": "2018-08-29",
+    "return": "2018-09-06",
+    "cost": "1906.72"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Zaggle",
+    "region": "West",
+    "depart": "2018-08-11",
+    "return": "2018-08-12",
+    "cost": "943.52"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Tubesys",
+    "region": "Central",
+    "depart": "2018-03-31",
+    "return": "2018-03-31",
+    "cost": "414.10"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Octocore",
+    "region": "North",
+    "depart": "2018-05-16",
+    "return": "2018-05-16",
+    "cost": "769.80"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Imaginart",
+    "region": "South",
+    "depart": "2018-07-08",
+    "return": "2018-07-16",
+    "cost": "856.88"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Brainquil",
+    "region": "North",
+    "depart": "2018-02-10",
+    "return": "2018-02-13",
+    "cost": "1021.16"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Flum",
+    "region": "South",
+    "depart": "2018-07-09",
+    "return": "2018-07-20",
+    "cost": "2810.94"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Retrotex",
+    "region": "East",
+    "depart": "2018-08-16",
+    "return": "2018-08-22",
+    "cost": "2714.06"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Mediot",
+    "region": "North",
+    "depart": "2018-05-02",
+    "return": "2018-05-12",
+    "cost": "604.83"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Furnafix",
+    "region": "East",
+    "depart": "2018-08-19",
+    "return": "2018-08-20",
+    "cost": "719.09"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Securia",
+    "region": "East",
+    "depart": "2018-01-24",
+    "return": "2018-01-26",
+    "cost": "1481.23"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Vurbo",
+    "region": "North",
+    "depart": "2018-08-18",
+    "return": "2018-08-18",
+    "cost": "75.60"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Providco",
+    "region": "North",
+    "depart": "2018-09-04",
+    "return": "2018-09-06",
+    "cost": "1182.76"
+  },
+  {
+    "rep": "Shurlock Gonthier",
+    "client": "Elemantra",
+    "region": "North",
+    "depart": "2018-08-21",
+    "return": "2018-08-21",
+    "cost": "584.57"
+  },
+  {
+    "rep": "Paulette Runcie",
+    "client": "Kneedles",
+    "region": "East",
+    "depart": "2018-01-07",
+    "return": "2018-01-11",
+    "cost": "1703.86"
+  },
+  {
+    "rep": "Cirstoforo Simmance",
+    "client": "Digiprint",
+    "region": "East",
+    "depart": "2018-02-03",
+    "return": "2018-02-14",
+    "cost": "3371.30"
+  },
+  {
+    "rep": "Christabel Fawcus",
+    "client": "Centree",
+    "region": "South",
+    "depart": "2018-03-23",
+    "return": "2018-04-02",
+    "cost": "965.65"
+  },
+  {
+    "rep": "Hilary Gingles",
+    "client": "Kengen",
+    "region": "North",
+    "depart": "2018-06-04",
+    "return": "2018-06-10",
+    "cost": "2839.37"
+  }
+]
