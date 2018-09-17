@@ -1,17 +1,19 @@
 # Observable Notebook Dataflows, Fast
 
-- 18.09.2018. Twin Cities Data Visualization Meetup (Saint Paul, MN).
+- 18.09.2018. [Twin Cities (Data) Visualization Group](https://www.meetup.com/Twin-Cities-Visualization-Group/) (Saint Paul, MN).
+  - **[Presentation Notebook](https://beta.observablehq.com/@jagrafft/travel-time-for-nil-recurring-reps)**
 
 ## Resources
-- **[Example Notebook](https://beta.observablehq.com/d/273d68b841f4e7a3)**
 - JSON
-    - JSON Generator
-    - Other bookmarks
-- Observable notebook
-    - Examples (list some compelling/unique ones?)
-- Vega-Lite
-    - Docs
-    - Gallery
+    - [JSON Generator (next)](https://next.json-generator.com/)
+- [Observable notebook](https://beta.observablehq.com/)
+    - [Featured Collections](https://beta.observablehq.com/@observablehq?tab=collections)
+    - [Jason A. Grafft](https://beta.observablehq.com/@jagrafft/)
+    - [Shirley Wu](https://beta.observablehq.com/@sxywu/)
+- [Vega-Lite](https://vega.github.io/vega-lite/)
+    - [Docs](https://vega.github.io/vega-lite/docs/)
+      - [Data Types](https://vega.github.io/vega-lite/docs/type.html)
+    - [Gallery](https://vega.github.io/vega-lite/examples/)
 
 ## [JSON Generator](https://www.json-generator.com/) Fake Data
 ### Representatives
@@ -39,6 +41,8 @@
 ```
 [Gist](https://gist.githubusercontent.com/jagrafft/d0f8c49420690a0ddf1a58be0dfad0db/raw/be9771cb6cec648cd2b2bace321a2f7e84e69c83/observable_notebook_fast_data.json)
 
+[JSON](https://github.com/jagrafft/presentations/blob/master/observable_notebook_fast/2018_travel_data.json)
+
 ### Representatives from Acquired Company
 ```javascript
 [
@@ -63,3 +67,5 @@
 ]
 ```
 [Gist](https://gist.githubusercontent.com/jagrafft/7ddabfc73c672ea73ad1cbe45f03ff57/raw/e3bb0a9b8bad33934d9c95e2c2bbb283aaeb950a/observable_notebook_fast_additional_data.json)
+
+[JSON](https://github.com/jagrafft/presentations/blob/master/observable_notebook_fast/2018_new_reps_travel_data.json)
