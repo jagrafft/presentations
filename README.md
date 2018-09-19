@@ -5,7 +5,7 @@
 ## Index
 - 18.09.2018. *[Observable Notebook Dataflows, Fast](https://beta.observablehq.com/@jagrafft/travel-time-for-nil-recurring-reps)*. [Twin Cities (Data) Visualization Group][tcvg] (Saint Paul, MN).
 - 08.09.2018. *[Programming Languages Influence How We Code: \[Arrays, Types, FP\].ap(Julia, Python)](https://github.com/jagrafft/presentations/tree/master/arrays_types_fp_julia_python)*. [DataSciPy Meetup][leam] (Roseville, MN).
-- 10.07.2017. *[Plotting with Gadfly in Less Than 15 Minutes](https://github.com/jagrafft/presentations/tree/master/plotting_w_gadfly_lt_15min)*. [Twin Cities (Data) Visualization Group][tcvg] (Roseville, MN).
+- 10.07.2018. *[Plotting with Gadfly in Less Than 15 Minutes](https://github.com/jagrafft/presentations/tree/master/plotting_w_gadfly_lt_15min)*. [Twin Cities (Data) Visualization Group][tcvg] (Roseville, MN).
 
 ## Incubator
 - *Data Science with Julia: Fundamentals.* [DataSciPy Meetup][leam] (Roseville, MN).
