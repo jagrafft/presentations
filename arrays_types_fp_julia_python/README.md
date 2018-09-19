@@ -1,6 +1,6 @@
 # Programming Languages Influence How We Code: \[Arrays, Types, FP\].ap(Julia, Python)
 
-- 08.09.2018. DataSciPy Meetup (Roseville, MN).
+- 08.09.2018. [DataSciPy Meetup](https://www.meetup.com/League-of-Extraordinary-Algorithms/) (Roseville, MN).
   - Robust presenter notes!
   - [Compiled Slides](https://github.com/jagrafft/presentations/blob/master/arrays_types_fp_julia_python/compiled-slides.zip)
 
