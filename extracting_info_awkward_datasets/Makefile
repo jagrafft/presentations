@@ -1,0 +1,2 @@
+slides:
+	cp slides.md ../output; cp citations.bib ../output; pandoc --filter pandoc-citeproc -t revealjs -s ../output/slides.md -o ../output/extracting_info_awkward_datasets.html -V theme=black -V transition=none; rm ../output/slides.md; rm ../output/citations.bib;

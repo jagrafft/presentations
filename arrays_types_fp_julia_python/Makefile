@@ -1,2 +1,2 @@
 slides:
-	pandoc --filter pandoc-citeproc -t revealjs -V theme=black -V transition=none -s slides.md -o slides.html
+	cp slides.md ../output; cp citations.bib ../output; pandoc --filter pandoc-citeproc -t revealjs -s ../output/slides.md -o ../output/arrays_types_fp_julia_python.html -V theme=black -V transition=none; rm ../output/slides.md; rm ../output/citations.bib;

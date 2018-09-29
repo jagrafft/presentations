@@ -2,7 +2,7 @@
 title:  Programming Languages Influence How We Code
 author: Jason A. Grafft
 bibliography: citations.bib
-csl: './american-medical-association.csl'
+csl: '../output/american-medical-association.csl'
 ---
 # \[Arrays, Types, FP\].ap(Julia, Python)
 
@@ -665,7 +665,7 @@ make install
 ## Thank you!!
 > <jgrafft@gmail.com>
 
-- <http://grafft.co>
-- <http://github.com/jagrafft>
+- <https://grafft.co>
+- <https://github.com/jagrafft>
 
 ## References
