@@ -56,7 +56,7 @@ A **Record** is a time series. It is *atomic* and thus immutable: changes in sta
 ## `model:` Time Series
 A **Time Series** is a 1-dimensional<sup>\*</sup> array of pairs $t_n \to \ell_n$ orderable from smallest to largest by $t_n$. It may be operated on as a stream without violating immutability.
 
-![](img/placeholder.png)
+![](img/multiple_observers-marble_error.png)
 
 <span style="float: left;"><small><sup>\*</sup> Because $t \to \ell$ is a one-way relation, indicating $\ell$ is dependent on $t$ for meaning.</small></span>
 
