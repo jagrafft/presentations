@@ -4,85 +4,68 @@ author: Jason A. Grafft
 bibliography: citations.bib
 csl: '../output/american-medical-association.csl'
 ---
-## Conceptual Framework
-> The Seven Tools of Causal Inference with Reflections on Machine Learning[@pearl_seven_2018]
->
-> Judea Pearl
+## Modeling[@pearl_do-calculus-rev_2012]
+- Biomedicine provides a robust set of well-vetted causal heuristics
+    - e.g. "A patient $P$ presents with initial state $S_0$, suggesting evolution over time $t$ into state $S_t$."
+- The mediation of $S_0$ by $t$ creates $S_t$, which suggests interventions $I_{n—m}$."
+    - In this case $t$ is best represented as a function that operates on partially ordered sets$^a$
 
-:::notes
-- Analogous to Steph's *ML Pipeline*, but more rigorous and better suited to my task.
-:::
+## Psychomotor Task Model
+{{img}}
 
-## Tool 1: Encoding Causal Assumptions--Transparency and Testability
-1. Representational accuracy of dataset
-    - Captures sufficient degree of source state
-2. Self localization of data points
-    - Context for a data point is provided by its neighbors
-3. Valid structural model
-    - Correctly abstracts common elements of dataset and their relations
+- $I$ confounds the relationship of $S_0$ and $t$ in *predictable and unpredictable* ways$^b$
 
-:::notes
-- Recall these data are extracted from another source (in my case, transcribed from a video).
-- A *compression function* defines the reconstruction process.
-- The data model encodes valid structural relations between elements.
-- The data model guides the compression function--representational accuracy is defined by how these structures interact iteratively.
-:::
+{{img}}
 
-## Tool 2: *Do*-calculus and the control of confounding
-- *Do*-calculus not yet implemented
+## Data
+- Filmed study participants during simulated case
+- Two (2) raters reviewed footage
+- Created a psychomotor event log for each case
 
-## Tool 3: The Algorithmization of Counterfactuals
+|t|event|code|state|result|notes|
+|:-:|:-:|:-:|:-:|:-:|---|
+|0.0|start|||||
+|56.0|drug|Fentanyl|bolus|100mcg|Stated '2.0mcg/kg'|
+|97.0|drug|Lidocaine|bolus|70mg||
+|101.0|drug|Propofol|bolus|150mg|Stated '2mg/kg'|
+|119.0|drug|Succinylcholine|bolus|70mg|Stated '1mg/kg'|
+|160.0|laryngoscopy|start|manual|||
+|192.0|eti|start||||
+|212.0|laryngoscopy|stop|manual|||
+|232.0|eti|stop||||
+|243.0|ventilations|start|manual|||
+|249.0|check|breath sounds||bilateral||
+|257.0|recognize|monitor|etCO2|active||
+|259.0|end|||||
 
-## Tool 4: Mediation Analysis and the Assessment of Direct and Indirect Effects
+## Data Integrity
+> A minority of orderings are valid, and raters "blind" downstream consumers
 
-## Tool 5: Adaptability, External Validity and Sample Selection
-1. Task description
-2. Data modeling
-3. Data collection
+- Chronology, pairing of events
+- Coding and spelling errors
+- Representation of dosing and instructions
 
-## Task description
-> Rapid sequence induction and intubation (RSII) of a standardized simulated patient.
+## Algorithms
+- Biomedicine has surprising insight into what *should*$^c$ follow $S_t$ given $t$ and/or $S_{t-n}$
+- Algorithms approximate intermediary clinical reasoning, composing into reasonable clinical "takes"
 
-## `model:` Record
-A **Record** is a time series. It is *atomic* and thus immutable: changes in state violate meaning.
+## Key Algorithms
+- `countunique`
+    - Coding and spelling errors
+    - Provides rough measure of "orthodoxy"
+- `destructure`
+- `tuplesbykey`
+    - Extracts combinations
 
-> $\forall R,\ell,t \nin \emptyset; n,m \ge 0: R_m \to \{t_0 \to \ell_0, \ldots, t_n \to \ell_n\}$
+## Information
+- Nearly all "operable" information is extracted algorithmically
 
-:::notes
-- *Atomic* is here used to mean an irreducible unit.
-- "Violation of meaning" asserts an a priori effect on the validity of downstream assertions.
-:::
+## Statistics
 
-## `model:` Time Series
-A **Time Series** is a 1-dimensional<sup>\*</sup> array of pairs $t_n \to \ell_n$ orderable from smallest to largest by $t_n$. It may be operated on as a stream without violating immutability.
 
-![](img/multiple_observers-marble_error.png)
-
-<span style="float: left;"><small><sup>\*</sup> Because $t \to \ell$ is a one-way relation, indicating $\ell$ is dependent on $t$ for meaning.</small></span>
-
-:::notes
-- More precisely, the meaning of $t$ has greater resilience to erosion than the meaning of $\ell$.
-:::
-
-## Collection
-- Filmed study population performing standardized simulation case
-- Two (2) raters (1 expert, 1 lay) reviewed footage
-
-||A|B|C|D|...|
-|:-:|:-:|:-:|:-:|:-:|:-:|
-|$t_0$|start|||||
-|99|2|3|4|5|6|
-|$\ldots$|$\ldots$|$\ldots$|$\ldots$|$\ldots$|$\ldots$|
-|99|2|3|4|5|6|
-|$t_{max}$|end|||||
-
-## {{EXAMPLE TABLE}}
-
-## Tool 6: Recovering from Missing Data
-> "Using causal models of the missingness process we can now formalize the conditions under which causal and probabilistic relationships can be reovered from incomplete data and, whenever the conditions are satisfied, produce a consistent estimate of the desired relationship."[@pearl_seven_2018]
-
-## Tool 7: Causal Discovery
-- Dataflow programming (citations)
+## Validity
+- Comparison with other groups
+- Physiology simulation
 
 ## Thank you!!
 > <jgrafft@gmail.com>
@@ -90,5 +73,10 @@ A **Time Series** is a 1-dimensional<sup>\*</sup> array of pairs $t_n \to \ell_n
 - <https://grafft.co>
 - <https://github.com/jagrafft>
 - <https://beta.observablehq.com/@jagrafft>
+
+## Endnotes
+<div id="ref-"><p>$^a$ $S_0$ and $S_p$ are likely posets. Reflexivity and transitivity are relatively easy to demonstrate in the physical models of biomedicine. I suspect antisymmetry holds as well, but have not investigated this property.</p></div>
+<div id="ref-"><p>$^b$ In biomedicine, it is helpful to understand all applications as partial.</p></div>
+<div id="ref-"><p>$^c$ In essence, aggressive data collection and review has facilitated valid association of inputs with outputs, providing some way of calculating the "other end" of a black-box model given a left or right input.</p></div>
 
 ## References
