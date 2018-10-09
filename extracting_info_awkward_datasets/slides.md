@@ -5,12 +5,12 @@ bibliography: citations.bib
 csl: '../output/american-medical-association.csl'
 ---
 ## Modeling
-- A patient $P$ presents with initial state $S_0$, evolving under the influence of time $t$ and an unmeasured confounding variable into $S_{t}.^{a,b}$
+- A patient $P$ presents with initial state $S_0$, evolving under the influence of time $t$ and an unmeasured confounding variable into $S_{t}.^a$
 
 ![](img/model1.png)
 
 ## Psychomotor Task Model
-- An intervention $I$ confounds the relationship of $t$, $S_0$, $S_t$, and the unmeasured variable in *predictable and unpredictable* ways.$^c$
+- An intervention $I$ confounds the relationship of $t$, $S_0$, $S_t$, and the unmeasured variable in *predictable and unpredictable* ways.$^b$
 
 ![](img/model2.png)
 
@@ -38,10 +38,10 @@ csl: '../output/american-medical-association.csl'
 ## Data Integrity
 > A minority of orderings are valid, and raters "blind" downstream consumers
 
-- Chronology, pairing of events
-- Coding and spelling
-- Drug dosing
-- Instructions to assistant
+- Essential items
+    - Chronology, pairing of events
+    - Coding and spelling
+    - Drug dosing
 
 ## Key Algorithms
 - `countunique`
@@ -78,6 +78,9 @@ csl: '../output/american-medical-association.csl'
 ## Chronology and pairing of events
 ![](img/pairing.png)
 
+## Hypotheses
+![](img/hypotheses.png)
+
 ## Statistics
 ||count|unique|missing|mean|minimum|1st|median|3rd|maximum|$\sigma$|$\sigma^2$|skew|kurtosis|
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -94,7 +97,7 @@ csl: '../output/american-medical-association.csl'
 
 $range((P_{S_{(t+n)_a}}, S_{(t+n)_a}) \to (P_{S_{(t+m)_{\ldots}}}, S_{(t+m)_{\ldots}}))$
 
-> A well-curated set of heuristics for composing empirical evidence guides this process. **Mechanical ones must match.**$^d$
+> A well-curated set of heuristics for composing empirical evidence guides this process. **Mechanical ones must match.**$^c$
 
 ## Next Steps
 - Asserting meaningful causality from these data necessitates integrating metatdata
@@ -123,8 +126,7 @@ $range((P_{S_{(t+n)_a}}, S_{(t+n)_a}) \to (P_{S_{(t+m)_{\ldots}}}, S_{(t+m)_{\ld
 
 ## Endnotes
 <div id="ref-"><p>$^a$ $S_0, \ldots, S_t$ are likely posets. Reflexivity and transitivity are relatively easy to demonstrate in the physical models of biomedicine. I suspect antisymmetry holds as well, but have not investigated this property.</p></div>
-<div id="ref-"><p>$^b$ $t$ is likely an input into the function which **{{FINISH}}**</p></div>
-<div id="ref-"><p>$^c$ In biomedicine, it is helpful to understand all applications as partial.</p></div>
-<div id="ref-"><p>$^d$ In essence, aggressive data collection and review has facilitated valid association of inputs with outputs, providing some way of calculating the "other end" of a black-box model given a left or right input.</p></div>
+<div id="ref-"><p>$^b$ In biomedicine, it is helpful to understand all applications as partial.</p></div>
+<div id="ref-"><p>$^c$ In essence, aggressive data collection and review has facilitated valid association of inputs with outputs, providing some way of calculating the "other end" of a black-box model given a left or right input.</p></div>
 
 ## References
