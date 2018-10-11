@@ -2,7 +2,7 @@
 *.csl
 *.csv
 *.html
-*.pdf
+//*.pdf
 
 reveal.js
 slides.html
