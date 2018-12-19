@@ -1,0 +1,2 @@
+slides:
+	cp slides.md ../output; cp citations.bib ../output; cp -R img ../output; pandoc --filter pandoc-citeproc -t revealjs -s ../output/slides.md -o ../output/julia_data_analysis.html -V theme=black -V transition=none; rm ../output/slides.md; rm ../output/citations.bib;
