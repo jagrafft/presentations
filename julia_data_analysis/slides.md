@@ -61,8 +61,33 @@ $$ -->
 
 ---
 
-## Large-Scale, Standardized Examinations
-- "High" and "low"-detail communication categories [REWORD]
+## Standard Examinations at Scale
+- Categorically distinct documentation
+    - Public, Adminstrators, Psychometricians/Lawyers
 - Legally defensible
+    - Pedantic content associations, defined by committee
+- Obtuse reporting
+    - Categorical results with dynamic score ranges
+- High difficulty end-to-end
+    - Diverse group of experts, many support personnel, much time and more money required
+
+:::notes
+- Educational testing, **especially** concerning public education, is the effort of experts and domain of politicians
+- Score ranges typically valid for a given time period
+- "Below", "Near", "Above", "Well Above" common (loosely)
+- Obscured reporting is intended to preserve exam validity, and generally does a good job
+- "Startup" cost ~$12M as of *2009*, significant upkeep
+:::
 
 ## 
+- Education psychobabble
+    - Words connected by farcical assumptions do not make fact (e.g. Constructivism)
+- Nauseating political confounding
+    - Expert created, decision-makers came out first in public popularity race
+    - Big \$\$\$
+    - Big impact
+
+:::notes
+- Almost everyone has an opinion because almost everyone has a stake in the process or outcome
+- Money and impact greatly increase desireability of control
+:::
