@@ -1,5 +1,6 @@
 # Presentations
 ## Upcoming
+- 12.01.2019. *[Julia Data Analysis](https://github.com/jagrafft/presentations/tree/master/julia_data_analysis)*. [DataSciPy Meetup][leam] (Roseville, MN).
 
 ## Index
 - 09.10.2018. *[Extracting Information from Awkward Datasets (Tabletop Talk)](https://github.com/jagrafft/presentations/tree/master/extracting_info_awkward_datasets)*. [League of Extraordinary Algorithms][leam] (Minneapolis, MN).
@@ -8,7 +9,6 @@
 - 10.07.2018. *[Plotting with Gadfly in Less Than 15 Minutes](https://github.com/jagrafft/presentations/tree/master/plotting_w_gadfly_lt_15min)*. [Twin Cities (Data) Visualization Group][tcvg] (Roseville, MN).
 
 ## Incubator
-- *Data Science with Julia: Fundamentals.* [DataSciPy Meetup][leam] (Roseville, MN).
 
 [leam]: https://www.meetup.com/League-of-Extraordinary-Algorithms/
 [tcvg]: https://www.meetup.com/Twin-Cities-Visualization-Group/
