@@ -5,10 +5,6 @@ author: Jason A. Grafft
 # csl: '../output/american-medical-association.csl'
 ---
 
-# TK
-
----
-
 ## Objectives
 - Julia basics
 - Data preparation and import, with Julia
@@ -26,11 +22,11 @@ author: Jason A. Grafft
 2. Ask questions
 3. Have fun!
 
-# TK2
+# Smarter Balanced Assessment
 
 ---
 
-## Smarter Balanced Assessment
+## &nbsp;
 - Large-scale standardized exam used by fourteen (14) states
 - Unresolved validity questions
 - Two tests
@@ -38,7 +34,7 @@ author: Jason A. Grafft
     - Mathematics
 - Administered to grades 3–8, 11
 
-## Context
+## Context of Results
 - Education psychobabble
 - Heavily politicized
     - Big \$\$\$
@@ -56,6 +52,9 @@ author: Jason A. Grafft
 # The Data
 
 ---
+
+## &nbsp;
+State of California Smarter Balanced Assessment Results from 2015 to 2018
 
 ## Sources
 <small>`text/plain; charset=us-ascii`</small>
@@ -77,6 +76,13 @@ author: Jason A. Grafft
 
 $(\hat{i}, \hat{j}, \hat{k}) = (3,4,2)$
 
+## Integrity Issues
+- $\emptyset$ significant digits
+    - 2015–2016 `Vector{Int}`
+    - 2017-2018 `Vector{Float}`
+- Vectors *vertically indepdendent* and **horizontally dependent**
+- 2017 results
+
 # Preparation
 
 ---
@@ -88,9 +94,21 @@ $(\hat{i}, \hat{j}, \hat{k}) = (3,4,2)$
 
 ![](img/docker_logo.png)
 
-## Integrity Issues
-- $\emptyset$ significant digits
-    - 2015–2016 `Vector{Int}`
-    - 2017-2018 `Vector{Float}`
-- Vectors *vertically indepdendent* and **horizontally dependent**
+## 
+> `data_preparation.md`
 
+# Applying Julia Functions
+
+---
+
+## &nbsp;
+
+
+# Lastly
+## Thank you!!
+> <jgrafft@gmail.com>
+
+- <https://grafft.co>
+- <https://github.com/jagrafft>
+
+## References
