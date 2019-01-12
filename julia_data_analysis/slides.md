@@ -1,8 +1,6 @@
 ---
 title:  Data Analysis with Julia
 author: Jason A. Grafft
-# bibliography: citations.bib
-# csl: '../output/american-medical-association.csl'
 ---
 
 ## Objectives
@@ -35,13 +33,14 @@ author: Jason A. Grafft
 - Administered to grades 3–8, 11
 
 ## Context of Results
-- Education psychobabble
 - Heavily politicized
     - Big \$\$\$
     - Expert created and maintained
     - Controlled by first-place in popularity contest
     - Big influence for a priveldged few
 - Difficult to adminstrate
+- Education psychobabble
+- Awkward (and useful) population grouping
 
 ## Large-Scale Test Construction
 - By-and-large, measurement validity is high
@@ -54,7 +53,7 @@ author: Jason A. Grafft
 ---
 
 ## &nbsp;
-State of California Smarter Balanced Assessment Results from 2015 to 2018
+### State of California Smarter Balanced Assessment Results from 2015 to 2018
 
 ## Sources
 <small>`text/plain; charset=us-ascii`</small>
@@ -83,7 +82,7 @@ $(\hat{i}, \hat{j}, \hat{k}) = (3,4,2)$
 - Vectors *vertically indepdendent* and **horizontally dependent**
 - 2017 results
 
-# Preparation
+# Data Preparation
 
 ---
 
@@ -103,12 +102,11 @@ $(\hat{i}, \hat{j}, \hat{k}) = (3,4,2)$
 
 ## &nbsp;
 
+![](img/kitty_explore.jpg)
 
-# Lastly
-## Thank you!!
+# Thank you!!
+## &nbsp;
 > <jgrafft@gmail.com>
 
 - <https://grafft.co>
 - <https://github.com/jagrafft>
-
-## References
