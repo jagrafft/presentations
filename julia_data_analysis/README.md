@@ -14,7 +14,7 @@
     - https://github.com/rened/FunctionalData.jl
     - https://github.com/oxinabox/Pipe.jl
 
-### Access NamedTuple by Row in JuliaDB
+### Access `NamedTuple` (row) at a Given Array Index in JuliaDB
 - http://juliadb.org/latest/index.html
 
 ```julia
