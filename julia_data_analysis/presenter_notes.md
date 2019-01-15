@@ -1,11 +1,11 @@
-1. Objectives
-2. Context
+1. **Objectives**
+2. **Context**
     - These data will demand we acknoledge and interface with an awkwardly dimensional set of "external" domains--that we are not masters of.
     - Dataset is large enough and has sufficient integrity for aleatory association.
     - Skilled professionals in the domain of public (or public-facing) EC-12 education have a keen sense of *limits*, and for when it is appropriate to undesrtand one item via another.
     - EC-12 edudcation systems and their component systems (States, Districts, Schools, Classrooms, ...) are highly individual and evaluating them accurately without direct experiece is nearly impossible.
         - Medicine is less complex.
-3. Contract
+3. **Contract**
     - Let's bias our discussion toward the technical today. This keeps the playing field open but raises the entry bar to help us focus on the objectives.
 4. **Smarter Balanced Assessment**
     1. &nbsp;
