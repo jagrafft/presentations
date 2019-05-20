@@ -1,5 +1,7 @@
 # Presentations
 ## Upcoming
+- 05.06.2019. *[Improving Personal Practice: Techniques of High Performing Software Developers]((https://github.com/jagrafft/presentations/tree/master/improving_personal_practice)*. [LambdaConf 2019][lc2019] (Boulder, CO).
+  - *Slides will be posted following talk*
 
 ## Index
 - 12.01.2019. *[Julia Data Analysis](https://github.com/jagrafft/presentations/tree/master/julia_data_analysis)*. [DataSciPy Meetup][leam] (Roseville, MN).
@@ -10,5 +12,6 @@
 
 ## Incubator
 
+[lc2019]: https://lambdaconf.zohobackstage.com/LambdaConf2019
 [leam]: https://www.meetup.com/League-of-Extraordinary-Algorithms/
 [tcvg]: https://www.meetup.com/Twin-Cities-Visualization-Group/
