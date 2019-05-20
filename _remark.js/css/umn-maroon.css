@@ -117,13 +117,38 @@ blockquote {
   padding: 0 15px;
 }
 
-#slide-title.remark-slide-content {
-    background-color: var(--umn-maroon);
-    color: var(--umn-lightGold);
-}
-
 #bibtex_display {
     font-size: 12pt;
+}
+
+#slide-last-slide.remark-slide-content {
+    background-color: var(--umn-maroon);
+    color: white;
+}
+
+div.title-first-slide {
+    background-color: white;
+    color: var(--umn-maroon);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    margin: 50px 0 0 0;
+    height: 732px;
+    width: 100%;
+}
+
+div.umn-logo-first-slide {
+    background-color: var(--umn-maroon);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 348px;
+    width: 100%;
+    text-align: center;
+}
+div.umn-logo-first-slide img {
+    padding: 24px 0 0 0;
 }
 
 div.umn-footer {
@@ -131,7 +156,7 @@ div.umn-footer {
     position: fixed;
     bottom: 0px;
     left: 0px;
-    height: 50px;
+    height: 74px;
     width: 100%;
     text-align: right;
 }
