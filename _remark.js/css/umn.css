@@ -7,8 +7,8 @@
     --umn-maroon: #7a0019;
     --umn-off-white: #f9f7f6;
     --umn-stormy: #404d5b;
-    --main-color: var(--umn-gold); 
-    --last-slide-text-color: black; /* white for Maroon Theme */
+    --main-color: var(--umn-maroon); 
+    --last-slide-text-color: white; /* white for Maroon Theme */
 }
 
 body {
@@ -138,8 +138,8 @@ div.title-first-slide {
     position: fixed;
     top: 0px;
     left: 0px;
-    text-align: center;
-    margin: 7.5% 0 0 0;
+    text-align: left;
+    margin: 7.5% 0 0 8.5%;
     height: 78%;
     width: 100%;
 }
