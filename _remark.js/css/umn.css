@@ -2,17 +2,21 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
 :root {
-    /* Light Gold */
-    /* --main-color: #ffd75f; */
-    /* Maroon */
-    --main-color: #7a0019; 
+    --umn-gold: #ffcc33;
+    --umn-lighter-gray: #f0efee;
+    --umn-maroon: #7a0019;
+    --umn-off-white: #f9f7f6;
+    --umn-stormy: #404d5b;
+    --main-color: var(--umn-gold); 
+    --last-slide-text-color: black; /* white for Maroon Theme */
 }
 
 body {
+    color: var(--umn-stormy);
     font-family: 'Open Sans', sans-serif;
 }
 h1, h2, h3 {
-    color: var(--main-color);
+    color: var(--umn-maroon);
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     margin-bottom: 0;
@@ -27,11 +31,11 @@ h1, h2, h3 {
 li p { line-height: 1.25em; }
 .large { font-size: 2em; }
 a, a > code {
-    color: var(--main-color);
+    color: var(--umn-maroon);
     text-decoration: underline;
 }
 code {
-    background: #f0efee;
+    background: var(--umn-lighter-gray);
     border-radius: 5px;
 }
 .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
@@ -60,7 +64,7 @@ code {
     text-shadow: 0 0 20px #333;
 }
 .inverse h1, .inverse h2 {
-    color: #f3f3f3;
+    color: var(--umn-off-white);
     line-height: 0.8em;
 }
 /* Slide-specific styling */
@@ -125,12 +129,12 @@ blockquote {
 
 #slide-last-slide.remark-slide-content {
     background-color: var(--main-color);
-    color: white;
+    color: var(--last-slide-text-color);
 }
 
 div.title-first-slide {
     background-color: white;
-    color: var(--main-color);
+    color: var(--umn-maroon);
     position: fixed;
     top: 0px;
     left: 0px;

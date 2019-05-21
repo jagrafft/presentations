@@ -2,7 +2,7 @@ title: w00t
 subtitle: the next generation
 author: John Doe IV
 email: iv@john.doe
-logo: img/SimPORTAL_Logo_UMN_M-D2D_t-gw.png
+logo: img/SimPORTAL_Logo_UMN_M-D2D_t-mb.png
 
 # &nbsp;
 <div class="title-first-slide">
@@ -24,7 +24,7 @@ logo: img/SimPORTAL_Logo_UMN_M-D2D_t-gw.png
 
 ---
 
-logo_footer: img/UMN_blockM_gold-mb.png
+logo_footer: img/UMN_blockM_maroon.png
 layout: true
 <div class="umn-footer">
 	<div class="umn-footer"><img src="{{logo_footer}}" style="margin: 1% 1% 0 0; height: 55%; width: 4%;"/></div>
@@ -46,7 +46,7 @@ Slide 2
 
 ---
 
-logo: img/SimPORTAL_Logo_UMN_M-D2D_t-gw.png
+logo: img/SimPORTAL_Logo_UMN_M-D2D_t-mb.png
 layout: false
 class: center
 name: last-slide
