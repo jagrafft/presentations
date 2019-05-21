@@ -1,31 +1,43 @@
+title: w00t
+subtitle: the next generation
+author: John Doe IV
+email: iv@john.doe
+logo: img/SimPORTAL_Logo_UMN_M-D2D_t-gw.png
+
 # &nbsp;
 <div class="title-first-slide">
 	<p>
-    	<span style="font-size: 2.6em; font-weight: 900;">{{TITLE}}</span>
+    	<span style="font-size: 2.6em; font-weight: 900;">{{title}}</span>
 		<br />
-    	<span style="font-size: 2em; font-weight: 400;">{{SUBTITLE}}</span>
+    	<span style="font-size: 2em; font-weight: 400;">{{subtitle}}</span>
 	</p>
-	
 	<p>
-		<span style="color: #404d5b; font-size: 1.2em;">{{AUTHOR}}</span>
+		<span style="color: #404d5b; font-size: 1.2em;">{{author}}</span>
 		<br />
-		<span style="font-size: 1.2em;"><a href="mailto:{{EMAIL}}" style="color: #404d5b;">{{EMAIL}}</a></span>
+		<span style="font-size: 1.2em;"><a href="mailto:{{email}}" style="color: #404d5b;">{{email}}</a></span>
 	</p>
 </div>
 
 <div class="umn-logo-first-slide">
-	<img src="{{LOGO}}" width="400px" height="300px"/>
+	<img src="{{logo}}" width="22.5%" height="87%" />
 </div>
 
 ---
 
+logo_footer: img/UMN_blockM_gold-mb.png
 layout: true
-<div class="umn-footer"><img src="{{FOOTER_LOGO}}" style="margin: 9px 9px 0 0; height: 56px; width: 102px;"/></div>
+<div class="umn-footer">
+	<div class="umn-footer"><img src="{{logo_footer}}" style="margin: 1% 1% 0 0; height: 55%; width: 4%;"/></div>
+</div>
 
 ---
 
-# Slide 1
-Slide 1
+# $\LaTeX$!!
+
+$$\hat{a}(S) = \begin{cases}
+\gt 0, & \text{when} \uparrow S \\\
+\le 0, & \text{when} \downarrow S
+\end{cases}$$
 
 ---
 
@@ -34,16 +46,18 @@ Slide 2
 
 ---
 
+logo: img/SimPORTAL_Logo_UMN_M-D2D_t-gw.png
 layout: false
 class: center
 name: last-slide
 # &nbsp;
-<img src="{{LOGO}}" width="400px" height="300px"/>
+<img src="{{logo}}" width="38%" height="42%"/>
 <p style="font-size: 1.2em;">
-	<span style="padding: 10px";>Crookston</span>
-	<span style="padding: 10px";>Duluth</span>
-	<span style="padding: 10px";>Morris</span>
-	<span style="padding: 10px";>Rochester</span>
-	<span style="padding: 10px";>Twin Cities</span>
+	<span style="padding: 1%";>Crookston</span>
+	<span style="padding: 1%";>Duluth</span>
+	<span style="padding: 1%";>Morris</span>
+	<span style="padding: 1%";>Rochester</span>
+	<span style="padding: 1%";>Twin Cities</span>
 </p>
-<p style="font-size: 0.45em; margin: 80px 0 0 0;">The University of Minnesota is an equal opportunity educator and employer.</p>
+
+<p style="font-size: 0.45em; margin: 11% 0 0 0;">The University of Minnesota is an equal opportunity educator and employer.</p>
