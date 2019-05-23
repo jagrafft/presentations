@@ -19,7 +19,7 @@ h1, h2, h3 {
     color: var(--umn-maroon);
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    margin-bottom: 0;
+    margin-bottom: 0.5%;
 }
 .remark-slide-content h1 { font-size: 2.6em; }
 .remark-slide-content h2 { font-size: 2em; }
