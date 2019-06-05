@@ -1,0 +1,206 @@
+## Speaker Notes
+## Improving Personal Practice: Techniques of High Performing Software Developers
+### {{title slide}}
+- Psychomotor performance researcher, deep experience in adult education
+- Research focuses on quantifying—then improving—entry-level skills of healthcare providers
+- I'm going to present a variant of Category Theory, Causal Modeling, which will be our "tool for thought"
+	- Bet you weren't expecting that
+	- Nomenclature, and it's use, will become much more specific
+
+`::PAUSE, ~3sec::` Who wants to get better...
+
+### Acknowledgements
+- Performance does not develop in isolation (foreshadow)
+- Working with LambdaConf speakers was motivating
+- Special thanks to Dr. Konia and relationalAI
+
+I will be taking questions at the end, please submit them to....
+
+### What We're Looking For
+- **Functions which describe stable patterns**
+    - *Causative* patterns are implicit in this definition
+- We acknowledge certain statistical patterns as indicative of causality
+- These are almost exclusively *time-varying, "forward", ordered sets*
+
+Since we are assessing for patterns indicative of causality, a reasonably rigorous definition should be employed...
+
+### Working Definition
+- Distributions may be thought of as selection functions which define information spaces
+- The specificity of these function definitions make them difficult to informatively apply to other information spaces
+- Performance is domain-bound for the same reason (high specificity)
+	- E.g. domains of expertise do not transfer
+
+There are many possible information spaces, we'll quickly review an example...
+
+### Information Space Model
+- Task model on right, task results on left
+	- Note the complexity of interactions in the causal model (this is a simple one...)
+- Provider A's performance unambiguously superior (variance is dangerous) because their behavior
+	- Resulted in a larger number of "consonant" interactions
+	- Mitigated the influence of $U$ (uncertainty) set
+- Interactions are patterning
+
+Interactions occur at many "resolutions"...
+
+### Work Context <span style="font-size: 0.45em;">(Espinosa et al, 2007)</span>
+- "Best in class" (in my opinion) of a number of studies summarizing the topic
+
+| loc | ref | x | y | ⧫ | ◼ | Summary |
+|-|-|-|-|-|-|-|
+| `UL` | a | Task Familiarity | Structural Complexity | ++Low | High | *TASK familiarity is most beneficial when structural complexity is low* |
+| `UR` | b | Team Familiarity | Geographic Dispersion | Colocated | ++Distributed | *Familiarity is most beneficial for distributed teams* |
+| `LL` | c | Team Familiarity | Team Size | Low | ++High | *Larger teams benefit most from familiarity* |
+| `LR` | d | Team Familiarity | Task Familiarity | ++Low | High | *TEAM familiarity is a greater benefit when TAsk familiarity is low* |
+
+- The composition of $S$ varies across these contexts, $\therefore I$
+- Literature suggests enlargement of interactive environment introduces communication difficulties
+- *Think of work environment as the context of habit.*
+
+Sensible or otherwise, humans have a burning desire to adapt to their local environment. Interaction, *of any kind* (avoidance, fear, frustration, ...), patterns our behavior, and may do so deeply...
+
+### Neurophysiology
+- Neurologic adaptation to stimuli, with the goal of automation, is a foregone conclusion
+- General circuitry is inefficient
+- *Patterning is achieved indiscriminantly **by** our behavior **at** the "speed of stress"*
+- $f$
+    - "Divided attention training..."
+	    - We more often need the ability to cultivate vertically in our jobs
+    - Thanks to Jesse Corry (Board Certified Stroke Neurologist)
+
+We may change them, but the brain won't yield inconvenient patterns (e.g. inattentive, reactive, anxious, ...) as we desire. It plays a long-term strategy...
+
+### Automation
+- Habit is an expression of automation, as are fight/flight, anxiety, feelings toward others, ...
+- $\text{general} \to \text{specific}$ along "gradient of effort"
+- Automation behaviors are strongly correlated with performance in a given information space ($P \in S_i$)—this can be desireable or not, according to $f$.
+
+We need multiple draws from a partially-known distribution to characterize it, this most often negatively affects performance...
+
+### Self Regulation
+- Domains of expertise $\neq$ transfer, but performance drop is normal and expected for the unfamiliar
+
+This is frequently difficult to receive, and since we may self-regulate into a large number of behaviors it is **easy to automate a return to the familiar** (e.g. avoidance). Social ability is a huge help here...
+
+### Single Consensus Finding
+- Socialization is a source of stimuli, and a non-negotiable need for human development
+- Social contexts are fertile ground for negative interpersonal feedback loops, which social ability mitigates these
+- Social engagement has a strong correlation to many types of "success" (e.g. academic, personal, professional, ...)
+- Baltes and Diehl (2018), Sonnentag *et al* (2006), and Verbeke (2008) provide apt summaries
+
+Social connection, underwritten by social ability, reduces the fear of *consequence* of failure—encouraging exploration and resilience. Consider that, in software, **we navigate social contexts to deliver technical solutions** and judge merit by **external efficacy.**
+
+### Improving Personal Practice
+- Interaction with "the system" is responsible for automation
+
+#### Key Points
+- Automation sees to "stickiness"
+	- See Singh *et al*, model presented is compelling
+- Self perception has a deterministic influence on behavior, $\therefore$ automation
+- Chronological models are *wrong*, so associated models are precluded
+- High performers use *dynamic* behavioral strategies to interact passively benefit from an *evolving* environment.
+
+### High performers *(v moderate)*<sup>§</sup>
+- Competent study, read this if you pick one
+- `::QUICKLY point out social nature of majority of items::`
+
+I will draft our examples from this list and the next...
+
+### Most Frequent (Sub)categories<sup>§</sup>
+- GitHub open-source developer survey
+- Good methods, poor reporting
+- Read Sonnentag and this is you have time for two paper
+- `::QUICKLY need for social skills even more obvious here::`
+
+### Generic Process <span style="font-size: 0.45em;">(Wittkuhn, 2016)</span>
+- Most common request during pilot testing was for $n$ step method
+- This is the most authentically accurate I could find
+- And a clear example of why performance is domain bound
+
+For purposes of modeling, I split the list into three sections...
+
+### Generic Process <span style="font-size: 0.45em;">(Wittkuhn, 2016)</span>
+Let's build a few models using seeds from Sonnentag (2006) and Baltes and Diehl (2018). These are not finely wrought and show one of many valid representations. We move forward with the understanding that PPC<sub>$n$</sub> $\to G_{n+1}$
+
+### $G_1$: $\downarrow t \to$ Problem Comprehension
+- Goal from Sonnentag et al (2006), variables from Baltes and Diehl (2018)
+- This model says I'm thinking `1,5,6` will be conditioning, and `2,6` are important
+
+This model is essentially passive. It does not allow us much longitudinal influence, nor is it optimized...
+
+### $G_{\hat{1}}$: $\downarrow t \to$ Problem Comprehension
+- My intervention is spending more time in the places related discussions occur
+- And I'm going to bias completion of my goal toward externally observable items
+
+#### Posterior Predictive Checks
+- My premise is effective summarization correlates with problem comprehension, so
+	- There should be an increase in the efficacy of first-pass communication
+	- Less refactors should be necessary to produce a satisfactory result
+
+### $G_2$: $\uparrow$ FP Skills
+This goal is impossibly generic...
+
+#### {{IMAGE}}
+- We all have a sense of how involved working toward understanding of *this particular* chart is
+- And that it represents a small percentage of FP skillset
+
+Number of possible states too large to realize improvement, rephrase...
+
+### $R_{2}$: Data61 `..., Applicative.hs, ...`
+- Using a well-structured curriculum helps, but...
+- This model is naive, poorly reflective of curricular structure
+- A successful learning endeavour will address such naivety
+
+In essence, our goal *for the task* is to refactor the graph into one fairly representative of curriculum's structure...
+
+### $R_{\hat{2}}$:  Data61 `..., Applicative.hs, ...`
+- $\Lambda$: I'm going to combine a "learning for mastery" strategy—repeat task till proficient—with a few simple outcome goals
+- Thus my intervention $(do(\cdot))$ is "global" and I will align goal completion with a more generic understanding of the functions under study
+- Tony Morris may disagree, but that's an excellent opportunity for refinement
+
+The essential improvement is reduction in number of incoming arrows to $G_2$. This dramatically increases the chance repeating these exercises will meaningfully refine our graph...
+
+#### Posterior Predictive Checks
+- Both PPC items should stabilize near minimum values
+- This **DOES NOT** indicate mastery of task, only that the learning effect is expended for now
+
+##### Potential Improvements
+- `lift2` has strongest representation, treat specially?
+- Where should $V_0$ go?
+
+Ideally, we would have a related, less structured, project to work on shortly following "convergence", which I now want you to hear as **automation**. A more ambiguous task will challenge automation and increase our chance of genuine improvement...
+
+### $G_3$: $\uparrow t \to$ Communication $\land$ Cooperation
+- My first draft "stakes a claim" on `0: Open-minded, 5: Experience, 6: Team player, 7: Good listener`
+- Highest number of possible states between examples
+- The number of $\leftrightarrow$ is a liability
+
+I should be mindful of how vague the variables are because environment will contribute significantly to their definition. As we've seen this should not be allowed a priori...
+
+### $G_{\hat{3}}$: $\uparrow t \to$ Communication $\land$ Cooperation
+- I'm going to "lean on listening and patience" to improve my intrapersonal experience  with communication and cooperation ($V_7 \to V_5 \to \ldots$)
+- I'm going to seek environments which **mildly** force me to socialize, and keep my investment of hours respectful of how taxing this activity is for to me
+- Working with a counselor is recognition of
+	- My own skill
+	- Task ambiguity $\propto$ likelihood of middling result
+
+#### Posterior Predictive Checks
+- Are my attitudes and feelings toward the activity changing in a "positive" way?
+- I am going to exploit working with a counselor to track my "behavioral performance" specifically
+	- This could be done many ways, I recommend keeping the cognitive load low in service of development
+
+That's the end of my examples. Let's summarize...
+
+### Summary
+#### High Performers
+#### High Performance
+#### Personal Practice
+
+#### Performance Improvement
+I want to end on the last point. My father's phrase is "No one cares how much you know till they know how much you care." I encourage you to care about yourselves and the value you derive from your life.
+
+### References
+
+### Thank You!
+I have a few minutes to take questions before dinner... Sit with people you don't know tonight!
+
+### {{logo slide}}

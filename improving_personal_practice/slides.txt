@@ -1,0 +1,907 @@
+title: Improving Personal Practice
+subtitle: Techniques of High Performing Software Developers
+author: Jason A. Grafft, M.Ac.
+email: graf0096@umn.edu
+logo: img/SimPORTAL_Logo_UMN_M-D2D_t-gw.png
+
+# &nbsp;
+<div class="title-first-slide">
+	<p>
+    	<span style="font-size: 2.6em; font-weight: 900;">{{title}}</span>
+		<br />
+    	<span style="font-size: 2em; font-weight: 400;">{{subtitle}}</span>
+	</p>
+	
+	<p>
+		<span style="color: #404d5b; font-size: 1.2em;">{{author}}</span>
+		<br />
+		<span style="font-size: 1.2em;"><a href="mailto:{{email}}" style="color: #404d5b;">{{email}}</a></span>
+	</p>
+</div>
+
+<div class="umn-logo-first-slide">
+	<img src="{{logo}}" width="22.5%" height="87%" />
+</div>
+
+???
+- Psychomotor performance researcher, deep experience in adult education
+- Research focuses on quantifying—then improving—entry-level skills of healthcare providers
+
+`::PAUSE, ~3sec::` Who wants to get better...
+
+---
+
+logo_footer: img/UMN_blockM_gold.png
+layout: true
+<div class="umn-footer">
+	<img src="{{logo_footer}}" style="margin: 1% 1% 0 0; height: 55%; width: 4%;"/>
+</div>
+
+---
+
+# Acknowledgements
+- Mojca Konia, MD, PhD, MACM
+- SimPORTAL Staff
+- Chris Hafner, LAc
+- Jesse Corry, MD
+- League of Extraordinary Algorithms Meetup
+- LambdaConf Speakers
+- Abraham Sangha
+- relationalAI
+
+???
+- Performance does not develop in isolation (foreshadow)
+- Working with LambdaConf speakers was motivating
+- Special thanks to Dr. Konia and relationalAI
+
+I will be taking questions <span style="color: red; font-weight: 700">HOW</span> at the end, please submit them to <span style="color: red; font-weight: 700">THREAD/...?</span>.
+
+---
+
+# What We're Looking For
+> "[C]ausal relationships are *ontological*, describing objective physical constraints in our world, whereas probabilistic relationships are *epistemic*, reflecting what we know or believe about the world."
+
+.right[\- Judea Pearl, *Causality: Models, Reasoning and Inference* (2nd, 2009)]
+
+???
+- **Functions which describe stable patterns**
+    - *Causative* patterns are implicit in this definition
+- We acknowledge certain statistical patterns as indicative of causality
+- These are almost exclusively *time-varying, "forward", ordered sets*
+
+Since we are assessing for patterns indicative of causality, a reasonably rigorous definition should be employed...
+
+---
+
+# Working Definition
+> High performance implies a statistical reliability that within information space ($S$) future performance ($P$) will closely resemble ideal performance ($I$) such that for $I,P \in S$ 
+
+$$\mu_{I-P} = \mu_I - \mu_P \approx 0.0$$
+
+$$\sigma_{I-P}^2 = \sigma_I^2 - \sigma_P^2 \approx 0.0$$
+
+???
+- Distributions may be thought of as selection functions which define information spaces
+- The specificity of these function definitions make them difficult to informatively apply to other information spaces
+- Performance is domain-bound for the same reason (high specificity)
+	- E.g. domains of expertise do not transfer
+
+There are many possible information spaces, we'll quickly review an example...
+
+---
+
+class: center
+# Information Space Model
+<table>
+	<tr>
+		<td>Provider A</td>
+        <td><img src="img/rsiiA.svg" height="66%" width="66%" /></td>
+        <td rowspan="2"><img src="img/lc2019_rsii-causal-model.svg" height="130%" width="130%" /></td>
+	</tr>
+	<tr>
+		<td>Provider B</td>
+        <td><img src="img/rsiiB.svg" height="66%" width="66%" /></td>
+    </tr>
+</table>
+
+???
+- Task model on right, task results on left
+	- Note the complexity of interactions in the causal model (this is a simple one...)
+- Provider A's performance unambiguously superior (variance is dangerous) because their behavior
+	- Resulted in a larger number of "consonant" interactions
+	- Mitigated the influence of $U$ (uncertainty) set
+- Interactions are patterning
+
+Interactions occur at many "resolutions"...
+
+---
+
+class: center
+# Work Context <span style="font-size: 0.45em;">(Espinosa et al, 2007)</span>
+<img src="img/Espinosa_fig2_p624.png" width="63.5%" height="63.5%" />
+
+???
+- "Best in class" (in my opinion) of a number of studies summarizing the topic
+
+| loc | ref | x | y | ⧫ | ◼ | Summary |
+|-|-|-|-|-|-|-|
+| `UL` | a | Task Familiarity | Structural Complexity | ++Low | High | *TASK familiarity is most beneficial when structural complexity is low* |
+| `UR` | b | Team Familiarity | Geographic Dispersion | Colocated | ++Distributed | *Familiarity is most beneficial for distributed teams* |
+| `LL` | c | Team Familiarity | Team Size | Low | ++High | *Larger teams benefit most from familiarity* |
+| `LR` | d | Team Familiarity | Task Familiarity | ++Low | High | *TEAM familiarity is a greater benefit when TAsk familiarity is low* |
+
+- The composition of $S$ varies across these contexts, $\therefore I$
+- Literature suggests enlargement of interactive environment introduces communication difficulties
+- *Think of work environment as the context of habit.*
+
+Sensible or otherwise, humans have a burning desire to adapt to their local environment. Interaction, *of any kind* (avoidance, fear, frustration, ...), patterns our behavior, and may do so deeply...
+
+---
+
+# Neurophysiology
+- Brain physically adapts to *stimuli*
+- Specialization lowers (metabolic) demand of (stimuli) processing
+- Automation trends toward the *mode* (of stimuli)
+
+$$f: \text{SocialMedia → Garbage}$$
+
+???
+- Neurologic adaptation to stimuli, with the goal of automation, is a foregone conclusion
+- General circuitry is inefficient
+- *Patterning is achieved indiscriminantly **by** our behavior **at** the "speed of stress"*
+- $f$
+    - "Divided attention training..."
+	    - We more often need the ability to cultivate vertically in our jobs
+    - Thanks to Jesse Corry (Board Certified Stroke Neurologist)
+
+We may change them, but the brain won't yield inconvenient patterns (e.g. inattentive, reactive, anxious, ...) as we desire. It plays a long-term strategy...
+
+---
+
+# Automation
+- You may consider automation a "category view" of adaptive neurophysiologic specialization
+- Fairly a "deep learning" process
+
+$$f: \text{effort} \gt \text{minimum viable} \to \text{effort} \lor \text{minimum viable}$$
+
+???
+- Habit is an expression of automation, as are fight/flight, anxiety, feelings toward others, ...
+- $\text{general} \to \text{specific}$ along "gradient of effort"
+- Automation behaviors are strongly correlated with performance in a given information space ($P \in S_i$)—this can be desireable or not, according to $f$.
+
+We need multiple draws from a partially-known distribution to characterize it, this most often negatively affects performance...
+
+---
+
+class: center
+# Self Regulation
+<img src="img/Zimmerman-person_behavior_environment.svg" width="92.5%" height="92.5%" />
+.right[<span style="font-size: 0.66em;">Barry J. Zimmerman. *A social cognitive view of self-regulated academic learning.* (1989). From Zimmerman *Development and Adaptation of Expertise*$\ldots$ (p707, 2006)</span>]
+
+???
+- Domains of expertise $\neq$ transfer, but performance drop is normal and expected for the unfamiliar
+
+This is frequently difficult to receive, and since we may self-regulate into a large number of behaviors it is **easy to automate a return to the familiar** (e.g. avoidance). Social ability is a huge help here...
+
+---
+
+# Single Consensus Finding
+Social Ability $S$ $\ggg$ General Mental Ability $G$, where $\hat{a}$ represents the effect size of $G$ and $\lambda$ is total effect
+
+$$\lambda = \hat{a} \cdot G \circ S$$
+
+$$\hat{a}(S) = \begin{cases}
+\gt 0, & \text{when} \uparrow S \\\
+\le 0, & \text{when} \downarrow S
+\end{cases}$$
+
+???
+- Socialization is a source of stimuli, and a non-negotiable need for human development
+- Social contexts are fertile ground for negative interpersonal feedback loops, which social ability mitigates these
+- Social engagement has a strong correlation to many types of "success" (e.g. academic, personal, professional, ...)
+- Baltes and Diehl (2018), Sonnentag *et al* (2006), and Verbeke (2008) provide apt summaries
+
+Social connection, underwritten by social ability, reduces the fear of *consequence* of failure—encouraging exploration and resilience. Consider that, in software, **we navigate social contexts to deliver technical solutions** and judge merit by **external efficacy.**
+
+---
+
+# Improving Personal Practice
+> "[P]erformance is not a variable that is part of the system that can be directly influenced as with other parts of the system. It emerges when the variables work or interact together in an appropriate way, which entails that it must be reproduced continuously. [...] One cannot intervene into performance. One can intervene into the system, whose parts by working together, make performance emerge."
+
+.right[\- Klaus D. Wittkuhn, *Understanding Performance Improvement* (2016)]
+
+???
+- Interaction with "the system" is responsible for automation
+
+--
+
+### Key Points
+- Performance patterns are "sticky"
+- Self perception of self efficacy is a liability
+- $\text{improvement} \perp t \text{ when } t \ge t_{min}$
+
+???
+#### Key Points
+- Automation sees to "stickiness"
+	- See Singh *et al*, model presented is compelling
+- Self perception has a deterministic influence on behavior, $\therefore$ automation
+- Chronological models are *wrong*, so associated models are precluded
+- High performers use *dynamic* behavioral strategies to interact passively benefit from an *evolving* environment.
+
+---
+
+# High performers *(v moderate)*<sup>§</sup>
+<table>
+	<tr>
+		<td>Category</td>
+		<th>Trait</th>
+	</tr>
+	<tr>
+		<td>Requirements analysis and design </td>
+		<td style="font-weight: 700;">$\downarrow$ time on problem comprehension</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td style="font-weight: 700;">Adequate problem representation early</td>
+	</tr>
+	<tr>
+		<td>Program comprehension and programming</td>
+		<td style="font-weight: 700;">Pursuit of abstract programming goals</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td style="font-weight: 700;">Cross-reference strategy </td>
+	</tr>
+	<tr>
+		<td>Testing and debugging</td>
+		<td style="font-weight: 700;">Active search for problems</td>
+	</tr>
+	<tr>
+		<td>Knowledge</td>
+		<td style="font-weight: 700;">Broader and more detailed knowledge base</td>
+	</tr>
+	<tr>
+		<td>Communication and cooperation</td>
+		<td style="font-weight: 700;">Spend more time on communication and cooperation</td>
+	</tr>
+</table>
+
+.right[<sup>§</sup> - Sonnentag et al (2006)]
+
+???
+- Competent study, read this if you pick one
+- `::QUICKLY point out social nature of majority of items::`
+
+I will draft our examples from this list and the next...
+
+---
+
+# Most Frequent (Sub)categories<sup>§</sup>
+<table>
+	<tr>
+		<th style="margin: 0;">Skills</th>
+		<th style="margin: 0;">Individual Characteristics</th>
+		<th style="margin: 0;">Expertise, Knowledge, and Performance</th>
+	</tr>
+	<tr>
+		<td>
+			<ul style="margin: 0;">
+				<li>Problem solving</li>
+				<ul>
+					<li>Abstraction</li>
+					<li>Decomposition</li>
+					<li>Analytical thinking</li>
+					<li>Logical thinking</li>
+				</ul>
+				<li>Continuous learning</li>
+				<li>Requirements</li>
+				<ul>
+					<li>Good listener</li>
+					<li>Understand a customer</li>
+					<li>Effective nontechnical explanations</li>
+				</ul>
+				<li>Assess trade-offs</li>
+			</ul>
+		</td>
+		<td>
+			<ul style="margin: 0;">
+				<li>Open-minded</li>
+				<li>Team player</li>
+				<li>Curious</li>
+				<li>Patient</li>
+				<li>Self-reflective</li>
+			</ul>
+		</td>
+		<td>
+			<ul style="margin: 0;">
+				<li>General knowledge</li>
+				<li>Task-specific knowledge</li>
+				<li>Experience</li>
+				<li>Decomposition</li>
+				<li>Modularization</li>
+				<li>Maintainability</li>
+				<li>Clear structure</li>
+				<li>Performance</li>
+			</ul>
+		</td>
+	</tr>
+</table>
+
+.right[<sup>§</sup> - Baltes and Diehl (2018). Summarized by Jason A. Grafft]
+
+???
+- GitHub open-source developer survey
+- Good methods, poor reporting
+- Read Sonnentag and this is you have time for two paper
+- `::QUICKLY need for social skills even more obvious here::`
+
+---
+
+# Generic Process <span style="font-size: 0.45em;">(Wittkuhn, 2016)</span>
+- Define the performance in question
+- Identify the variables that influence the performance
+- Model the performance system in order to understand how these variables interrelate
+- Identify gaps and opportunities in the performance system
+- Identify possible interventions to close these gaps
+- Look for economic interventions that have leverage and influence other variables beyond the targeted variable and yield a diffusion of effect
+- Observe what is happening when you implement the intervention and take corrective action as needed
+
+???
+- Most common request during pilot testing was for $n$ step method
+- This is the most authentically accurate I could find
+- And a clear example of why performance is domain bound
+
+For purposes of modeling, I split the list into three sections...
+
+---
+
+<h1 style="font-size: 2em; text-align: right; width: 100%;">Generic Process <span style="font-size: 0.45em;">(Wittkuhn, 2016)</span></h1>
+<h3 style="margin: 0;">$G_n$</h3>
+- Define the performance in question
+- Identify the variables that influence the performance
+- Model the performance system in order to understand how these variables interrelate
+
+<h3 style="margin: 0;">$G_{\hat{n}}$</h3>
+- Identify gaps and opportunities in the performance system
+- Identify possible interventions to close these gaps
+- Look for economic interventions that have leverage and influence other variables beyond the targeted variable and yield a diffusion of effect
+
+<h3 style="margin: 0;">Posterior Predictive Checks</h3>
+- Observe what is happening when you implement the intervention and take corrective action as needed
+
+???
+Let's build a few models using seeds from Sonnentag (2006) and Baltes and Diehl (2018). These are not finely wrought and show one of many valid representations. We move forward with the understanding that PPC<sub>$n$</sub> $\to G_{n+1}$
+
+---
+
+# Goal$_1$: $\downarrow t \to$ Problem Comprehension
+<div style="width: 100%">
+	<div style="float: left; padding-right: 15%;">
+		<table>
+			<tr>
+				<td>$G$</td>
+				<td>Goal</td>
+			</tr>
+			<tr>
+				<td>$V_0$</td>
+				<td>Good Listener</td>
+			</tr>
+			<tr>
+				<td>$V_1$</td>
+				<td>Understand a customer</td>
+			</tr>
+			<tr>
+				<td>$V_2$</td>
+				<td>Effective nontechnical explanations</td>
+			</tr>
+			<tr>
+				<td>$V_3$</td>
+				<td>Assess trade-offs</td>
+			</tr>
+			<tr>
+				<td>$V_4$</td>
+				<td>General knowledge</td>
+			</tr>
+			<tr>
+				<td>$V_5$</td>
+				<td>Task specific knowledge</td>
+			</tr>
+			<tr>
+				<td>$V_6$</td>
+				<td>Analytical thinking</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<img src="img/lc2019_problem-comp.svg" height="40%" width="40%" />
+	</div>
+</div>
+
+???
+- Goal from Sonnentag et al (2006), variables from Baltes and Diehl (2018)
+- This model says I'm thinking `1,5,6` will be conditioning, and `2,6` are important
+
+This model is essentially passive. It does not allow us much longitudinal influence, nor is it optimized...
+
+---
+
+# G$_{\hat{1}}$: $\downarrow t \to$ Problem Comprehension
+<div style="width: 100%">
+	<div style="float: left; padding-right: 15%;">
+		<table style="border-collapse: collapse;">
+			<tr>
+				<td>$\Lambda$</td>
+				<td>$\uparrow$ time at code reviews, meetings, ...</td>
+			</tr>
+			<tr>
+				<td>$E_0$</td>
+				<td>"Listening strategies" resource</td>
+			</tr>
+			<tr>
+				<td>$E_1$</td>
+				<td>Solicit reviews from coworkers</td>
+			</tr>
+			<tr style="border-bottom: 1px solid black;">
+				<td>$E_2$</td>
+				<td>Track number of communications to<br />consensus understanding</td>
+			</tr>
+			<tr>
+				<td>$G$</td>
+				<td>Goal</td>
+			</tr>
+			<tr>
+				<td>$V_0$</td>
+				<td>Good Listener</td>
+			</tr>
+			<tr>
+				<td>$V_1$</td>
+				<td>Understand a customer</td>
+			</tr>
+			<tr>
+				<td>$V_2$</td>
+				<td>Effective nontechnical explanations</td>
+			</tr>
+			<tr>
+				<td>$V_3$</td>
+				<td>Assess trade-offs</td>
+			</tr>
+			<tr>
+				<td>$V_4$</td>
+				<td>General knowledge</td>
+			</tr>
+			<tr>
+				<td>$V_5$</td>
+				<td>Task specific knowledge</td>
+			</tr>
+			<tr>
+				<td>$V_6$</td>
+				<td>Analytical thinking</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<img src="img/lc2019_problem-comp-hat.svg" height="35%" width="35%" />
+	</div>
+
+???
+- My intervention is spending more time in the places related discussions occur
+- And I'm going to bias completion of my goal toward externally observable items
+
+--
+
+<div style="float: right;">
+	<h3>Posterior Predictive Checks</h3>
+	<ul style="margin: 0px">
+		<li>$\downarrow$ in recommunications to mutual understanding</li>
+		<li>$\downarrow$ in "downstream" refactors</li>
+	</ul>
+</div>
+</div>
+
+???
+### Posterior Predictive Checks
+- My premise is effective summarization correlates with problem comprehension, so
+	- There should be an increase in the efficacy of first-pass communication
+	- Less refactors should be necessary to produce a satisfactory result
+
+---
+
+class: center
+# G$_2$: $\uparrow$ FP Skills
+
+???
+This goal is impossibly generic...
+
+--
+
+<img src="img/slamdata-recursion-schemes.png" height="55%" width="55%" />
+
+.right[<span style="font-size: 0.7em">from <https://github.com/slamdata/matryoshka></span>]
+
+???
+- We all have a sense of how involved working toward understanding of *this particular* chart is
+- And that it represents a small percentage of FP skillset
+
+Number of possible states too large to realize improvement, rephrase...
+
+---
+
+## Refinement$_{2}$: Data61 `..., Applicative.hs, ...`
+<div style="width: 100%">
+	<div style="float: left; padding-right: 15%;">
+		<table>
+			<tr>
+				<td>$G_2$</td>
+				<td>Goal (Refinement)</td>
+			</tr>
+			<tr>
+				<td>$V_0$</td>
+				<td><tt>ExactlyOne</tt></td>
+			</tr>
+			<tr>
+				<td>$V_1$</td>
+				<td><tt>List</tt></td>
+			</tr>
+			<tr>
+				<td>$V_2$</td>
+				<td><tt>Optional</tt></td>
+			</tr>
+			<tr>
+				<td>$V_3$</td>
+				<td><tt>((->) t)</tt></td>
+			</tr>
+			<tr>
+				<td>$V_4$</td>
+				<td><tt>lift{2,3,4,0,1}</tt></td>
+			</tr>
+			<tr>
+				<td>$V_9$</td>
+				<td><tt>*></tt></td>
+			</tr>
+			<tr>
+				<td>$V_{10}$</td>
+				<td><tt><*</tt></td>
+			</tr>
+			<tr>
+				<td>$V_{11}$</td>
+				<td><tt>sequence</tt></td>
+			</tr>
+			<tr>
+				<td>$V_{12}$</td>
+				<td><tt>replicateA</tt></td>
+			</tr>
+			<tr>
+				<td>$V_{13}$</td>
+				<td><tt>filtering</tt></td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<img src="img/lc2019_data61-applicative.svg" height="40%" width="40%" />
+	</div>
+</div>
+
+???
+- Using a well-structured curriculum helps, but...
+- This model is naive, poorly reflective of curricular structure
+- A successful learning endeavour will address such naivety
+
+In essence, our goal *for the task* is to refactor the graph into one fairly representative of curriculum's structure...
+
+---
+
+## Refinement$_{\hat{2}}$:  Data61 `..., Applicative.hs, ...`
+<div style="width: 100%">
+	<div style="float: left; padding-right: 15%;">
+		<table style="border-collapse: collapse;">
+			<tr>
+				<td>$\Lambda$</td>
+				<td><code>recurse</code></td>
+			</tr>
+			<tr>
+				<td>$E_0$</td>
+				<td><tt>foldRight</tt></td>
+			</tr>
+			<tr>
+				<td>$E_1$</td>
+				<td><tt>map</tt></td>
+			</tr>
+			<tr style="border-bottom: 1px solid black;">
+				<td>$V_{4^*}$</td>
+				<td><tt>lift$_n$</tt></td>
+			</tr>
+			<tr>
+				<td>$G_2$</td>
+				<td>Goal (Refinement)</td>
+			</tr>
+			<tr>
+				<td>$V_0$</td>
+				<td><tt>ExactlyOne</tt></td>
+			</tr>
+			<tr>
+				<td>$V_1$</td>
+				<td><tt>List</tt></td>
+			</tr>
+			<tr>
+				<td>$V_2$</td>
+				<td><tt>Optional</tt></td>
+			</tr>
+			<tr>
+				<td>$V_3$</td>
+				<td><tt>((->) t)</tt></td>
+			</tr>
+			<tr>
+				<td>$V_9$</td>
+				<td><tt>*></tt></td>
+			</tr>
+			<tr>
+				<td>$V_{10}$</td>
+				<td><tt><*</tt></td>
+			</tr>
+			<tr>
+				<td>$V_{11}$</td>
+				<td><tt>sequence</tt></td>
+			</tr>
+			<tr>
+				<td>$V_{12}$</td>
+				<td><tt>replicateA</tt></td>
+			</tr>
+			<tr>
+				<td>$V_{13}$</td>
+				<td><tt>filtering</tt></td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<img src="img/lc2019_data61-applicative-hat.svg" height="35%" width="35%" />
+	</div>
+
+???
+- $\Lambda$: I'm going to combine a "learning for mastery" strategy—repeat task till proficient—with a few simple outcome goals
+- Thus my intervention $(do(\cdot))$ is "global" and I will align goal completion with a more generic understanding of the functions under study
+- Tony Morris may disagree, but that's an excellent opportunity for refinement
+
+The essential improvement is reduction in number of incoming arrows to $G_2$. This dramatically increases the chance repeating these exercises will meaningfully refine our graph...
+
+--
+
+<div style="float: right;">
+	<h3>Posterior Predictive Checks</h3>
+	<span>$\downarrow$ per attempt, to stability</span><br />
+	<ul style="margin: 0px">
+		<li>Time spent per function</li>
+		<li>Number of external resources used per function</li>
+	</ul>
+</div>
+</div>
+
+???
+### Posterior Predictive Checks
+- Both PPC items should stabilize near minimum values
+- This **DOES NOT** indicate mastery of task, only that the learning effect is expended for now
+
+**Potential Improvements**
+- `lift2` has strongest representation, treat specially?
+- Where should $V_0$ go?
+
+Ideally, we would have a related, less structured, project to work on shortly following "convergence", which I now want you to hear as **automation**. A more ambiguous task will challenge automation and increase our chance of genuine improvement...
+
+---
+
+# G$_3$: $\uparrow t \to$ Communication $\land$ Cooperation
+<div style="width: 100%">
+	<div style="float: left; padding-right: 15%;">
+		<table>
+			<tr>
+				<td>$G_3$</td>
+				<td>Goal</td>
+			</tr>
+			<tr>
+				<td>$V_0$</td>
+				<td>Open-minded</td>
+			</tr>
+			<tr>
+				<td>$V_1$</td>
+				<td>Broader and more detailed<br />knowledge base</td>
+			</tr>
+			<tr>
+				<td>$V_2$</td>
+				<td>Curious</td>
+			</tr>
+			<tr>
+				<td>$V_3$</td>
+				<td>Patient</td>
+			</tr>
+			<tr>
+				<td>$V_4$</td>
+				<td>Self-reflective</td>
+			</tr>
+			<tr>
+				<td>$V_5$</td>
+				<td>Experience</td>
+			</tr>
+			<tr>
+				<td>$V_6$</td>
+				<td>Team player</td>
+			</tr>
+			<tr>
+				<td>$V_7$</td>
+				<td>Good listener</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<img src="img/lc2019_comm-coop.svg" height="40%" width="40%" />
+	</div>
+</div>
+
+???
+- My first draft "stakes a claim" on `0: Open-minded, 5: Experience, 6: Team player, 7: Good listener`
+- Highest number of possible states between examples
+- The number of $\leftrightarrow$ is a liability
+
+I should be mindful of how vague the variables are because environment will contribute significantly to their definition. As we've seen this should not be allowed a priori...
+
+---
+
+# G$_{\hat{3}}$: $\uparrow t \to$ Communication $\land$ Cooperation
+<div style="width: 100%">
+	<div style="float: left; padding-right: 15%;">
+		<table style="border-collapse: collapse;">
+			<tr>
+				<td>$\Lambda$</td>
+				<td>2$\times$month $\to$ Coach/Counselor/Mentor</td>
+			</tr>
+			<tr>
+				<td>$E_0$</td>
+				<td>Journal</td>
+			</tr>
+			<tr style="border-bottom: 1px solid black;">
+				<td>$E_1$</td>
+				<td>4 hours of in-person, structured<br />socializing per month</td>
+			</tr>
+			<tr>
+				<td>$G_3$</td>
+				<td>Goal</td>
+			</tr>
+			<tr>
+				<td>$V_0$</td>
+				<td>Open-minded</td>
+			</tr>
+			<tr>
+				<td>$V_1$</td>
+				<td>Broader and more detailed<br />knowledge base</td>
+			</tr>
+			<tr>
+				<td>$V_2$</td>
+				<td>Curious</td>
+			</tr>
+			<tr>
+				<td>$V_3$</td>
+				<td>Patient</td>
+			</tr>
+			<tr>
+				<td>$V_4$</td>
+				<td>Self-reflective</td>
+			</tr>
+			<tr>
+				<td>$V_5$</td>
+				<td>Experience</td>
+			</tr>
+			<tr>
+				<td>$V_6$</td>
+				<td>Team player</td>
+			</tr>
+			<tr>
+				<td>$V_7$</td>
+				<td>Good listener</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<img src="img/lc2019_comm-coop-hat.svg" height="35%" width="35%" />
+	</div>
+
+???
+- I'm going to "lean on listening and patience" to improve my intrapersonal experience  with communication and cooperation ($V_7 \to V_5 \to \ldots$)
+- I'm going to seek environments which **mildly** force me to socialize, and keep my investment of hours respectful of how taxing this activity is for to me
+- Working with a counselor is recognition of
+	- My own skill
+	- Task ambiguity $\propto$ likelihood of middling result
+
+--
+
+<div style="float: right;">
+	<h3>Posterior Predictive Checks</h3>
+	<ul style="margin: 0px">
+		<li>$\downarrow$ in anxiety/distraction/... round related activities</li>
+		<li>$\downarrow$ in dissonant behaviors</li>
+	</ul>
+</div>
+</div>
+
+???
+### Posterior Predictive Checks
+- Are my attitudes and feelings toward the activity changing in a "positive" way?
+- I am going to exploit working with a counselor to track my "behavioral performance" specifically
+	- This could be done many ways, I recommend keeping the cognitive load low in service of development
+
+That's the end of my examples. Let's summarize...
+
+---
+
+# Summary
+
+--
+
+### High Performers
+
+--
+
+- Are characterized by statistical regularity of *outcome* in a particular environment
+- Model their practice as one of social efficacy *reinforced* by knowledge and technical ability
+
+--
+
+### High Performance
+
+--
+
+- Is bound to a domain because it is well-attenuated to the needs of that environment
+- Is "sticky"
+- May be automated, and social reinforcement is especially helpful
+
+---
+
+# Summary
+
+### Personal Practice
+
+--
+
+- Is the result of automation behaviors
+- Is modifiable of our own effort
+
+--
+
+### Performance Improvement
+
+--
+
+- Is the side effect of a dynamic process
+- Depends on mutable combinations and interactions *we may influence*
+
+???
+I want to end on the last point. My father's phrase is "No one cares how much you know till they know how much you care." I encourage you to care about yourselves and the value you derive from your life.
+
+---
+
+# References
+<div id="bibtex_display"></div>
+
+---
+
+class: center
+# &nbsp;
+<p style="font-size: 6em; margin: 12% 0 0 0;">Thank You!</p>
+
+???
+I have a few minutes to take questions before dinner... Sit with people you don't know tonight!
+
+---
+
+logo: img/SimPORTAL_Logo_UMN_M-D2D_t-gw.png
+layout: false
+class: center
+name: last-slide
+# &nbsp;
+<img src="{{logo}}" width="38%" height="42%"/>
+<p style="font-size: 1.2em;">
+	<span style="padding: 1%";>Crookston</span>
+	<span style="padding: 1%";>Duluth</span>
+	<span style="padding: 1%";>Morris</span>
+	<span style="padding: 1%";>Rochester</span>
+	<span style="padding: 1%";>Twin Cities</span>
+</p>
+
+<p style="font-size: 0.45em; margin: 11% 0 0 0;">The University of Minnesota is an equal opportunity educator and employer.</p>
