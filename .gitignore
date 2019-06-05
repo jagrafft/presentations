@@ -1,8 +1,6 @@
 .DS_Store
 *.csl
 *.csv
-*.html
-//*.pdf
 
 reveal.js
 slides.html

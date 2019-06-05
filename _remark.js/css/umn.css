@@ -8,7 +8,7 @@
     --umn-off-white: #f9f7f6;
     --umn-stormy: #404d5b;
     --main-color: var(--umn-maroon); 
-    --last-slide-text-color: white; /* white for Maroon Theme */
+    --last-slide-text-color: white; /* Gold Theme => black, Maroon Theme => white */
 }
 
 body {
