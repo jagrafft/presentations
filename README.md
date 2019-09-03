@@ -1,5 +1,6 @@
 # Presentations
 ## Upcoming
+- 26.10.2019 *[Computing with Graph Structures](https://github.com/jagrafft/presentations/tree/master/computing_with_graph_structures)*. [League of Extraordinary Algorithms][leam] (Minneapolis, MN).
 
 ## Index
 - 05.06.2019. *[Improving Personal Practice: Techniques of High Performing Software Developers](https://github.com/jagrafft/presentations/tree/master/improving_personal_practice)*. [LambdaConf 2019][lc2019] (Boulder, CO). Keynote.

@@ -1,0 +1,68 @@
+title: Computing with Graph Structures
+subtitle: DataSciPy ∧ League of Extraordinary Algorithms ∧ Social Data Science
+author: Jason A. Grafft
+email: graf0096@umn.edu
+logo: img/SimPORTAL_Logo_UMN_M-D2D_t-gw.png
+
+# &nbsp;
+<div class="title-first-slide">
+	<p>
+    	<span style="font-size: 2.6em; font-weight: 900;">{{title}}</span>
+        <br>
+        <span style="font-size: 1.4em; font-weight: 400;">{{subtitle}}</span>
+	</p>
+	<p>
+		<span style="color: #404d5b; font-size: 1.2em;">{{author}}</span>
+		<br />
+		<span style="font-size: 1.2em;"><a href="mailto:{{email}}" style="color: #404d5b;">{{email}}</a></span>
+	</p>
+</div>
+
+<div class="umn-logo-first-slide">
+	<img src="{{logo}}" width="22.5%" height="87%" />
+</div>
+
+---
+
+logo_footer: img/UMN_blockM_gold.png
+layout: true
+<div class="umn-footer">
+	<div class="umn-footer"><img src="{{logo_footer}}" style="margin: 1% 1% 0 0; height: 55%; width: 4%;"/></div>
+</div>
+
+---
+
+# $\LaTeX$!!
+
+$$\hat{a}(S) = \begin{cases}
+\gt 0, & \text{when} \uparrow S \\\
+\le 0, & \text{when} \downarrow S
+\end{cases}$$
+
+---
+
+# Slide 2
+Slide 2
+
+---
+
+# References
+<div id="bibtex_display"></div>
+
+---
+
+logo: img/SimPORTAL_Logo_UMN_M-D2D_t-gw.png
+layout: false
+class: center
+name: last-slide
+# &nbsp;
+<img src="{{logo}}" width="38%" height="42%"/>
+<p style="font-size: 1.2em;">
+	<span style="padding: 1%";>Crookston</span>
+	<span style="padding: 1%";>Duluth</span>
+	<span style="padding: 1%";>Morris</span>
+	<span style="padding: 1%";>Rochester</span>
+	<span style="padding: 1%";>Twin Cities</span>
+</p>
+
+<p style="font-size: 0.45em; margin: 11% 0 0 0;">The University of Minnesota is an equal opportunity educator and employer.</p>

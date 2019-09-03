@@ -69,3 +69,5 @@
 [Gist](https://gist.githubusercontent.com/jagrafft/7ddabfc73c672ea73ad1cbe45f03ff57/raw/e3bb0a9b8bad33934d9c95e2c2bbb283aaeb950a/observable_notebook_fast_additional_data.json)
 
 [JSON](https://github.com/jagrafft/presentations/blob/master/observable_notebook_fast/2018_new_reps_travel_data.json)
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
