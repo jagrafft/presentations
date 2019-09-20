@@ -1,0 +1,229 @@
+title: Twin Cities Julia User Group
+subtitle: Inaugural Meeting
+author: Jason A. Grafft
+email: jgrafft@gmail.com
+
+# &nbsp;
+<div class="title-first-slide">
+	<p>
+    	<span style="font-size: 2em; font-weight: 900;">{{title}}</span>
+        <br>
+        <span style="font-size: 1.55em; font-weight: 400;">{{subtitle}}</span>
+	</p>
+	<p>
+		<span style="color: #404d5b; font-size: 1.2em;">{{author}}</span>
+		<br />
+		<span style="font-size: 1.2em;"><a href="mailto:{{email}}" style="color: #404d5b;">{{email}}</a></span>
+	</p>
+	.center[<img src="img/julia-dots.svg" width="27%" height="27%" />]
+</div>
+
+---
+
+# The Julia Language
+- General purpose, optomized for numerical computing
+
+--
+
+- Developed at MIT
+
+--
+
+- Dynamic, full type system
+
+--
+
+- Fast<sup>1</sup>.footnote[<sup>1</sup> [Julia Micro-Benchmarks](https://julialang.org/benchmarks/)]
+
+--
+
+.center[<img src="img/julia_benchmarks.png" width="58%" height="58%" />]
+
+---
+
+# The Julia Ecosystem<sup>1</sup>
+- Open source $\to$ [Julia](https://julialang.org/)
+
+--
+
+- Closed source $\to$ [Julia Computing](https://juliacomputing.com/)
+
+--
+
+- "Users, Partners, and Employers Hiring Julia Programmers"<sup>2</sup>.footnote[
+	<sup>1</sup> [The Julia Projects and Its Entities](https://julialang.org/blog/2019/02/julia-entities)<br />
+	<sup>2</sup> <https://juliacomputing.com/>
+]
+
+--
+
+.center[<img src="img/julia_partners.png" width="80%" height="80%" />]
+
+---
+
+# Language Features
+- Matlab/Python/R-type syntax (Lisp heritage)
+
+--
+
+- Interoperability<sup>1</sup>.footnote[<sup>1</sup> <https://julialang.org/> "Packages"] $\to$ C/Fortran, C++, Java, Python, R
+
+--
+
+- JIT compliation (majority of core libraries in Julia)
+
+--
+
+- Multiple dispatch
+
+--
+
+```julia
+m(x) = (println("w00t"); println("z00t"); println(x^2));
+# Which steps of m(x) complete with each call?
+# Which calls fail?
+m(3)                          # 1
+m("b00t")                     # 2
+m(BigInt(typemax(Int64)))     # 3
+m(missing)                    # 4
+m(*)                          # 5
+m(2.3)                        # 6
+m('c')                        # 7
+```
+
+--
+
+- Optional type declarations
+
+--
+
+- Targets LLVM to produce C bytecode
+
+---
+
+# Compelling Language Features
+.footnote[
+	<sup>1</sup> <https://docs.julialang.org/en/v1.0/manual/missing/#missing-1>
+	<br />
+	<sup>2</sup> <https://docs.julialang.org/en/v1.0/manual/metaprogramming/>
+]
+- Broadcast operators
+
+--
+
+```julia
+X = 1:1:1000
+
+string(X) == X |> string  # => "1:1:1000"
+
+string.(X) == X .|> string  # => ["1", ..., "1000"]
+
+X .|> x -> "id: $x, area: $(π*x^2)"
+	# => ["id: 1, area: 3.141592653589793", ..., "id: 1000, area: 3.141592653589793e6"]
+```
+
+--
+
+- Nondestructive `Missing` value (equivalent to R's `NA` and SQL's `NULL`)<sup>1</sup>
+
+--
+
+- Mathematically coherent type architecture
+
+--
+
+- Performance of user types ≡ base types
+
+--
+
+- Metaprogramming and macros<sup>2</sup>
+
+--
+
+```julia
+ex3 = Meta.parse("(4 + 4) / 2")  # => :((4 + 4) / 2)
+Meta.show_sexpr(ex3)  # => (:call, :/, (:call, :+, 4, 4), 2)
+```
+
+---
+
+# Example: Generate Normalized Curves
+```julia
+
+using Distributions, GR, LaTeXStrings, StatsPlots; gr(dpi=300, fmt=:png)
+
+outd = "img/BioGears/RSII_Profiling/2019-09-17";
+samples = (line = 1:1:1000, scat=10000);
+
+# Functions
+## Line Plots
+p_(X, title, xlab) = StatsPlots.plot(X, xlabel=xlab, formatter=:auto, guidefontsize=6, legend=false, tickfontsize=4, title=title, titlefontsize=8);
+p(d, r; title="", xlab="") = map(i -> d, r) |> X -> p_(X, title, xlab);
+p(d, r, max; title="", xlab="") = map(i -> d, r) |> X -> (p_(X, title, xlab); StatsPlots.vline!([max], color=:red)) |> StatsPlots.plot;
+
+## Scatter Plots
+s(d, n, rng; title="", xlab="", ylab="", scale=false) = (
+    arr = rand(d, n) |> x -> scale ? ((x .* (rng[2]-rng[1])) .+ rng[1]) : x;
+    StatsPlots.scatter(arr, color=:black, formatter=:auto, guidefontsize=6, framestyle=:grid, legend=false, markersize=0.25, title=title, titlefontsize=8, tickfontsize=4, xlabel=xlab, ylabel=ylab); StatsPlots.hline!(rng, color=:red);
+);
+
+# Data
+dists = [(2.5,2), (180,100), (180,300), (30,45), (2.5,2)] |> tup -> [
+    (d = Beta(tup[1]...), l = "Duration of Laryngoscopy", t = latexstring("\\textnormal{Beta}$(tup[1])"), xlab="seconds", ylab="n", rng=[8,32], scale = true),
+    (d = Truncated(Normal(tup[2]...), tup[2][1], tup[2][1] + tup[2][1]*5), l = "Duration of Preoxygenation", t = latexstring("\\textnormal{Truncated }\\mathcal{N}$(tup[2])"), xlab="seconds", ylab="n", rng=[0,180]),
+    (d = Uniform(tup[3]...), l = "Fentanyl Administration to Laryngoscopy", t = latexstring("\\textnormal{Uniform}$(tup[3])"), xlab="seconds", ylab="n", rng=[tup[3]...]),
+    (d = Uniform(tup[4]...), l = "Succinylcholine Administration to Laryngsocopy", t = latexstring("\\textnormal{Uniform}$(tup[4])"), xlab="seconds", ylab="n", rng=[tup[4]...]),
+    (d = Beta(tup[5]...), l = "Time to Mechanical Ventilations", t = latexstring("\\textnormal{Beta}$(tup[5])"), xlab="seconds", ylab="n", rng=[4,12], scale = true)
+];
+```
+
+---
+
+# Example: Plot Normalized Curve Data
+```julia
+# Draw Functions
+## Line Plots (pdf curve)
+dists .|> t -> png((t.rng[1] == 0 ? p(t.d, samples.line; title=t.l, xlab=t.xlab) : p(t.d, samples.line, t.rng[2]; title=t.t, xlab=t.xlab)), "$(t.l)-pdf");
+
+## Scatter Plots
+dists .|> t -> png((t.rng[1] == 0 ? s(t.d, samples.scat, [t.rng[2]]; title=t.t, xlab=t.ylab, ylab=t.xlab) : s(t.d, samples.scat, t.rng; title=t.l, xlab=t.ylab, ylab=t.xlab)), "$(t.l)-scatter");
+
+### 2x1 {Line, Scatter}**
+zip(
+    dists .|> t -> p(t.d, samples.line; xlab=t.xlab),
+    dists .|> t -> (t.rng[1] == 0 ? s(t.d, samples.scat, [t.rng[2]]; xlab=t.ylab, ylab=t.xlab, scale=(:scale in keys(t))) : s(t.d, samples.scat, t.rng; xlab=t.ylab, ylab=t.xlab, scale=(:scale in keys(t))))
+) |> collect |> z -> zip(z, dists .|> t -> (l=t.l, t=t.t)) |> collect .|> t -> png(Plots.plot(t[1]..., title=t[2].t), "$outd/$(t[2].l)");
+
+### 10 2x1 {Line Scatter}
+1:1:10 .|> it -> zip(
+    dists .|> t -> p(t.d, samples.line; xlab=t.xlab),
+    dists .|> t -> (t.rng[1] == 0 ? s(t.d, samples.scat, [t.rng[2]]; xlab=t.ylab, ylab=t.xlab) : s(t.d, samples.scat, t.rng; xlab=t.ylab, ylab=t.xlab))
+) |> collect |> z -> zip(z, dists .|> t -> (l=t.l, t=t.t)) |> collect .|> t -> png(Plots.plot(t[1]..., title=t[2].t), "$outd/it/$(t[2].l)");
+```
+
+---
+
+# Example: Output
+| Laryngoscopy$_{dur}$ | Preoxygenation$_{dur}$ |
+|:-:|:-:|
+| <img src="img/DurationofLaryngoscopy.png" height="100%" width="100%" /> | <img src="img/DurationofPreoxygenation.png" height="100%" width="100%" /> |
+
+---
+
+# Example: Output
+| Fentanyl$_t \to$ Laryngoscopy$_t$ | Succinylcholine$_t \to$ Laryngoscopy$_t$ |
+|:-:|:-:|
+| <img src="img/FentanylAdministrationtoLaryngoscopy.png" height="100%" width="100%" /> | <img src="img/SuccinylcholineAdministrationtoLaryngsocopy.png" height="100%" width="100%" /> |
+
+---
+
+# Example: Output
+| ETI$_t \to$ Mechanical Ventilations ||
+|:-:|:-:|
+| <img src="img/TimetoMechanicalVentilations.png" height="58%" width="58%" /> | |
+
+---
+
+class: center
+# &nbsp;
+<p style="color:#606060; font-size: 6em; margin: 18% 0 0 0;">Thank You!</p>

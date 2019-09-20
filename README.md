@@ -1,5 +1,6 @@
 # Presentations
 ## Upcoming
+- 20.09.2019 *[Twin Cities Julia User Group: Inaugural Meeting](https://github.com/jagrafft/presentations/tree/master/tc_julia_user_group_inaugural_meeting)*. [Twin Cities Julia User Group][tcjug] (Minneapolis, MN).
 - 26.10.2019 *[Computing with Graph Structures](https://github.com/jagrafft/presentations/tree/master/computing_with_graph_structures)*. [League of Extraordinary Algorithms][leam] (Minneapolis, MN).
 
 ## Index
@@ -17,4 +18,5 @@
 
 [lc2019]: https://lambdaconf.zohobackstage.com/LambdaConf2019
 [leam]: https://www.meetup.com/League-of-Extraordinary-Algorithms/
+[tcjug]: https://www.meetup.com/Twin-Cities-Julia-User-Group/
 [tcvg]: https://www.meetup.com/Twin-Cities-Visualization-Group/
