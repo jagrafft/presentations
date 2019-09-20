@@ -33,7 +33,11 @@ email: jgrafft@gmail.com
 
 --
 
-- Fast<sup>1</sup>.footnote[<sup>1</sup> [Julia Micro-Benchmarks](https://julialang.org/benchmarks/)]
+- Fast<sup>1,2</sup>.footnote[
+	<sup>1</sup> [Julia Micro-Benchmarks](https://julialang.org/benchmarks/)
+	<br />
+	<sup>2</sup> [Celeste.jl](https://github.com/jeff-regier/Celeste.jl) $\to$ {[Julia Joins Petaflop Club](https://juliacomputing.com/communication/2017/09/12/julia-joins-petaflop-club.html), [Parallel Supercomputing for Astronomy](https://juliacomputing.com/case-studies/celeste.html)}
+]
 
 --
 
@@ -42,6 +46,11 @@ email: jgrafft@gmail.com
 ---
 
 # The Julia Ecosystem<sup>1</sup>
+.footnote[
+	<sup>1</sup> [The Julia Projects and Its Entities](https://julialang.org/blog/2019/02/julia-entities)<br />
+	<sup>2</sup> <https://juliacomputing.com/>
+]
+
 - Open source $\to$ [Julia](https://julialang.org/)
 
 --
@@ -50,10 +59,7 @@ email: jgrafft@gmail.com
 
 --
 
-- "Users, Partners, and Employers Hiring Julia Programmers"<sup>2</sup>.footnote[
-	<sup>1</sup> [The Julia Projects and Its Entities](https://julialang.org/blog/2019/02/julia-entities)<br />
-	<sup>2</sup> <https://juliacomputing.com/>
-]
+- "Users, Partners, and Employers Hiring Julia Programmers"<sup>2</sup>
 
 --
 
