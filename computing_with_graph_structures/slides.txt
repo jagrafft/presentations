@@ -1,8 +1,8 @@
 title: Computing with Graph Structures
 subtitle: DataSciPy<br />League of Extraordinary Algorithms<br />Social Data Science
-author: Jason A. Grafft<br />relationalAI
+author: Jason A. Grafft<br />Data Scientist<br />relationalAI
 email: jason@grafft.co
-logo: img/.png
+logo: img/800px-Labelled_Eulergraph.svg.png
 
 # &nbsp;
 <div class="title-first-slide">
@@ -19,30 +19,39 @@ logo: img/.png
 </div>
 
 <div class="logo-first-slide">
-	<img src="{{logo}}" width="22.5%" height="87%" />
+	<a href="https://en.wikipedia.org/wiki/Eulerian_path#/media/File:Labelled_Eulergraph.svg" target="_blank">
+		<img src="{{logo}}" width="20%" height="90%" />
+	</a>
 </div>
 
 ---
 
-logo_footer: img/.png
+logo_footer: img/Königsberg_graph.svg
 layout: true
 <div class="footer">
-	<img src="{{logo_footer}}" style="margin: 1% 1% 0 0; height: 55%; width: 4%;"/>
+    <a href="https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg#/media/File:K%C3%B6nigsberg_graph.svg" target="_blank">
+		<img src="{{logo_footer}}" style="margin: 1% 1% 0 0; height: 55%; width: 4%;"/>
+	</a>
 </div>
 
 ---
 
-# $\LaTeX$!!
+# Ground Truths
 
-$$\hat{a}(S) = \begin{cases}
-\gt 0, & \text{when} \uparrow S \\\
-\le 0, & \text{when} \downarrow S
-\end{cases}$$
+
 
 ---
 
-# Slide 2
-Slide 2
+# Hard Truths
+
+
+---
+
+# Structural Representations<sup>1</sup>
+
+.center[<img src="img/raedt_data-representation-hierarchy.png" width="70%" height="70%" />]
+
+.footnote[<sup>1</sup> Raedt and Kersting.]
 
 ---
 
@@ -57,9 +66,11 @@ class: center
 
 ---
 
-logo: img/.png
+logo: img/Kely_graph_of_F2_clear.svg.png
 layout: false
 class: center
 name: last-slide
 # &nbsp;
-<img src="{{logo}}" width="38%" height="42%"/>
+<a href="https://en.wikipedia.org/wiki/Eulerian_path#/media/File:Kely_graph_of_F2_clear.svg" target="_blank">
+	<img src="{{logo}}" style="margin-top: -9.5%" width="60%" height="60%"/>
+</a>
