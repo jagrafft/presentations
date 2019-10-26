@@ -35,15 +35,21 @@ layout: true
 </div>
 
 ---
+# Introductory Remarks
 
-# Ground Truths
+--
 
+## Hold your buzzwords...
+- Computing is not math because data structures have a physical representation
+- Computatable represtations of graphs are stored and accessed on hardware
+- Linear(ized) access patterns are obligate
 
+--
 
----
-
-# Hard Truths
-
+## Put the Kool-Aid down...
+- Convenience of association ≠ sensibility or possibility of computatation
+- Only nodes need carry information
+- Relational algebras don't define the mechanics of physical storage
 
 ---
 
@@ -52,6 +58,12 @@ layout: true
 .center[<img src="img/raedt_data-representation-hierarchy.png" width="70%" height="70%" />]
 
 .footnote[<sup>1</sup> Raedt and Kersting.]
+
+---
+
+# `Code Time`
+
+.center[<img src="img/terminal.svg" width="45%" height="45%" />]
 
 ---
 
