@@ -3,16 +3,15 @@
 	<head>
 		<title>TITLE</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<link rel="stylesheet" href="css/jag.css">
+		<link rel="stylesheet" href="css/{{STYLESHEET}}.css">
 	</head>
 	<body>
 		<textarea id="source"></textarea>
-		<bibtex src="citations.bib"></bibtex>
+		<bibtex src="{{CITATIONS.bib}}"></bibtex>
 
 		<script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript"></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js/src/bibtex_js.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+		<script type="text/javascript" src="https://cdn.rawgit.com/pcooksey/bibtex-js/ef59e62c/src/bibtex_js.js"></script>
 		<script type="text/javascript">
 			const slideshow = remark.create({
 				ratio: "16:9",
