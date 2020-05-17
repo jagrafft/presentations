@@ -1,0 +1,116 @@
+title: Enhancing Machine Learning and Data Visualization Pipelines with Isomorphisms
+author: Jason A. Grafft
+email: jason@grafft.co
+
+# &nbsp;
+<div class="title-first-slide">
+	<p>
+    	<span style="font-size: 2.6em; font-weight: 900;">{{title}}</span>
+		<br />
+    	<!--<span style="font-size: 2em; font-weight: 400;">{{subtitle}}</span>//-->
+	</p>
+	
+	<p>
+		<span style="color: #404d5b; font-size: 1.2em;">{{author}}</span>
+		<br />
+		<span style="font-size: 1.2em;"><a href="mailto:{{email}}" style="color: #404d5b;">{{email}}</a></span>
+	</p>
+</div>
+
+---
+
+# Graph Isomorphism\*
+An **isomorphism of graphs** $G$ and $H$ is a bijection between the vertex sets of $A$ and $B$
+
+$$f:V(G) \to V(H)$$
+
+|Graph G|Graph H|Isomorphism between G and H|
+|:-:|:-:|:-:|
+|![Graph G](img/100px-Graph_isomorphism_a.svg.png)|![Graph H](img/210px-Graph_isomorphism_b.svg.png)|f(a) = 1<br />f(b) = 6<br />f(c) = 8<br />f(d) = 3<br />f(g) = 5<br />f(h) = 2<br />f(i) = 4<br />f(j) = 7|
+
+.left[<span style="font-size: 8pt">\* - Definition and images from Wikipedia, https://en.wikipedia.org/wiki/Graph_isomorphism</span>]
+
+???
+- We will "evolve" (6NF) this representation shortly
+- **DO NOT TARRY**
+
+---
+
+# Bijection\*
+|   |   |   |   |   |
+|---|:-:|:-:|:-:|:-:|
+|   |![Not a bijection](img/180px-Injection.svg.png)|![Bijection](img/Bijection.svg.png)|![Not a bijection](img/180px-Surjection.svg.png)|![Not a bijection](img/180px-Not-Injection-Surjection.svg.png)|
+|`bijection?`|$\bot$|$\top$|$\bot$|$\bot$|
+
+.left[<span style="font-size: 8pt">\* - Definition and images from Wikipedia, https://en.wikipedia.org/wiki/Bijection</span>]
+
+???
+- **DO NOT TARRY**
+
+---
+
+# Data
+Fischer's [Iris Data Set](https://archive.ics.uci.edu/ml/datasets/Iris)\*
+
+<div style="width: 100%">
+	<div style="float: left;">
+         <img alt="Iris Data Element Categories" src="img/iris-free_nodes-categories.svg" />
+    </div>
+    <div style="float: left; margin-left: 3.5%;">
+$
+data = \begin{bmatrix}
+5.1 & 3.5 & 1.4 & 0.2 \\
+4.9 & 3.0 & 1.4 & 0.2 \\
+4.7 & 3.2 & 1.3 & 0.2 \\
+4.6 & 3.1 & 1.5 & 0.2 \\
+5.0 & 3.6 & 1.4 & 0.2 \\
+5.4 & 3.9 & 1.7 & 0.4 \\
+4.6 & 3.4 & 1.4 & 0.3 \\
+\ldots & \ldots & \ldots & \ldots 
+\end{bmatrix}
+$
+</div>
+<div style="margin-left: 5%;">
+$
+labels = \begin{bmatrix}
+setosa \\
+setosa \\
+setosa \\
+setosa \\
+setosa \\
+setosa \\
+setosa \\
+\ldots
+\end{bmatrix}
+$
+</div>
+</div>
+
+<div style="width: 100%; margin-top: 13%;">
+<span style="font-size: 8pt">* - UCI Machine Learning Repository, 1988.</span>
+</div>
+
+???
+- We have formally "crossed into" Machine Learning "territory"
+- I am going to take one more step
+
+---
+
+# Data: Relational View (6NF)
+- Sixth Normal Form (6NF) was introduced by C.J. Date in the 1990s
+- Excellent form for temporal data
+- "[I]ntended to decompose relation variables to irreducible components."\*
+
+<div style="width: 100%;">
+<span style="font-size: 8pt">* - https://en.wikipedia.org/wiki/Sixth_normal_form</span>
+</div>
+
+???
+- 6NF is defined by the absence of nontrivial *join dependencies*. Our current work will not require this level of definition, but it is worth knowing.
+- Another way of thinking about 6NF is that it generalizes relational operators to support a "natural treatment of interval data"
+- Don't worry if this is fuzzy, working with it during this presentation will be clear
+
+---
+
+# References
+<div id="bibtex_display"></div>

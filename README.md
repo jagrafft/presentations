@@ -1,8 +1,6 @@
 # Presentations
 ## Upcoming
-- 03-05.06.2019\*\* *[Enhancing Machine Learning and Data Visualization Pipelines with Isomorphisms](https://github.com/jagrafft/presentations/tree/master/enhancing_ml-dv_pipelines_w_isomorphisms)*. [LambdaConf 2020][lc2020] (Estes Park, CO).
-
-<small>\*\* - Accepted, unscheduled.</small>
+- 26.05.2020T1600-0400 *[Enhancing Machine Learning and Data Visualization Pipelines with Isomorphisms](https://github.com/jagrafft/presentations/tree/master/enhancing_ml-dv_pipelines_w_isomorphisms)*. [LambdaConf 2020][lc2020] (Zoom Webinar).
 
 ## Index
 - 26.10.2019 *[Computing with Graph Structures](https://github.com/jagrafft/presentations/tree/master/computing_with_graph_structures)*. [League of Extraordinary Algorithms][leam] (Minneapolis, MN).

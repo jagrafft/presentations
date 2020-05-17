@@ -1,0 +1,8 @@
+graph G {
+    rankdir=LR;
+    PL
+    PW
+    SL
+    SW
+    Sp
+}

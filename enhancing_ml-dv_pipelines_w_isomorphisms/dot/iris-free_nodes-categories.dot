@@ -1,0 +1,14 @@
+digraph G {
+    rankdir=LR
+    PL
+    PW
+    SL
+    SW
+    Sp
+    
+    label
+    data
+
+    data -> {PL, PW, SL, SW}
+    label -> Sp
+}
