@@ -1,5 +1,6 @@
 title: Enhancing Machine Learning and Data Visualization Pipelines with Isomorphisms
 author: Jason A. Grafft
+professional: Knowledge Engineer, relationalAI
 email: jason@grafft.co
 
 # &nbsp;
@@ -10,10 +11,12 @@ email: jason@grafft.co
     	<!--<span style="font-size: 2em; font-weight: 400;">{{subtitle}}</span>//-->
 	</p>
 	
-	<p>
-		<span style="color: #404d5b; font-size: 1.2em;">{{author}}</span>
+	<p style="color: #404d5b; font-size: 1.2em;">
+		<span>{{author}}</span>
 		<br />
-		<span style="font-size: 1.2em;"><a href="mailto:{{email}}" style="color: #404d5b;">{{email}}</a></span>
+        <span>{{professional}}</span>
+        <br />
+		<span><a href="mailto:{{email}}" style="color: #404d5b;">{{email}}</a></span>
 	</p>
 </div>
 
@@ -46,6 +49,36 @@ $$f:V(G) \to V(H)$$
 
 ???
 - **DO NOT TARRY**
+
+---
+
+# <span style="font-size: 22pt;">{$\text{enhanchment}$} $\coprod$ {$\text{innovation},\text{optimization},\text{performance}, \ldots$}</span>
+
+- Thanks to their relationship with entropy, set combinations can pose a significant challenge to deployment
+- Expansion and reduction of entropy require compute resources
+- The application of these compute resources is defined by code
+
+--
+
+### ergo,
+
+1. Isomorphisms will not "free" us from performance issues, or necessarily increase performance
+
+--
+
+1. They are a relation defined by _theory_, so the difficulties of translating theory to practice apply
+
+--
+
+1. Working to realize stricter forms of relations across a system has a good deal of longitudinal value
+
+???
+- "Setting expectations"
+- No universe in which universal genericism exists
+- Structure of code is _supposed to_ be logical...
+- "In practice", isomorphisms are _generally_ a sign of coherent design and _tend_ to indicate greater stability
+  - They are also quite rare "in the wild"
+- **Point 3** is my pitch to you...
 
 ---
 
