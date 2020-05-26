@@ -49,8 +49,7 @@ $$f:V(G) \to V(H)$$
 
 ---
 
-# Data
-Fischer's [Iris Data Set](https://archive.ics.uci.edu/ml/datasets/Iris)\*
+# Fischer's [Iris Data Set](https://archive.ics.uci.edu/ml/datasets/Iris)\*
 
 <div style="width: 100%">
 	<div style="float: left;">
@@ -91,17 +90,91 @@ $
 </div>
 
 ???
+- You can also think of these as entities in a resolution scheme
+  - I will not go into this, message me offline
 - We have formally "crossed into" Machine Learning "territory"
 - I am going to take one more step
 
 ---
 
-# Data: Relational View (6NF)
+# Relational View (6NF)
 - Sixth Normal Form (6NF) was introduced by C.J. Date in the 1990s
 - Excellent form for temporal data
 - "[I]ntended to decompose relation variables to irreducible components."\*
 
-<div style="width: 100%;">
+<div style="font-size: 11pt;">
+<table>
+<thead>
+    <tr>
+        <td>$i$</td><td>petal_length</td><td style="padding-left: 2.25em;">&nbsp;</td>
+        <td>$i$</td><td>petal_width</td><td style="padding-left: 2.25em;">&nbsp;</td>
+        <td>$i$</td><td>sepal_length</td><td style="padding-left: 2.25em;">&nbsp;</td>
+        <td>$i$</td><td>sepal_width</td><td style="padding-left: 2.25em;">&nbsp;</td>
+        <td>$i$</td><td>species</td><td style="padding-left: 2.25em;">&nbsp;</td>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td><em>1</em></td><td>5.1</td><td>&nbsp;</td>
+        <td><em>1</em></td><td>3.5</td><td>&nbsp;</td>
+        <td><em>1</em></td><td>1.4</td><td>&nbsp;</td>
+        <td><em>1</em></td><td>0.2</td><td>&nbsp;</td>
+        <td><em>1</em></td><td>setosa</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><em>2</em></td><td>4.9</td><td>&nbsp;</td>
+        <td><em>2</em></td><td>3.0</td><td>&nbsp;</td>
+        <td><em>2</em></td><td>1.4</td><td>&nbsp;</td>
+        <td><em>2</em></td><td>0.2</td><td>&nbsp;</td>
+        <td><em>2</em></td><td>setosa</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><em>3</em></td><td>4.7</td><td>&nbsp;</td>
+        <td><em>3</em></td><td>3.2</td><td>&nbsp;</td>
+        <td><em>3</em></td><td>1.3</td><td>&nbsp;</td>
+        <td><em>3</em></td><td>0.2</td><td>&nbsp;</td>
+        <td><em>3</em></td><td>setosa</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><em>4</em></td><td>4.6</td><td>&nbsp;</td>
+        <td><em>4</em></td><td>3.1</td><td>&nbsp;</td>
+        <td><em>4</em></td><td>1.5</td><td>&nbsp;</td>
+        <td><em>4</em></td><td>0.2</td><td>&nbsp;</td>
+        <td><em>4</em></td><td>setosa</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><em>5</em></td><td>5.0</td><td>&nbsp;</td>
+        <td><em>5</em></td><td>3.6</td><td>&nbsp;</td>
+        <td><em>5</em></td><td>1.4</td><td>&nbsp;</td>
+        <td><em>5</em></td><td>0.2</td><td>&nbsp;</td>
+        <td><em>5</em></td><td>setosa</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><em>6</em></td><td>5.4</td><td>&nbsp;</td>
+        <td><em>6</em></td><td>3.9</td><td>&nbsp;</td>
+        <td><em>6</em></td><td>1.7</td><td>&nbsp;</td>
+        <td><em>6</em></td><td>0.4</td><td>&nbsp;</td>
+        <td><em>6</em></td><td>setosa</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><em>7</em></td><td>4.6</td><td>&nbsp;</td>
+        <td><em>7</em></td><td>3.4</td><td>&nbsp;</td>
+        <td><em>7</em></td><td>1.4</td><td>&nbsp;</td>
+        <td><em>7</em></td><td>0.3</td><td>&nbsp;</td>
+        <td><em>7</em></td><td>setosa</td><td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>$\ldots$</em></td><td>$\ldots$</td><td>&nbsp;</td>
+        <td>$\ldots$</em></td><td>$\ldots$</td><td>&nbsp;</td>
+        <td>$\ldots$</em></td><td>$\ldots$</td><td>&nbsp;</td>
+        <td>$\ldots$</em></td><td>$\ldots$</td><td>&nbsp;</td>
+        <td>$\ldots$</td><td>$\ldots$</td><td>&nbsp;</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+<div style="width: 100%; margin-top: 3em;">
 <span style="font-size: 8pt">* - https://en.wikipedia.org/wiki/Sixth_normal_form</span>
 </div>
 
@@ -112,5 +185,191 @@ $
 
 ---
 
+# k-Nearest Neighbors (kNN) Classification
+.center[
+![Train-Test Data, sketchy example](img/Train-Test_Scatterplots.png)
+]
+
+???
+- Please excuse the bad plots!
+  - `y1` "train" set
+  - `y2` "test" set
+- `x-axis` is `id` (100 in train, 50 in test)
+
+**"TAKEAWAY"**
+- We are _classifying_ (labeling) by nearest neighbor. Even though this 1-dimensional view is "rough", it gives a good idea of how the elements of each parameter group.
+
+---
+
+# Naive kNN
+
+<div style="float: left; font-size: 14pt; margin-right: 6em;">
+$\forall(x \in X_{test} : $<br />
+<span style="margin-left: 2em;">$top[1,$</span><br />
+<span style="margin-left: 4em;">$count[ \ell : $</span><br />
+<span style="margin-left: 6em;">$labels_{Xtrain}$</span><br />
+<span style="margin-left: 6em;">$\land$</span><br />
+<span style="margin-left: 6em;">$top[k, \forall(y \in X_{train} :$</span><br />
+<span style="margin-left: 8em;">$dist[x,y]$</span><br />
+<span style="margin-left: 6em;">$)]$</span><br />
+<span style="margin-left: 4em;">$]$</span><br />
+<span style="margin-left: 2em;">$]$</span><br />
+$)$
+</div>
+
+--
+
+<span style="float: left; margin-left: 3em;">
+1. For each element of the "test" set, calculate a `dist`ance from each element in the "train" set
+1. `sort` these via  "nearest first" (lowest `dist` value) then take the `top` $k$ tuples
+1. `join` the top $k$ tuples with their $labels$
+1. `count` the number of each label in the set just formed
+1. `sort` these via "most frequent" then take the first (`top[1,...]`) tuple in the relation
+</span>
+
+--
+
+<span style="font-size: 18pt;">Now you know why naive kNN scales at $O(dn^2)$</span>
+
+--
+
+<span style="font-size: 18pt;">In our case that's $4 \cdot 150^2 = 4 \cdot 22500 = 90000$</span>
+
+--
+
+.right[
+<span style="font-size: 18pt;">for *150* tuples of airity *4*</span>
+]
+
+
+???
+- `top` includes `sort`
+- The $i$ values in each row enable the "magic" here
+
+---
+
+## $data_{input} \to kNN() \to labels_P \to viz()$
+
+<span style="float: left;">![Data](img/data.jpeg)</span>
+
+--
+
+<span style="float: left;">![Categories!](img/categories_forall-dist-top-and-count-top.jpeg)</span>
+
+--
+
+.right[![Vega Lite JSON](img/vega-lite.jpeg)]
+
+---
+
+# End-to-End Operation 
+.center[![No Lines](img/categories_all_no_lines.jpeg)]
+
+---
+
+# $data \to \forall$
+
+.center[![data to forall](img/categories_data-forall.jpeg)]
+
+---
+
+# $\forall \to dist$
+
+.center[![forall to dist](img/categories_forall-dist.jpeg)]
+
+---
+
+# $dist \to top$
+
+.center[![dist to top](img/categories_dist-top.jpeg)]
+
+---
+
+# $top \to \land$
+
+.center[![top to AND](img/categories_top-and.jpeg)]
+
+---
+
+# $\land \to count$
+
+.center[![AND to count](img/categories_and-count.jpeg)]
+
+---
+
+# $count \to top$
+
+.center[![count to top](img/categories_count-top.jpeg)]
+
+--
+
+.center[`// out => `<br />
+$
+labels_P = \begin{bmatrix}
+\ell_1; \\
+\ell_2; \\
+\ell_3; \\
+\ell_4; \\
+\ell_5; \\
+\ell_6; \\
+\ell_7; \\
+\ldots ; \\
+\ell_n
+\end{bmatrix}
+$]
+
+---
+
+# $data \to data_{out}$
+
+.center[![data_out to viz](img/categories_data-dataOut.jpeg)]
+
+---
+
+# $data_{out} \to concat$
+
+.center[![data_out to concat](img/categories_Xtrain_Xtest-concat.jpeg)]
+
+---
+
+# $concat \to VegaLite$
+
+.center[![concat to VegaLite](img/categories_concat-vegalite.jpeg)]
+
+---
+
+# Finished Operation
+
+.center[![finished operation](img/categories_finished.jpeg)]
+
+
+---
+
+# Enhancements
+
+1. Accountability of operations
+1. Easier identification of potential fail points
+1. Identification of areas that generate excessive facts
+1. Resource allocation and planning
+1. Stable interface for data vizualization API
+   - [Vega-Lite](https://vega.github.io/vega-lite/), in our case
+
+---
+
 # References
 <div id="bibtex_display"></div>
+
+---
+
+# Appendix
+### Euclid distance for tuples of airity $n$
+
+$\exists(r_1,\ldots,r_n \in R \land s_1,\ldots,s_n \in S:$<br />
+<span style="margin-left: 2em;">$sqrt[$</span><br />
+<span style="margin-left: 4em;">$sum[$</span><br />
+<span style="margin-left: 6em;">$squared[$</span><br />
+<span style="margin-left: 8em;">$(s_1 - r_1; \ldots ; s_n - s_n)$</span><br />
+<span style="margin-left: 6em;">$]$</span><br />
+<span style="margin-left: 4em;">$]$</span><br />
+<span style="margin-left: 2em;">$]$</span><br />
+$)$
