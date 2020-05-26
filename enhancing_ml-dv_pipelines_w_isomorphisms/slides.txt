@@ -49,8 +49,7 @@ $$f:V(G) \to V(H)$$
 
 ---
 
-# Data
-Fischer's [Iris Data Set](https://archive.ics.uci.edu/ml/datasets/Iris)\*
+# Fischer's [Iris Data Set](https://archive.ics.uci.edu/ml/datasets/Iris)\*
 
 <div style="width: 100%">
 	<div style="float: left;">
@@ -98,14 +97,10 @@ $
 
 ---
 
-# Data: Relational View (6NF)
+# Relational View (6NF)
 - Sixth Normal Form (6NF) was introduced by C.J. Date in the 1990s
 - Excellent form for temporal data
 - "[I]ntended to decompose relation variables to irreducible components."\*
-
-<div style="width: 100%;">
-<span style="font-size: 8pt">* - https://en.wikipedia.org/wiki/Sixth_normal_form</span>
-</div>
 
 <div style="font-size: 11pt;">
 <table>
@@ -179,6 +174,10 @@ $
 </table>
 </div>
 
+<div style="width: 100%; margin-top: 3em;">
+<span style="font-size: 8pt">* - https://en.wikipedia.org/wiki/Sixth_normal_form</span>
+</div>
+
 ???
 - 6NF is defined by the absence of nontrivial *join dependencies*. Our current work will not require this level of definition, but it is worth knowing.
 - Another way of thinking about 6NF is that it generalizes relational operators to support a "natural treatment of interval data"
@@ -249,9 +248,128 @@ $)$
 
 ---
 
-# $data_{input} \to kNN() \to labels_P \to viz()$
+## $data_{input} \to kNN() \to labels_P \to viz()$
+
+<span style="float: left;">![Data](img/data.jpeg)</span>
+
+--
+
+<span style="float: left;">![Categories!](img/categories_forall-dist-top-and-count-top.jpeg)</span>
+
+--
+
+.right[![Vega Lite JSON](img/vega-lite.jpeg)]
+
+---
+
+# End-to-End Operation 
+.center[![No Lines](img/categories_all_no_lines.jpeg)]
+
+---
+
+# $data \to \forall$
+
+.center[![data to forall](img/categories_data-forall.jpeg)]
+
+---
+
+# $\forall \to dist$
+
+.center[![forall to dist](img/categories_forall-dist.jpeg)]
+
+---
+
+# $dist \to top$
+
+.center[![dist to top](img/categories_dist-top.jpeg)]
+
+---
+
+# $top \to \land$
+
+.center[![top to AND](img/categories_top-and.jpeg)]
+
+---
+
+# $\land \to count$
+
+.center[![AND to count](img/categories_and-count.jpeg)]
+
+---
+
+# $count \to top$
+
+.center[![count to top](img/categories_count-top.jpeg)]
+
+--
+
+.center[`// out => `<br />
+$
+labels_P = \begin{bmatrix}
+\ell_1; \\
+\ell_2; \\
+\ell_3; \\
+\ell_4; \\
+\ell_5; \\
+\ell_6; \\
+\ell_7; \\
+\ldots ; \\
+\ell_n
+\end{bmatrix}
+$]
+
+---
+
+# $data \to data_{out}$
+
+.center[![data_out to viz](img/categories_data-dataOut.jpeg)]
+
+---
+
+# $data_{out} \to concat$
+
+.center[![data_out to concat](img/categories_Xtrain_Xtest-concat.jpeg)]
+
+---
+
+# $concat \to VegaLite$
+
+.center[![concat to VegaLite](img/categories_concat-vegalite.jpeg)]
+
+---
+
+# Finished Operation
+
+.center[![finished operation](img/categories_finished.jpeg)]
+
+
+---
+
+# Enhancements
+
+1. Accountability of operations
+1. Easier identification of potential fail points
+1. Identification of areas that generate excessive facts
+1. Resource allocation and planning
+1. Stable interface for data vizualization API
+   - [Vega-Lite](https://vega.github.io/vega-lite/), in our case
 
 ---
 
 # References
 <div id="bibtex_display"></div>
+
+---
+
+# Appendix
+### Euclid distance for tuples of airity $n$
+
+$\exists(r_1,\ldots,r_n \in R \land s_1,\ldots,s_n \in S:$<br />
+<span style="margin-left: 2em;">$sqrt[$</span><br />
+<span style="margin-left: 4em;">$sum[$</span><br />
+<span style="margin-left: 6em;">$squared[$</span><br />
+<span style="margin-left: 8em;">$(s_1 - r_1; \ldots ; s_n - s_n)$</span><br />
+<span style="margin-left: 6em;">$]$</span><br />
+<span style="margin-left: 4em;">$]$</span><br />
+<span style="margin-left: 2em;">$]$</span><br />
+$)$
