@@ -2,7 +2,7 @@
 ## Upcoming
 
 ## Index
-- 26.05.2020T1600-0400 *[Enhancing Machine Learning and Data Visualization Pipelines with Isomorphisms](https://github.com/jagrafft/presentations/tree/master/enhancing_ml-dv_pipelines_w_isomorphisms)*. [LambdaConf 2020][lc2020] (Zoom Webinar). [[PDF][lc2020pres] | recording]
+- 26.05.2020T1600-0400 *[Enhancing Machine Learning and Data Visualization Pipelines with Isomorphisms](https://github.com/jagrafft/presentations/tree/master/enhancing_ml-dv_pipelines_w_isomorphisms)*. [LambdaConf 2020][lc2020] (Zoom Webinar). [[PDF][lc2020pres] | [recording][lc2020presrec]]
 - 26.10.2019 *[Computing with Graph Structures](https://github.com/jagrafft/presentations/tree/master/computing_with_graph_structures)*. [League of Extraordinary Algorithms][leam] (Minneapolis, MN).
 - 20.09.2019 *[Twin Cities Julia User Group: Inaugural Meeting](https://github.com/jagrafft/presentations/tree/master/tc_julia_user_group_inaugural_meeting)*. [Twin Cities Julia User Group][tcjug] (Minneapolis, MN).
 - 05.06.2019. *[Improving Personal Practice: Techniques of High Performing Software Developers](https://github.com/jagrafft/presentations/tree/master/improving_personal_practice)*. [LambdaConf 2019][lc2019] (Boulder, CO). Keynote. [[PDF][lc2019pres]]
@@ -22,6 +22,7 @@
 [lc2019pres]: https://github.com/jagrafft/presentations/raw/master/improving_personal_practice/JasonAGrafft-ImprovingPersonalPractice.pdf
 [lc2020]: https://lambdaconf.zohobackstage.com/LambdaConf2020
 [lc2020pres]: https://github.com/jagrafft/presentations/raw/master/enhancing_ml-dv_pipelines_w_isomorphisms/JasonAGrafft_EnhancingMLPipelines_w_Isomorphims.pdf
+[lc2020presrec]: https://youtu.be/wXQ94I_vrSc
 [leam]: https://www.meetup.com/League-of-Extraordinary-Algorithms/
 [tcjug]: https://www.meetup.com/Twin-Cities-Julia-User-Group/
 [tcvg]: https://www.meetup.com/Twin-Cities-Visualization-Group/
