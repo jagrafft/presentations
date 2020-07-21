@@ -9,7 +9,6 @@
 - 08.09.2018. *[Programming Languages Influence How We Code: \[Arrays, Types, FP\].ap(Julia, Python)](https://github.com/jagrafft/presentations/tree/master/arrays_types_fp_julia_python)*. [DataSciPy Meetup][leam] (Roseville, MN).
 - 10.07.2018. *[Plotting with Gadfly in Less Than 15 Minutes](https://github.com/jagrafft/presentations/tree/master/plotting_w_gadfly_lt_15min)*. [Twin Cities (Data) Visualization Group][tcvg] (Roseville, MN).
 
-## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
 [extractpres]: https://github.com/jagrafft/presentations/raw/master/extracting_info_awkward_datasets/extracting_info_awkward_datasets.pdf
