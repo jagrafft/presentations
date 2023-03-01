@@ -1,0 +1,233 @@
+// https://www.mayoclinic.org/medical-professionals/trauma/news/mass-casualty-triage-guidelines-revised/mac-20512735
+
+// (edge_label,label)
+def edge_labels = {
+    (0, "") ;
+    (1, "Yes") ;
+    (2, "No") ;
+    (3, "ALL Yes") ;
+    (4, "ANY No") ;
+    (5, "Child?") ;
+}
+
+// (u,v,edge_label)
+def node_connections = {
+    // Step 1
+    (6,7,0) ;
+    (7,8,0) ;
+    // Step 2
+    (9,10,0) ;
+    (10,11,5) ;
+    (10,12,0) ;
+    (11,12,0) ;
+    (12,13,0) ;
+    (13,14,1) ;
+    (13,5,2) ;
+    (14,15,0) ;
+    (15,16,0) ;
+    (16,17,0) ;
+    (17,19,3) ;
+    (19,2,2) ;
+    (19,1,1) ;
+    (17,18,4) ;
+    (18,3,1) ;
+    (18,4,2) ;
+}
+
+// (node,label)
+def node_labels = {
+    (1,"𝗠𝗶𝗻𝗶𝗺𝗮𝗹") ;
+    (2,"𝗗𝗲𝗹𝗮𝘆𝗲𝗱") ;
+    (3,"𝗜𝗺𝗺𝗲𝗱𝗶𝗮𝘁𝗲") ;
+    (4,"𝗘𝘅𝗽𝗲𝗰𝘁𝗮𝗻𝘁") ;
+    (5, "𝗗𝗲𝗮𝗱") ;
+    (6, "𝗦𝘁𝗶𝗹𝗹/𝗼𝗯𝘃𝗶𝗼𝘂𝘀 𝗹𝗶𝗳𝗲 𝘁𝗵𝗿𝗲𝗮𝘁\nAssess first") ;
+    (7, "𝗪𝗮𝘃𝗲/𝗽𝘂𝗿𝗽𝗼𝘀𝗲𝗳𝘂𝗹 𝗺𝗼𝘃𝗲𝗺𝗲𝗻𝘁\nAssess second") ;
+    (8, "𝗪𝗮𝗹𝗸\nAssess third") ;
+    (9, "Control major\nhemorrhage") ;
+    (10, "Open airway") ;
+    (11, "Consider two (2)\nrescue breaths") ;
+    (12, "Auto-inject antidotes") ;
+    (13, "Breathing?") ;
+    (14, "Obeys commands or\nmakes purposeful movements?") ;
+    (15, "Has peripheral pulse?") ;
+    (16, "NOT in respiratory\ndistress?") ;
+    (17, "Major hemorrhage\ncontrolled?") ;
+    (18, "Likely to survive\ngiven current resources?") ;
+    (19, "Minor injuries ONLY?") ;
+}
+
+def node_steps = {
+    (:global, 6) ;
+    (:global, 7) ;
+    (:global, 8) ;
+    (:individual, 1) ;
+    (:individual, 2) ;
+    (:individual, 3) ;
+    (:individual, 4) ;
+    (:individual, 5) ;
+    (:individual, 9) ;
+    (:individual, 10) ;
+    (:individual, 11) ;
+    (:individual, 12) ;
+    (:individual, 13) ;
+    (:individual, 14) ;
+    (:individual, 15) ;
+    (:individual, 16) ;
+    (:individual, 17) ;
+    (:individual, 18) ;
+    (:individual, 19) ;
+    (:lsi, 9) ;
+    (:lsi, 10) ;
+    (:lsi, 11) ;
+    (:lsi, 12) ;
+    (:unlabeled, 14) ;
+    (:unlabeled, 15) ;
+    (:unlabeled, 16) ;
+    (:unlabeled, 17) ;
+}
+
+// (step,label)
+def step_labels = {
+    (:global, "𝗦𝘁𝗲𝗽 𝟭\nGlobal sorting") ;
+    (:individual, "𝗦𝘁𝗲𝗽 𝟮\nIndividual assessment") ;
+    (:lsi, "𝗟𝗦𝗜") ;
+    (:unlabeled, "") ;
+}
+
+def edge_styles = {
+    (10,11,"dotted") ;
+    (11,12,"dotted") ;
+}
+
+def node_styles = {
+    (1, "color", "#00BC01") ;
+    (1, "fillcolor", "#00BC01") ;
+    (1, "fontcolor", "white") ;
+    (1, "fontsize", "20") ;
+    (2, "color", "#FEFE00") ;
+    (2, "fillcolor", "#FEFE00") ;
+    (2, "fontsize", "20") ;
+    (3, "color", "red") ;
+    (3, "fillcolor", "red") ;
+    (3, "fontcolor", "white") ;
+    (3, "fontsize", "20") ;
+    (4, "color", "gray63") ;
+    (4, "fillcolor", "gray63") ;
+    (4, "fontcolor", "black") ;
+    (4, "fontsize", "20") ;
+    (5, "color", "black") ;
+    (5, "fillcolor", "black") ;
+    (5, "fontcolor", "white") ;
+    (5, "fontsize", "20") ;
+    (6, "fontsize", "20") ;
+    (7, "fontsize", "20") ;
+    (8, "fontsize", "20") ;
+}
+
+module global_sorting_step
+    def node = node_steps[:global]
+    def attribute:graph = {
+        ("fontsize", "30") ;
+        ("label", step_labels[:global]) ;
+    }
+end
+
+module individual_assessment_step
+    def node = node_steps[:individual]
+    def attribute:graph = {
+        ("fontsize", "30") ;
+        ("label", step_labels[:individual]) ;
+    }
+end
+
+module individual_assessment_step_LSI
+    def node = node_steps[:lsi]
+    def attribute:graph = {
+        ("fontsize", "24") ;
+        ("label", step_labels[:lsi]) ;
+    }
+    
+    def parent = "individual"
+end
+
+module individual_assessment_step_unlabeled
+    def node = node_steps[:unlabeled]
+    def attribute:graph = {
+        ("label", step_labels[:unlabeled]) ;
+    }
+
+    def parent = "individual"
+end
+
+module salt_triage_graph
+    def edge(u,v) = node_connections(u,v,_)
+    def node(n) = first[node_connections](n) or second[node_connections](n)
+
+    def attribute:graph = {
+        // ("nodesep", "1.5") ;
+    }
+
+    def subgraph = {
+        ("global", global_sorting_step) ;
+        ("individual", individual_assessment_step) ;
+        ("lsi", individual_assessment_step_LSI) ;
+        ("unlabeled", individual_assessment_step_unlabeled) ;
+    }
+
+    def edge_attribute[u in first[edge], v in edge[u]] = {
+        ("label", edge_labels[node_connections[u,v]]) ;
+        ("style", edge_styles[u,v]) ;
+    }
+    
+    def node_attribute[n in node] = {
+        ("label", node_labels[n]) ;
+        ("shape", "rect") ;
+        ("style", "filled") ;
+        node_styles[n] ;
+        // Add default color if needed
+        (empty[node_styles[n,"color"]], { ("color", "#A4DCDC") ; ("fillcolor", "#A4DCDC") } )
+    }
+end
+
+def salt_edges(u,v) = node_connections(u,v,_)
+def G = directed_graph[salt_edges]
+def PR1 = incremental_PR[G,{}]
+def PR2 = incremental_PR[G,PR1]
+
+module salt_triage_pagerank_graph
+    def edge(u,v) = node_connections(u,v,_)
+    def node(n) = first[node_connections](n) or second[node_connections](n)
+
+    def attribute:graph = {
+        // ("rankdir", "LR") ;
+        ("nodesep", "1.15") ;
+    }
+
+    def subgraph = {
+        ("global", global_sorting_step) ;
+        ("individual", individual_assessment_step) ;
+        ("lsi", individual_assessment_step_LSI) ;
+        ("unlabeled", individual_assessment_step_unlabeled) ;
+    }
+
+    def edge_attribute[u in first[edge], v in edge[u]] = {
+        ("fontsize", "30") ;
+        ("label", decimal[64,3,PR2:pr[u]]) ;
+        ("style", edge_styles[u,v]) ;
+    }
+    
+    def node_attribute[n in node] = {
+        ("height", 24*PR2:pr[n]) ;
+        ("label", node_labels[n]) ;
+        ("shape", "circle") ;
+        ("style", "filled") ;
+        ("width", 24*PR2:pr[n]) ;
+        node_styles[n] ;
+        // Add default color if needed
+        (empty[node_styles[n,"color"]], { ("color", "#A4DCDC") ; ("fillcolor", "#A4DCDC") } )
+    }
+end
+
+// def output = graphviz[salt_triage_graph]
+// def output = graphviz[salt_triage_pagerank_graph]

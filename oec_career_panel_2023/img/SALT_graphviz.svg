@@ -1,0 +1,260 @@
+<svg width="1018" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0.00 0.00 1294.00 1044.00">
+<g id="graph0" class="graph" transform="translate(4,1040) scale(1)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-1040 1290,-1040 1290,4 -4,4"></polygon>
+<g id="clust1" class="cluster">
+<title>cluster_global</title>
+<polygon fill="none" stroke="black" points="8,-639.4 8,-993.2 496,-993.2 496,-639.4 8,-639.4"></polygon>
+<text text-anchor="middle" x="252" y="-962.2" font-family="Times,serif" font-size="30.00">𝗦𝘁𝗲𝗽 𝟭</text>
+<text text-anchor="middle" x="252" y="-926.2" font-family="Times,serif" font-size="30.00">Global sorting</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_individual</title>
+<polygon fill="none" stroke="black" points="504,-8 504,-1028 1278,-1028 1278,-8 504,-8"></polygon>
+<text text-anchor="middle" x="891" y="-997" font-family="Times,serif" font-size="30.00">𝗦𝘁𝗲𝗽 𝟮</text>
+<text text-anchor="middle" x="891" y="-961" font-family="Times,serif" font-size="30.00">Individual assessment</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_lsi</title>
+<polygon fill="none" stroke="black" points="839,-566.4 839,-940 1069,-940 1069,-566.4 839,-566.4"></polygon>
+<text text-anchor="middle" x="954" y="-914.4" font-family="Times,serif" font-size="24.00">𝗟𝗦𝗜</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_unlabeled</title>
+<polygon fill="none" stroke="black" points="753,-185.6 753,-456.6 1077,-456.6 1077,-185.6 753,-185.6"></polygon>
+</g>
+<!-- 6 -->
+<g id="node1" class="node">
+<title>6</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="487.56,-905.2 16.44,-905.2 16.44,-849.2 487.56,-849.2 487.56,-905.2"></polygon>
+<text text-anchor="middle" x="252" y="-883.2" font-family="Times,serif" font-size="20.00">𝗦𝘁𝗶𝗹𝗹/𝗼𝗯𝘃𝗶𝗼𝘂𝘀 𝗹𝗶𝗳𝗲 𝘁𝗵𝗿𝗲𝗮𝘁</text>
+<text text-anchor="middle" x="252" y="-859.2" font-family="Times,serif" font-size="20.00">Assess first</text>
+</g>
+<!-- 7 -->
+<g id="node2" class="node">
+<title>7</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="485.06,-812.2 18.94,-812.2 18.94,-756.2 485.06,-756.2 485.06,-812.2"></polygon>
+<text text-anchor="middle" x="252" y="-790.2" font-family="Times,serif" font-size="20.00">𝗪𝗮𝘃𝗲/𝗽𝘂𝗿𝗽𝗼𝘀𝗲𝗳𝘂𝗹 𝗺𝗼𝘃𝗲𝗺𝗲𝗻𝘁</text>
+<text text-anchor="middle" x="252" y="-766.2" font-family="Times,serif" font-size="20.00">Assess second</text>
+</g>
+<!-- 6&#45;&gt;7 -->
+<g id="edge1" class="edge">
+<title>6-&gt;7</title>
+<path fill="none" stroke="black" d="M252,-848.9C252,-840.62 252,-831.38 252,-822.56"></path>
+<polygon fill="black" stroke="black" points="255.5,-822.48 252,-812.48 248.5,-822.48 255.5,-822.48"></polygon>
+</g>
+<!-- 8 -->
+<g id="node3" class="node">
+<title>8</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="308.73,-703.4 195.27,-703.4 195.27,-647.4 308.73,-647.4 308.73,-703.4"></polygon>
+<text text-anchor="middle" x="252" y="-681.4" font-family="Times,serif" font-size="20.00">𝗪𝗮𝗹𝗸</text>
+<text text-anchor="middle" x="252" y="-657.4" font-family="Times,serif" font-size="20.00">Assess third</text>
+</g>
+<!-- 7&#45;&gt;8 -->
+<g id="edge2" class="edge">
+<title>7-&gt;8</title>
+<path fill="none" stroke="black" d="M252,-755.97C252,-743.17 252,-727.7 252,-713.81"></path>
+<polygon fill="black" stroke="black" points="255.5,-713.58 252,-703.58 248.5,-713.58 255.5,-713.58"></polygon>
+</g>
+<!-- 9 -->
+<g id="node4" class="node">
+<title>9</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="1051.79,-895.2 886.21,-895.2 886.21,-859.2 1051.79,-859.2 1051.79,-895.2"></polygon>
+<text text-anchor="middle" x="969" y="-873" font-family="Times,serif" font-size="14.00">Control major hemorrhage</text>
+</g>
+<!-- 10 -->
+<g id="node5" class="node">
+<title>10</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="1012.91,-802.2 925.09,-802.2 925.09,-766.2 1012.91,-766.2 1012.91,-802.2"></polygon>
+<text text-anchor="middle" x="969" y="-780" font-family="Times,serif" font-size="14.00">Open airway</text>
+</g>
+<!-- 9&#45;&gt;10 -->
+<g id="edge3" class="edge">
+<title>9-&gt;10</title>
+<path fill="none" stroke="black" d="M969,-859.08C969,-845.99 969,-827.68 969,-812.56"></path>
+<polygon fill="black" stroke="black" points="972.5,-812.24 969,-802.24 965.5,-812.24 972.5,-812.24"></polygon>
+</g>
+<!-- 11 -->
+<g id="node6" class="node">
+<title>11</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="1041.06,-693.4 846.94,-693.4 846.94,-657.4 1041.06,-657.4 1041.06,-693.4"></polygon>
+<text text-anchor="middle" x="944" y="-671.2" font-family="Times,serif" font-size="14.00">Consider two (2) rescue breaths</text>
+</g>
+<!-- 10&#45;&gt;11 -->
+<g id="edge4" class="edge">
+<title>10-&gt;11</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M964.98,-766.04C961.03,-749.15 954.93,-723.09 950.32,-703.42"></path>
+<polygon fill="black" stroke="black" points="953.69,-702.46 948.01,-693.52 946.88,-704.05 953.69,-702.46"></polygon>
+<text text-anchor="middle" x="975.67" y="-725.6" font-family="Times,serif" font-size="14.00">Child?</text>
+</g>
+<!-- 12 -->
+<g id="node7" class="node">
+<title>12</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="1047.8,-610.4 914.2,-610.4 914.2,-574.4 1047.8,-574.4 1047.8,-610.4"></polygon>
+<text text-anchor="middle" x="981" y="-588.2" font-family="Times,serif" font-size="14.00">Auto-inject antidotes</text>
+</g>
+<!-- 10&#45;&gt;12 -->
+<g id="edge5" class="edge">
+<title>10-&gt;12</title>
+<path fill="none" stroke="black" d="M995.25,-766.09C1014.43,-751.9 1038.95,-729.8 1050,-703.4 1060.98,-677.16 1063.42,-664.48 1050,-639.4 1045.06,-630.17 1037.35,-622.46 1028.85,-616.17"></path>
+<polygon fill="black" stroke="black" points="1030.78,-613.25 1020.53,-610.56 1026.87,-619.05 1030.78,-613.25"></polygon>
+</g>
+<!-- 11&#45;&gt;12 -->
+<g id="edge6" class="edge">
+<title>11-&gt;12</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M951.85,-657.22C956.8,-646.38 963.3,-632.14 968.91,-619.87"></path>
+<polygon fill="black" stroke="black" points="972.19,-621.1 973.16,-610.55 965.83,-618.19 972.19,-621.1"></polygon>
+</g>
+<!-- 13 -->
+<g id="node17" class="node">
+<title>13</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="1019.92,-537.4 942.08,-537.4 942.08,-501.4 1019.92,-501.4 1019.92,-537.4"></polygon>
+<text text-anchor="middle" x="981" y="-515.2" font-family="Times,serif" font-size="14.00">Breathing?</text>
+</g>
+<!-- 12&#45;&gt;13 -->
+<g id="edge7" class="edge">
+<title>12-&gt;13</title>
+<path fill="none" stroke="black" d="M981,-574.21C981,-566.19 981,-556.45 981,-547.47"></path>
+<polygon fill="black" stroke="black" points="984.5,-547.43 981,-537.43 977.5,-547.43 984.5,-547.43"></polygon>
+</g>
+<!-- 14 -->
+<g id="node8" class="node">
+<title>14</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="1068.99,-448.6 761.01,-448.6 761.01,-412.6 1068.99,-412.6 1068.99,-448.6"></polygon>
+<text text-anchor="middle" x="915" y="-426.4" font-family="Times,serif" font-size="14.00">Obeys commands or makes purposeful movements?</text>
+</g>
+<!-- 15 -->
+<g id="node9" class="node">
+<title>15</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="983.78,-375.6 846.22,-375.6 846.22,-339.6 983.78,-339.6 983.78,-375.6"></polygon>
+<text text-anchor="middle" x="915" y="-353.4" font-family="Times,serif" font-size="14.00">Has peripheral pulse?</text>
+</g>
+<!-- 14&#45;&gt;15 -->
+<g id="edge10" class="edge">
+<title>14-&gt;15</title>
+<path fill="none" stroke="black" d="M915,-412.41C915,-404.39 915,-394.65 915,-385.67"></path>
+<polygon fill="black" stroke="black" points="918.5,-385.63 915,-375.63 911.5,-385.63 918.5,-385.63"></polygon>
+</g>
+<!-- 16 -->
+<g id="node10" class="node">
+<title>16</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="1002.52,-302.6 827.48,-302.6 827.48,-266.6 1002.52,-266.6 1002.52,-302.6"></polygon>
+<text text-anchor="middle" x="915" y="-280.4" font-family="Times,serif" font-size="14.00">NOT in respiratory distress?</text>
+</g>
+<!-- 15&#45;&gt;16 -->
+<g id="edge11" class="edge">
+<title>15-&gt;16</title>
+<path fill="none" stroke="black" d="M915,-339.41C915,-331.39 915,-321.65 915,-312.67"></path>
+<polygon fill="black" stroke="black" points="918.5,-312.63 915,-302.63 911.5,-312.63 918.5,-312.63"></polygon>
+</g>
+<!-- 17 -->
+<g id="node11" class="node">
+<title>17</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="1008.54,-229.6 821.46,-229.6 821.46,-193.6 1008.54,-193.6 1008.54,-229.6"></polygon>
+<text text-anchor="middle" x="915" y="-207.4" font-family="Times,serif" font-size="14.00">Major hemorrhage controlled?</text>
+</g>
+<!-- 16&#45;&gt;17 -->
+<g id="edge12" class="edge">
+<title>16-&gt;17</title>
+<path fill="none" stroke="black" d="M915,-266.41C915,-258.39 915,-248.65 915,-239.67"></path>
+<polygon fill="black" stroke="black" points="918.5,-239.63 915,-229.63 911.5,-239.63 918.5,-239.63"></polygon>
+</g>
+<!-- 18 -->
+<g id="node18" class="node">
+<title>18</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="932.97,-140.8 681.03,-140.8 681.03,-104.8 932.97,-104.8 932.97,-140.8"></polygon>
+<text text-anchor="middle" x="807" y="-118.6" font-family="Times,serif" font-size="14.00">Likely to survive given current resources?</text>
+</g>
+<!-- 17&#45;&gt;18 -->
+<g id="edge13" class="edge">
+<title>17-&gt;18</title>
+<path fill="none" stroke="black" d="M893.66,-193.45C877.24,-180.25 854.37,-161.87 836.25,-147.31"></path>
+<polygon fill="black" stroke="black" points="838.28,-144.45 828.29,-140.91 833.9,-149.91 838.28,-144.45"></polygon>
+<text text-anchor="middle" x="895.47" y="-163" font-family="Times,serif" font-size="14.00">ANY No</text>
+</g>
+<!-- 19 -->
+<g id="node19" class="node">
+<title>19</title>
+<polygon fill="#a4dcdc" stroke="#a4dcdc" points="1096.59,-140.8 951.41,-140.8 951.41,-104.8 1096.59,-104.8 1096.59,-140.8"></polygon>
+<text text-anchor="middle" x="1024" y="-118.6" font-family="Times,serif" font-size="14.00">Minor injuries ONLY?</text>
+</g>
+<!-- 17&#45;&gt;19 -->
+<g id="edge14" class="edge">
+<title>17-&gt;19</title>
+<path fill="none" stroke="black" d="M936.53,-193.45C953.11,-180.25 976.19,-161.87 994.48,-147.31"></path>
+<polygon fill="black" stroke="black" points="996.87,-149.88 1002.51,-140.91 992.51,-144.4 996.87,-149.88"></polygon>
+<text text-anchor="middle" x="1005.24" y="-163" font-family="Times,serif" font-size="14.00">ALL Yes</text>
+</g>
+<!-- 1 -->
+<g id="node12" class="node">
+<title>1</title>
+<polygon fill="#00bc01" stroke="#00bc01" points="1096,-52 940,-52 940,-16 1096,-16 1096,-52"></polygon>
+<text text-anchor="middle" x="1018" y="-28" font-family="Times,serif" font-size="20.00" fill="white">𝗠𝗶𝗻𝗶𝗺𝗮𝗹</text>
+</g>
+<!-- 2 -->
+<g id="node13" class="node">
+<title>2</title>
+<polygon fill="#fefe00" stroke="#fefe00" points="1270,-52 1114,-52 1114,-16 1270,-16 1270,-52"></polygon>
+<text text-anchor="middle" x="1192" y="-28" font-family="Times,serif" font-size="20.00">𝗗𝗲𝗹𝗮𝘆𝗲𝗱</text>
+</g>
+<!-- 3 -->
+<g id="node14" class="node">
+<title>3</title>
+<polygon fill="red" stroke="red" points="708,-52 512,-52 512,-16 708,-16 708,-52"></polygon>
+<text text-anchor="middle" x="610" y="-28" font-family="Times,serif" font-size="20.00" fill="white">𝗜𝗺𝗺𝗲𝗱𝗶𝗮𝘁𝗲</text>
+</g>
+<!-- 4 -->
+<g id="node15" class="node">
+<title>4</title>
+<polygon fill="#a1a1a1" stroke="#a1a1a1" points="922,-52 726,-52 726,-16 922,-16 922,-52"></polygon>
+<text text-anchor="middle" x="824" y="-28" font-family="Times,serif" font-size="20.00">𝗘𝘅𝗽𝗲𝗰𝘁𝗮𝗻𝘁</text>
+</g>
+<!-- 5 -->
+<g id="node16" class="node">
+<title>5</title>
+<polygon fill="black" stroke="black" points="1183,-448.6 1087,-448.6 1087,-412.6 1183,-412.6 1183,-448.6"></polygon>
+<text text-anchor="middle" x="1135" y="-424.6" font-family="Times,serif" font-size="20.00" fill="white">𝗗𝗲𝗮𝗱</text>
+</g>
+<!-- 13&#45;&gt;14 -->
+<g id="edge9" class="edge">
+<title>13-&gt;14</title>
+<path fill="none" stroke="black" d="M967.96,-501.25C958.29,-488.53 944.95,-470.99 934.08,-456.69"></path>
+<polygon fill="black" stroke="black" points="936.85,-454.56 928.01,-448.71 931.28,-458.79 936.85,-454.56"></polygon>
+<text text-anchor="middle" x="963.89" y="-470.8" font-family="Times,serif" font-size="14.00">Yes</text>
+</g>
+<!-- 13&#45;&gt;5 -->
+<g id="edge8" class="edge">
+<title>13-&gt;5</title>
+<path fill="none" stroke="black" d="M1011.43,-501.25C1035.58,-487.64 1069.52,-468.51 1095.72,-453.74"></path>
+<polygon fill="black" stroke="black" points="1097.64,-456.67 1104.64,-448.71 1094.21,-450.57 1097.64,-456.67"></polygon>
+<text text-anchor="middle" x="1079.56" y="-470.8" font-family="Times,serif" font-size="14.00">No</text>
+</g>
+<!-- 18&#45;&gt;3 -->
+<g id="edge15" class="edge">
+<title>18-&gt;3</title>
+<path fill="none" stroke="black" d="M768.08,-104.65C736.51,-90.74 691.86,-71.07 658.07,-56.18"></path>
+<polygon fill="black" stroke="black" points="659.4,-52.94 648.84,-52.11 656.58,-59.35 659.4,-52.94"></polygon>
+<text text-anchor="middle" x="736.89" y="-74.2" font-family="Times,serif" font-size="14.00">Yes</text>
+</g>
+<!-- 18&#45;&gt;4 -->
+<g id="edge16" class="edge">
+<title>18-&gt;4</title>
+<path fill="none" stroke="black" d="M810.36,-104.65C812.73,-92.52 815.97,-76.02 818.69,-62.12"></path>
+<polygon fill="black" stroke="black" points="822.16,-62.6 820.65,-52.11 815.29,-61.25 822.16,-62.6"></polygon>
+<text text-anchor="middle" x="825.56" y="-74.2" font-family="Times,serif" font-size="14.00">No</text>
+</g>
+<!-- 19&#45;&gt;1 -->
+<g id="edge17" class="edge">
+<title>19-&gt;1</title>
+<path fill="none" stroke="black" d="M1022.81,-104.65C1021.98,-92.52 1020.84,-76.02 1019.87,-62.12"></path>
+<polygon fill="black" stroke="black" points="1023.36,-61.85 1019.18,-52.11 1016.38,-62.33 1023.36,-61.85"></polygon>
+<text text-anchor="middle" x="1031.89" y="-74.2" font-family="Times,serif" font-size="14.00">Yes</text>
+</g>
+<!-- 19&#45;&gt;2 -->
+<g id="edge18" class="edge">
+<title>19-&gt;2</title>
+<path fill="none" stroke="black" d="M1057.19,-104.65C1083.77,-90.92 1121.21,-71.57 1149.9,-56.75"></path>
+<polygon fill="black" stroke="black" points="1151.6,-59.81 1158.88,-52.11 1148.39,-53.59 1151.6,-59.81"></polygon>
+<text text-anchor="middle" x="1131.56" y="-74.2" font-family="Times,serif" font-size="14.00">No</text>
+</g>
+</g>
+</svg>

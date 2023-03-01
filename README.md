@@ -1,4 +1,5 @@
 # presentations
+- 07.03.2020 _Spring Lake Park Opportunities in Emergency Care (SLPOEC) Career Panel_.
 - 26.05.2020T1600-0400 *[Enhancing Machine Learning and Data Visualization Pipelines with Isomorphisms](https://github.com/jagrafft/presentations/tree/master/enhancing_ml-dv_pipelines_w_isomorphisms)*. [LambdaConf 2020][lc2020] (Zoom Webinar). [[PDF][lc2020pres] | [recording][lc2020presrec]]
 - 26.10.2019 *[Computing with Graph Structures](https://github.com/jagrafft/presentations/tree/master/computing_with_graph_structures)*. [League of Extraordinary Algorithms][leam] (Minneapolis, MN).
 - 20.09.2019 *[Twin Cities Julia User Group: Inaugural Meeting](https://github.com/jagrafft/presentations/tree/master/tc_julia_user_group_inaugural_meeting)*. [Twin Cities Julia User Group][tcjug] (Minneapolis, MN).

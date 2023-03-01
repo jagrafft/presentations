@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SLPOEC Career Panel 2023</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="jag.css">
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js" integrity="sha512-bj/tdW5m8Fiyt169efxoa7k2VvD4nE/IxHrBHagqhFleqZuFpmGD75RUrOta73Fw3vItyrwNKAVSeFY1CenpFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+
+
+        <script type="text/javascript">
+            const slideshow = remark.create({
+                ratio: "16:9",
+                slideNumberFormat: "",
+                sourceUrl: "slides.md"
+            });
+
+            // MathJax
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [["$","$"], ["\\(","\\)"]],
+                    skipTags: ["script", "noscript", "style", "textarea", "pre"]
+                }
+            });
+
+            MathJax.Hub.Configured();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+// https://chemm.hhs.gov/startadult.htm
+
+def edge_labels = {
+    (0, "") ;
+    (1,"yes") ;
+    (2,"no") ;
+    (3,"spontaneous breathing") ;
+    (4,"apnea") ;
+    (5,"≥30") ;
+    (6,"(no radial pulse) or (cap. refill ≥ 2sec)") ;
+    (7,"(radial pulse) or (cap. refill < 2sec)") ;
+    (8,"does not obey commands") ;
+    (9,"obeys commands") ;
+    (10,"<30") ;
+}
+
+def node_connections = {
+    (6,1,1) ;
+    (1,5,0) ;
+    (6,7,2) ;
+    (7,8,2) ;
+    (8,4,4) ;
+    (8,3,3) ;
+    (7,9,1) ;
+    (9,3,5) ;
+    (9,10,10) ;
+    (10,3,6) ;
+    (10,11,7) ;
+    (11,3,8) ;
+    (11,2,9) ;
+}
+
+def node_labels = {
+    (0, "") ;
+    (1,"Minor") ;
+    (2,"Delayed") ;
+    (3,"Immediate") ;
+    (4,"Expectant") ;
+    (5,"Secondary\nTriage") ;
+    (6,"Able to Walk?") ;
+    (7,"Spontaneous\nBreathing?") ;
+    (8,"Position\nAirway") ;
+    (9,"Respiratory\nRate") ;
+    (10,"Perfusion") ;
+    (11,"Mental\nStatus") ;
+}
+
+def node_styles = {
+    (1, "color", "#00BC01") ;
+    (1, "fillcolor", "#00BC01") ;
+    (1, "fontcolor", "white") ;
+    (1, "shape", "rect") ;
+    (2, "color", "#FEFE00") ;
+    (2, "fillcolor", "#FEFE00") ;
+    (2, "shape", "rect") ;
+    (3, "color", "red") ;
+    (3, "fillcolor", "red") ;
+    (3, "fontcolor", "white") ;
+    (3, "shape", "rect") ;
+    (4, "color", "black") ;
+    (4, "fillcolor", "black") ;
+    (4, "fontcolor", "white") ;
+    (4, "shape", "rect") ;
+    (5, "bgcolor", "#BDDFFE") ;
+    (5, "color", "#BDDFFE") ;
+    (5, "shape", "rect") ;
+    (5, "style", "filled,rounded") ;
+    (6, "fillcolor", "white") ;
+    (6, "shape", "diamond") ;
+    (7, "fillcolor", "white") ;
+    (7, "shape", "diamond") ;
+    (8, "fillcolor", "white") ;
+    (8, "shape", "rect") ;
+    (8, "style", "rounded") ;
+    (9, "shape", "diamond") ;
+    (9, "fillcolor", "white") ;
+    (10, "shape", "diamond") ;
+    (10, "fillcolor", "white") ;
+    (11, "shape", "diamond") ;
+    (11, "fillcolor", "white") ;
+}
+
+module start_triage_graph
+    def edge(u,v) = node_connections(u,v,_)
+    def node(n) = first[node_connections](n) or second[node_connections](n)
+
+    def attribute:graph = {
+        ("nodesep", "1.5") ;
+    }
+
+    def edge_attribute[u in first[edge], v in edge[u]] = {
+        ("label", edge_labels[node_connections[u,v]]) ;
+    }
+    
+    def node_attribute[n in node] = {
+        ("label", node_labels[n]) ;
+        ("style", "filled") ;
+        node_styles[n]
+    }
+end
+
+def start_edges(u,v) = node_connections(u,v,_)
+def G = directed_graph[start_edges]
+def PR1 = incremental_PR[G,{}]
+def PR2 = incremental_PR[G,PR1]
+
+module start_triage_pagerank_graph
+    def edge = G:edge
+    def node = G:node
+
+    def attribute:graph = {
+        ("nodesep", "1.15") ;
+    }
+
+    def edge_attribute[u in first[edge], v in edge[u]] = {
+        ("fontsize", "30") ;
+        ("label", decimal[64,3,PR2:pr[u]])
+    }
+    
+    def node_attribute[n in node] = {
+        ("color", node_styles[n,"color"]) ;
+        ("fillcolor", node_styles[n,"fillcolor"]) ;
+        ("fontcolor", node_styles[n,"fontcolor"]) ;
+        ("fontsize", "32") ;
+        ("height", 42*PR2:pr[n]) ;
+        ("label", node_labels[n]) ;
+        ("shape", "circle") ;
+        ("style", "filled") ;
+        ("width", 42*PR2:pr[n]) ;
+    }
+end
+
+// def output = graphviz[start_triage_graph]
+// def output = graphviz[start_triage_pagerank_graph]

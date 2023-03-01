@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+/* 
+Porcelain
+Japonica
+Shady Lady
+Night Shadz
+Thunder
+
+profile from http://colormind.io/bootstrap/
+*/
+:root {
+    --light-shades: #f7f9f9;
+    --light-accent: #d38468;
+    --main-color: #a2a0a1;
+    --dark-accent: #ad3d54;
+    --dark-shades: #2a1c28;
+}
+
+body {
+    color: var(--dark-shades);
+    font-family: 'Josefin Sans', sans-serif;
+}
+h1, h2, h3 {
+    color: var(--main-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5%;
+}
+.remark-slide-content h1 { font-size: 2.6em; }
+.remark-slide-content h2 { font-size: 2em; }
+.remark-slide-content h3 { font-size: 1.6em; }
+.footnote {
+    position: absolute;
+    bottom: 3em;
+}
+li p { line-height: 1.25em; }
+.large { font-size: 2em; }
+a, a > code {
+    color: var(--dark-accent);
+    text-decoration: underline;
+}
+code {
+    background: var(--light-shades);
+    border-radius: 5px;
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+.remark-code-line-highlighted     { background-color: var(--dark-shades); }
+.pull-left {
+    float: left;
+    width: 47%;
+}
+.pull-right {
+    float: right;
+    width: 47%;
+}
+.pull-right ~ p {
+    clear: both;
+}
+#slideshow .slide .content code {
+    font-size: 0.8em;
+}
+#slideshow .slide .content pre code {
+    font-size: 0.9em;
+    padding: 15px;
+}
+.inverse {
+    background: var(--dark-shades);
+    color: var(--light-shades);
+    text-shadow: 0 0 20px var(--dark-accent);
+}
+.inverse h1, .inverse h2 {
+    color: var(--light-shades);
+    line-height: 0.8em;
+}
+/* Slide-specific styling */
+#slide-inverse .footnote {
+    bottom: 12px;
+    left: 20px;
+}
+#slide-how .slides {
+    font-size: 0.9em;
+    position: absolute;
+    top:  151px;
+    right: 140px;
+}
+#slide-how .slides h3 {
+    margin-top: 0.2em;
+}
+#slide-how .slides .first,
+#slide-how .slides .second {
+    background-color: var(--light-shades);
+    padding: 1px 20px;
+    height: 90px;
+    width: 120px;
+    -moz-box-shadow: 0 0 10px var(--light-accent);
+    -webkit-box-shadow: 0 0 10px var(--light-accent);
+    box-shadow: 0 0 10px var(--light-accent);
+}
+#slide-how .slides .first {
+    background: var(--light-shades);
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: 1;
+}
+#slide-how .slides .second {
+    position: relative;
+    background: var(--light-shades);
+    z-index: 0;
+}
+/* Two-column layout */
+.left-column {
+    color: var(--light-accent);
+    width: 20%;
+    height: 92%;
+    float: left;
+}
+.left-column h2:last-of-type,
+.left-column h3:last-child {
+    color: #000;
+}
+.right-column {
+    width: 75%;
+    float: right;
+    padding-top: 1em;
+}
+blockquote {
+  border-left: 0.3em solid rgba(0,0,0,0.5);
+  padding: 0 1.4%;
+}
+
+#bibtex_display {
+    font-size: 12pt;
+}
+
+#slide-last-slide.remark-slide-content {
+    background-color: var(--main-color);
+    color: var(--light-shades);
+}
+
+div.title-first-slide {
+    color: var(--dark-shades);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    text-align: left;
+    margin: 7.5% 0 0 8.5%;
+    height: 78%;
+    width: 100%;
+}
+
+div.logo-first-slide {
+    background-color: var(--main-color);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 32%;
+    width: 100%;
+    text-align: center;
+}
+div.logo-first-slide img {
+    padding: 1.4% 0 0 0;
+}
+
+div.footer {
+    background-color: var(--main-color);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 7%;
+    width: 100%;
+    text-align: right;
+}
+
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  border-color: var(--dark-shades);
+}
+
+th {
+  background: var(--dark-shades);
+  color: var(--light-shades);
+  font-weight: bold;
+}

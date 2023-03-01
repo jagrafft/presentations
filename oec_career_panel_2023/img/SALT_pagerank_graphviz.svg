@@ -1,0 +1,275 @@
+<svg width="1018" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0.00 0.00 1872.00 3632.42">
+<g id="graph0" class="graph" transform="translate(4,3628.419921875) scale(1)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-3628.42 1868,-3628.42 1868,4 -4,4"></polygon>
+<g id="clust1" class="cluster">
+<title>cluster_global</title>
+<polygon fill="none" stroke="black" points="8,-1967.4 8,-3616.42 690,-3616.42 690,-1967.4 8,-1967.4"></polygon>
+<text text-anchor="middle" x="349" y="-3585.42" font-family="Times,serif" font-size="30.00">𝗦𝘁𝗲𝗽 𝟭</text>
+<text text-anchor="middle" x="349" y="-3549.42" font-family="Times,serif" font-size="30.00">Global sorting</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_individual</title>
+<polygon fill="none" stroke="black" points="698,-8 698,-3394.91 1856,-3394.91 1856,-8 698,-8"></polygon>
+<text text-anchor="middle" x="1277" y="-3363.91" font-family="Times,serif" font-size="30.00">𝗦𝘁𝗲𝗽 𝟮</text>
+<text text-anchor="middle" x="1277" y="-3327.91" font-family="Times,serif" font-size="30.00">Individual assessment</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_lsi</title>
+<polygon fill="none" stroke="black" points="1197,-1752.52 1197,-3306.91 1603,-3306.91 1603,-1752.52 1197,-1752.52"></polygon>
+<text text-anchor="middle" x="1400" y="-3281.31" font-family="Times,serif" font-size="24.00">𝗟𝗦𝗜</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_unlabeled</title>
+<polygon fill="none" stroke="black" points="1172,-616.78 1172,-1533.52 1456,-1533.52 1456,-616.78 1172,-616.78"></polygon>
+</g>
+<!-- 6 -->
+<g id="node1" class="node">
+<title>6</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="349" cy="-3194.98" rx="333.38" ry="333.38"></ellipse>
+<text text-anchor="middle" x="349" y="-3200.98" font-family="Times,serif" font-size="20.00">𝗦𝘁𝗶𝗹𝗹/𝗼𝗯𝘃𝗶𝗼𝘂𝘀 𝗹𝗶𝗳𝗲 𝘁𝗵𝗿𝗲𝗮𝘁</text>
+<text text-anchor="middle" x="349" y="-3176.98" font-family="Times,serif" font-size="20.00">Assess first</text>
+</g>
+<!-- 7 -->
+<g id="node2" class="node">
+<title>7</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="349" cy="-2493.58" rx="295.91" ry="295.91"></ellipse>
+<text text-anchor="middle" x="349" y="-2499.58" font-family="Times,serif" font-size="20.00">𝗪𝗮𝘃𝗲/𝗽𝘂𝗿𝗽𝗼𝘀𝗲𝗳𝘂𝗹 𝗺𝗼𝘃𝗲𝗺𝗲𝗻𝘁</text>
+<text text-anchor="middle" x="349" y="-2475.58" font-family="Times,serif" font-size="20.00">Assess second</text>
+</g>
+<!-- 6&#45;&gt;7 -->
+<g id="edge1" class="edge">
+<title>6-&gt;7</title>
+<path fill="none" stroke="black" d="M349,-2861.43C349,-2840.85 349,-2820.18 349,-2799.72"></path>
+<polygon fill="black" stroke="black" points="352.5,-2799.69 349,-2789.69 345.5,-2799.69 352.5,-2799.69"></polygon>
+<text text-anchor="middle" x="382.75" y="-2816.54" font-family="Times,serif" font-size="30.00">0.008</text>
+</g>
+<!-- 8 -->
+<g id="node3" class="node">
+<title>8</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="349" cy="-2047.23" rx="71.65" ry="71.65"></ellipse>
+<text text-anchor="middle" x="349" y="-2053.23" font-family="Times,serif" font-size="20.00">𝗪𝗮𝗹𝗸</text>
+<text text-anchor="middle" x="349" y="-2029.23" font-family="Times,serif" font-size="20.00">Assess third</text>
+</g>
+<!-- 7&#45;&gt;8 -->
+<g id="edge2" class="edge">
+<title>7-&gt;8</title>
+<path fill="none" stroke="black" d="M349,-2197.43C349,-2172.88 349,-2149.67 349,-2129.2"></path>
+<polygon fill="black" stroke="black" points="352.5,-2129.06 349,-2119.06 345.5,-2129.06 352.5,-2129.06"></polygon>
+<text text-anchor="middle" x="382.75" y="-2152.63" font-family="Times,serif" font-size="30.00">0.053</text>
+</g>
+<!-- 9 -->
+<g id="node4" class="node">
+<title>9</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1449" cy="-3194.98" rx="67.26" ry="67.26"></ellipse>
+<text text-anchor="middle" x="1449" y="-3199.18" font-family="Times,serif" font-size="14.00">Control major</text>
+<text text-anchor="middle" x="1449" y="-3182.38" font-family="Times,serif" font-size="14.00">hemorrhage</text>
+</g>
+<!-- 10 -->
+<g id="node5" class="node">
+<title>10</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1449" cy="-2493.58" rx="45.87" ry="45.87"></ellipse>
+<text text-anchor="middle" x="1449" y="-2489.38" font-family="Times,serif" font-size="14.00">Open airway</text>
+</g>
+<!-- 9&#45;&gt;10 -->
+<g id="edge3" class="edge">
+<title>9-&gt;10</title>
+<path fill="none" stroke="black" d="M1449,-3127.55C1449,-2990.08 1449,-2676.63 1449,-2549.59"></path>
+<polygon fill="black" stroke="black" points="1452.5,-2549.32 1449,-2539.32 1445.5,-2549.32 1452.5,-2549.32"></polygon>
+<text text-anchor="middle" x="1482.75" y="-2816.54" font-family="Times,serif" font-size="30.00">0.008</text>
+</g>
+<!-- 11 -->
+<g id="node6" class="node">
+<title>11</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1283" cy="-2047.23" rx="78.3" ry="78.3"></ellipse>
+<text text-anchor="middle" x="1283" y="-2051.43" font-family="Times,serif" font-size="14.00">Consider two (2)</text>
+<text text-anchor="middle" x="1283" y="-2034.63" font-family="Times,serif" font-size="14.00">rescue breaths</text>
+</g>
+<!-- 10&#45;&gt;11 -->
+<g id="edge4" class="edge">
+<title>10-&gt;11</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M1433.23,-2450.38C1405.89,-2377.18 1349.2,-2225.44 1313.81,-2130.71"></path>
+<polygon fill="black" stroke="black" points="1317.02,-2129.3 1310.25,-2121.16 1310.47,-2131.75 1317.02,-2129.3"></polygon>
+<text text-anchor="middle" x="1365.75" y="-2152.63" font-family="Times,serif" font-size="30.00">0.053</text>
+</g>
+<!-- 12 -->
+<g id="node7" class="node">
+<title>12</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1452" cy="-1828.67" rx="68.31" ry="68.31"></ellipse>
+<text text-anchor="middle" x="1452" y="-1824.47" font-family="Times,serif" font-size="14.00">Auto-inject antidotes</text>
+</g>
+<!-- 10&#45;&gt;12 -->
+<g id="edge5" class="edge">
+<title>10-&gt;12</title>
+<path fill="none" stroke="black" d="M1449.67,-2447.63C1451,-2354.81 1453.98,-2135.18 1455,-1950.83 1455.09,-1934.83 1455.28,-1930.82 1455,-1914.83 1454.96,-1912.3 1454.9,-1909.74 1454.85,-1907.15"></path>
+<polygon fill="black" stroke="black" points="1458.34,-1906.98 1454.59,-1897.07 1451.34,-1907.15 1458.34,-1906.98"></polygon>
+<text text-anchor="middle" x="1487.75" y="-2038.23" font-family="Times,serif" font-size="30.00">0.053</text>
+</g>
+<!-- 11&#45;&gt;12 -->
+<g id="edge6" class="edge">
+<title>11-&gt;12</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M1330.75,-1985.04C1353.68,-1955.66 1381.09,-1920.53 1404.05,-1891.12"></path>
+<polygon fill="black" stroke="black" points="1407,-1893.02 1410.4,-1882.98 1401.49,-1888.71 1407,-1893.02"></polygon>
+<text text-anchor="middle" x="1408.25" y="-1923.83" font-family="Times,serif" font-size="30.00">0.03</text>
+</g>
+<!-- 13 -->
+<g id="node17" class="node">
+<title>13</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1452" cy="-1643.02" rx="45.5" ry="45.5"></ellipse>
+<text text-anchor="middle" x="1452" y="-1638.82" font-family="Times,serif" font-size="14.00">Breathing?</text>
+</g>
+<!-- 12&#45;&gt;13 -->
+<g id="edge7" class="edge">
+<title>12-&gt;13</title>
+<path fill="none" stroke="black" d="M1452,-1760.33C1452,-1740.11 1452,-1718.18 1452,-1698.87"></path>
+<polygon fill="black" stroke="black" points="1455.5,-1698.74 1452,-1688.74 1448.5,-1698.74 1455.5,-1698.74"></polygon>
+<text text-anchor="middle" x="1485.75" y="-1715.52" font-family="Times,serif" font-size="30.00">0.075</text>
+</g>
+<!-- 14 -->
+<g id="node8" class="node">
+<title>14</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1314" cy="-1391.59" rx="133.85" ry="133.85"></ellipse>
+<text text-anchor="middle" x="1314" y="-1395.79" font-family="Times,serif" font-size="14.00">Obeys commands or</text>
+<text text-anchor="middle" x="1314" y="-1378.99" font-family="Times,serif" font-size="14.00">makes purposeful movements?</text>
+</g>
+<!-- 15 -->
+<g id="node9" class="node">
+<title>15</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1314" cy="-1114.32" rx="71.18" ry="71.18"></ellipse>
+<text text-anchor="middle" x="1314" y="-1110.12" font-family="Times,serif" font-size="14.00">Has peripheral pulse?</text>
+</g>
+<!-- 14&#45;&gt;15 -->
+<g id="edge10" class="edge">
+<title>14-&gt;15</title>
+<path fill="none" stroke="black" d="M1314,-1257.39C1314,-1236.46 1314,-1215.38 1314,-1196.11"></path>
+<polygon fill="black" stroke="black" points="1317.5,-1195.9 1314,-1185.9 1310.5,-1195.9 1317.5,-1195.9"></polygon>
+<text text-anchor="middle" x="1340.25" y="-1212.67" font-family="Times,serif" font-size="30.00">0.03</text>
+</g>
+<!-- 16 -->
+<g id="node10" class="node">
+<title>16</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1314" cy="-901.66" rx="69.14" ry="69.14"></ellipse>
+<text text-anchor="middle" x="1314" y="-905.86" font-family="Times,serif" font-size="14.00">NOT in respiratory</text>
+<text text-anchor="middle" x="1314" y="-889.06" font-family="Times,serif" font-size="14.00">distress?</text>
+</g>
+<!-- 15&#45;&gt;16 -->
+<g id="edge11" class="edge">
+<title>15-&gt;16</title>
+<path fill="none" stroke="black" d="M1314,-1042.88C1314,-1023.14 1314,-1001.54 1314,-981.35"></path>
+<polygon fill="black" stroke="black" points="1317.5,-981.25 1314,-971.25 1310.5,-981.25 1317.5,-981.25"></polygon>
+<text text-anchor="middle" x="1347.75" y="-997.98" font-family="Times,serif" font-size="30.00">0.053</text>
+</g>
+<!-- 17 -->
+<g id="node11" class="node">
+<title>17</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1314" cy="-692.56" rx="67.56" ry="67.56"></ellipse>
+<text text-anchor="middle" x="1314" y="-696.76" font-family="Times,serif" font-size="14.00">Major hemorrhage</text>
+<text text-anchor="middle" x="1314" y="-679.96" font-family="Times,serif" font-size="14.00">controlled?</text>
+</g>
+<!-- 16&#45;&gt;17 -->
+<g id="edge12" class="edge">
+<title>16-&gt;17</title>
+<path fill="none" stroke="black" d="M1314,-832.28C1314,-812.52 1314,-790.83 1314,-770.59"></path>
+<polygon fill="black" stroke="black" points="1317.5,-770.47 1314,-760.47 1310.5,-770.47 1317.5,-770.47"></polygon>
+<text text-anchor="middle" x="1347.75" y="-787.34" font-family="Times,serif" font-size="30.00">0.053</text>
+</g>
+<!-- 18 -->
+<g id="node18" class="node">
+<title>18</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1162" cy="-444.72" rx="108.12" ry="108.12"></ellipse>
+<text text-anchor="middle" x="1162" y="-448.92" font-family="Times,serif" font-size="14.00">Likely to survive</text>
+<text text-anchor="middle" x="1162" y="-432.12" font-family="Times,serif" font-size="14.00">given current resources?</text>
+</g>
+<!-- 17&#45;&gt;18 -->
+<g id="edge13" class="edge">
+<title>17-&gt;18</title>
+<path fill="none" stroke="black" d="M1277.44,-635.15C1271.4,-625.7 1265.24,-615.99 1259.5,-606.78 1247.44,-587.46 1234.72,-566.72 1222.6,-546.77"></path>
+<polygon fill="black" stroke="black" points="1225.44,-544.7 1217.26,-537.97 1219.46,-548.33 1225.44,-544.7"></polygon>
+<text text-anchor="middle" x="1292.75" y="-579.78" font-family="Times,serif" font-size="30.00">0.053</text>
+</g>
+<!-- 19 -->
+<g id="node19" class="node">
+<title>19</title>
+<ellipse fill="#a4dcdc" stroke="#a4dcdc" cx="1468" cy="-444.72" rx="82.57" ry="82.57"></ellipse>
+<text text-anchor="middle" x="1468" y="-440.52" font-family="Times,serif" font-size="14.00">Minor injuries ONLY?</text>
+</g>
+<!-- 17&#45;&gt;19 -->
+<g id="edge14" class="edge">
+<title>17-&gt;19</title>
+<path fill="none" stroke="black" d="M1349.72,-634.54C1370.36,-601.58 1396.63,-559.65 1419.17,-523.67"></path>
+<polygon fill="black" stroke="black" points="1422.17,-525.47 1424.51,-515.14 1416.24,-521.76 1422.17,-525.47"></polygon>
+<text text-anchor="middle" x="1419.75" y="-579.78" font-family="Times,serif" font-size="30.00">0.053</text>
+</g>
+<!-- 1 -->
+<g id="node12" class="node">
+<title>1</title>
+<ellipse fill="#00bc01" stroke="#00bc01" cx="1468" cy="-140.33" rx="98.91" ry="98.91"></ellipse>
+<text text-anchor="middle" x="1468" y="-134.33" font-family="Times,serif" font-size="20.00" fill="white">𝗠𝗶𝗻𝗶𝗺𝗮𝗹</text>
+</g>
+<!-- 2 -->
+<g id="node13" class="node">
+<title>2</title>
+<ellipse fill="#fefe00" stroke="#fefe00" cx="1749" cy="-140.33" rx="98.91" ry="98.91"></ellipse>
+<text text-anchor="middle" x="1749" y="-134.33" font-family="Times,serif" font-size="20.00">𝗗𝗲𝗹𝗮𝘆𝗲𝗱</text>
+</g>
+<!-- 3 -->
+<g id="node14" class="node">
+<title>3</title>
+<ellipse fill="red" stroke="red" cx="830" cy="-140.33" rx="124.16" ry="124.16"></ellipse>
+<text text-anchor="middle" x="830" y="-134.33" font-family="Times,serif" font-size="20.00" fill="white">𝗜𝗺𝗺𝗲𝗱𝗶𝗮𝘁𝗲</text>
+</g>
+<!-- 4 -->
+<g id="node15" class="node">
+<title>4</title>
+<ellipse fill="#a1a1a1" stroke="#a1a1a1" cx="1162" cy="-140.33" rx="124.16" ry="124.16"></ellipse>
+<text text-anchor="middle" x="1162" y="-134.33" font-family="Times,serif" font-size="20.00">𝗘𝘅𝗽𝗲𝗰𝘁𝗮𝗻𝘁</text>
+</g>
+<!-- 5 -->
+<g id="node16" class="node">
+<title>5</title>
+<ellipse fill="black" stroke="black" cx="1592" cy="-1391.59" rx="60.79" ry="60.79"></ellipse>
+<text text-anchor="middle" x="1592" y="-1385.59" font-family="Times,serif" font-size="20.00" fill="white">𝗗𝗲𝗮𝗱</text>
+</g>
+<!-- 13&#45;&gt;14 -->
+<g id="edge9" class="edge">
+<title>13-&gt;14</title>
+<path fill="none" stroke="black" d="M1418.11,-1612.33C1408.32,-1602.57 1398.21,-1591.21 1390.5,-1579.52 1379.98,-1563.56 1370.47,-1545.93 1362.02,-1528.06"></path>
+<polygon fill="black" stroke="black" points="1365.07,-1526.31 1357.7,-1518.7 1358.72,-1529.24 1365.07,-1526.31"></polygon>
+<text text-anchor="middle" x="1423.75" y="-1552.52" font-family="Times,serif" font-size="30.00">0.053</text>
+</g>
+<!-- 13&#45;&gt;5 -->
+<g id="edge8" class="edge">
+<title>13-&gt;5</title>
+<path fill="none" stroke="black" d="M1473.88,-1603.05C1496.27,-1563.14 1531.41,-1500.54 1557.55,-1453.98"></path>
+<polygon fill="black" stroke="black" points="1560.64,-1455.62 1562.48,-1445.19 1554.53,-1452.19 1560.64,-1455.62"></polygon>
+<text text-anchor="middle" x="1538.75" y="-1552.52" font-family="Times,serif" font-size="30.00">0.053</text>
+</g>
+<!-- 18&#45;&gt;3 -->
+<g id="edge15" class="edge">
+<title>18-&gt;3</title>
+<path fill="none" stroke="black" d="M1082.48,-371.29C1036.4,-329.33 978,-276.13 928.97,-231.48"></path>
+<polygon fill="black" stroke="black" points="931.25,-228.81 921.5,-224.67 926.54,-233.99 931.25,-228.81"></polygon>
+<text text-anchor="middle" x="1041.25" y="-291.66" font-family="Times,serif" font-size="30.00">0.03</text>
+</g>
+<!-- 18&#45;&gt;4 -->
+<g id="edge16" class="edge">
+<title>18-&gt;4</title>
+<path fill="none" stroke="black" d="M1162,-336.26C1162,-316.34 1162,-295.32 1162,-274.75"></path>
+<polygon fill="black" stroke="black" points="1165.5,-274.69 1162,-264.69 1158.5,-274.69 1165.5,-274.69"></polygon>
+<text text-anchor="middle" x="1188.25" y="-291.66" font-family="Times,serif" font-size="30.00">0.03</text>
+</g>
+<!-- 19&#45;&gt;1 -->
+<g id="edge17" class="edge">
+<title>19-&gt;1</title>
+<path fill="none" stroke="black" d="M1468,-361.89C1468,-327.36 1468,-286.66 1468,-249.68"></path>
+<polygon fill="black" stroke="black" points="1471.5,-249.36 1468,-239.36 1464.5,-249.36 1471.5,-249.36"></polygon>
+<text text-anchor="middle" x="1494.25" y="-291.66" font-family="Times,serif" font-size="30.00">0.03</text>
+</g>
+<!-- 19&#45;&gt;2 -->
+<g id="edge18" class="edge">
+<title>19-&gt;2</title>
+<path fill="none" stroke="black" d="M1523.85,-383.62C1567.25,-336.91 1627.84,-271.72 1675.23,-220.72"></path>
+<polygon fill="black" stroke="black" points="1677.88,-223.01 1682.12,-213.3 1672.75,-218.25 1677.88,-223.01"></polygon>
+<text text-anchor="middle" x="1642.25" y="-291.66" font-family="Times,serif" font-size="30.00">0.03</text>
+</g>
+</g>
+</svg>
