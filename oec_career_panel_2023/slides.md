@@ -38,14 +38,6 @@ email: jason@grafft.co
 
 <a href="img/cv_timeline.gv.svg" target="_blank"><img src="img/cv_timeline.gv.svg" alt="Career Timeline" width="100%" /></a>
 
-### Motivations
-
-- ADHD
-- Behavior of exceptionally complex systems
-- "Issues" with authority
-
---
-
 ### Fields I Tried Out
 
 - Academia
@@ -55,6 +47,13 @@ email: jason@grafft.co
 --
   - $\to$ Information Science (best "fit" _for me_)
 
+--
+
+### Plausible Reasons for "Fit"
+
+- ADHD
+- Fascinated by the behavior of complex systems
+
 ---
 
 # High-Fidelity Simulation Research
@@ -62,7 +61,9 @@ email: jason@grafft.co
 - M Simulation (prior)
   - with Mojca Remskar, MD, PhD
 
-### RSII Performed by an Anesthesiology Resident
+<h3 style="font-size: 18pt;">RSII Performed by an Anesthesiology Resident</h3>
+
+<small>
 
 | $t$   | event        | code            | state  | result    | notes              |
 |:-----:|:------------:|:---------------:|:------:|:---------:|--------------------|
@@ -80,11 +81,12 @@ email: jason@grafft.co
 | 257.0 | recognize    | monitor         | etCO2  | active    |                    |
 | 259.0 | end          |                 |        |           |                    |
 
+</small>
+
 --
 
-- This record cost over one-thousand dollars ($1000) to generate
-- Individual records are strikingly similar
-  - Dramatically increases cost of human review
+- This cost over one-thousand dollars ($1000) to generate
+- _Highly_ similar to most other records, $\uparrow\uparrow\uparrow$ cost of human review
 
 ---
 
@@ -100,16 +102,9 @@ email: jason@grafft.co
   
 --
 
-<img src="img/biogears_spO2-MAP-HR_plots.png" width="100%" />
+<img src="img/biogears_spO2-MAP-HR_plots.png" width="90%" />
 
 Provider 13's performance is clearly closer to ideal.
-
----
-
-# Psychomotor Performance Research
-
-- Personal (current)
-  - with Ayla Wolf, DAOM
 
 ---
 
@@ -179,8 +174,17 @@ Provider 13's performance is clearly closer to ideal.
 --
 
 - Improved representation of how each triage method affects large groups of people
-- Easier to see how <a href="img/START_pagerank_graphviz.svg" target="_blank">START</a> overuses critical care
-- Validates some design claims of <a href="img/SALT_pagerank_graphviz.svg" target="_blank">SALT</a>
+- Easier to see how START overuses critical care
+- Bias toward overtriage seems to be retained by SALT (noted by study authors)
+- Validates some design claims of SALT
+
+
+<small>
+<br /><br /><br />
+<a href="img/START_pagerank_graphviz.svg" target="_blank">START diagram</a>
+<br />
+<a href="img/SALT_pagerank_graphviz.svg" target="_blank">SALT diagram</a>
+</small>
 
 ---
 layout: false
